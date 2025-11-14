@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Centrum Terapii Malachit | Artykuły o zdrowiu psychicznym</title>
+    <meta name="description" content="Praktyczne porady o ADHD, terapii, zdrowiu psychicznym. Artykuły napisane przez doświadczonych psychoterapeutów z Centrum Terapii Malachit.">
+    <meta name="keywords" content="blog o ADHD, blog psychologiczny, zdrowie psychiczne, terapia, psychoterapia Warszawa">
+    <meta property="og:title" content="Blog Centrum Terapii Malachit - Artykuły o zdrowiu psychicznym">
+    <meta property="og:description" content="Praktyczne porady o ADHD, terapii, zdrowiu psychicznym od ekspertów.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ctmalachit.pl/blog">
+    <link rel="canonical" href="https://ctmalachit.pl/blog">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Centrum Terapii Malachit",
+        "description": "Artykuły o zdrowiu psychicznym, ADHD, terapii",
+        "url": "https://ctmalachit.pl/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Centrum Terapii Malachit",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ctmalachit.pl/Assets/Logo.svg"
+            }
+        },
+        "inLanguage": "pl-PL"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --gold-light: #f0d577;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 0 0 8px 8px;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--malachite-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--malachite-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .category-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--malachite-green);
+            background: white;
+            color: var(--malachite-green);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--malachite-green);
+            color: white;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            background: #e5e5e5;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .blog-category {
+            color: var(--malachite-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: #1a202c;
+        }
+
+        .blog-card h2 a {
+            color: #1a202c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-card h2 a:hover {
+            color: var(--malachite-green);
+        }
+
+        .blog-excerpt {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .read-more {
+            color: var(--malachite-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .read-more:hover {
+            color: var(--malachite-dark);
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+            background: #e5e5e5;
+        }
+
+        .featured-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .featured-content .blog-excerpt {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .featured-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+        <h1>Blog o zdrowiu psychicznym</h1>
+        <p>Praktyczne porady, najnowsze badania i inspiracje od naszych terapeutów</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <a href="#" class="category-btn active">Wszystkie</a>
+            <a href="#" class="category-btn">ADHD</a>
+            <a href="#" class="category-btn">ASD</a>
+            <a href="#" class="category-btn">Terapia</a>
+            <a href="#" class="category-btn">Zdrowie psychiczne</a>
+            <a href="#" class="category-btn">Relacje</a>
+        </div>
+
+        <!-- Featured Post -->
+        <article class="featured-post">
+            <img src="Assets/blog/adhd-doroslych-featured.jpg" alt="Jak rozpoznać ADHD u dorosłych" class="featured-image">
+            <div class="featured-content">
+                <span class="featured-badge">⭐ WYRÓŻNIONY</span>
+                <div class="blog-meta">
+                    <span class="blog-category">ADHD</span>
+                    <span class="blog-date">📅 10 listopada 2024</span>
+                </div>
+                <h2><a href="blog/jak-rozpoznac-adhd-u-doroslych.html">Jak rozpoznać ADHD u dorosłych? Kompletny przewodnik [2024]</a></h2>
+                <p class="blog-excerpt">
+                    Odkryj, jakie są najczęstsze objawy ADHD u dorosłych, jak przebiega diagnoza i kiedy warto zgłosić się do specjalisty. Praktyczny przewodnik oparty na najnowszych badaniach.
+                </p>
+                <div class="blog-footer">
+                    <span class="blog-author">👤 Mgr Sylwia Borowiec-Herej</span>
+                    <a href="blog/jak-rozpoznac-adhd-u-doroslych.html" class="read-more">Czytaj więcej →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <img src="Assets/blog/cbt-vs-dbt.jpg" alt="CBT vs DBT" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">TERAPIA</span>
+                        <span class="blog-date">📅 5 listopada 2024</span>
+                    </div>
+                    <h2><a href="blog/cbt-vs-dbt-ktora-terapie-wybrac.html">CBT vs DBT - którą terapię wybrać?</a></h2>
+                    <p class="blog-excerpt">
+                        Poznaj różnice między terapią poznawczo-behawioralną (CBT) a terapią dialektyczno-behawioralną (DBT). Dowiedz się, która z nich będzie najlepsza dla Ciebie.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Mgr Milena Filippowicz</span>
+                        <a href="blog/cbt-vs-dbt-ktora-terapie-wybrac.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <img src="Assets/blog/pierwsza-wizyta.jpg" alt="Pierwsza wizyta u psychologa" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">ZDROWIE PSYCHICZNE</span>
+                        <span class="blog-date">📅 1 listopada 2024</span>
+                    </div>
+                    <h2><a href="blog/jak-przygotowac-sie-do-pierwszej-wizyty.html">Jak przygotować się do pierwszej wizyty u psychologa?</a></h2>
+                    <p class="blog-excerpt">
+                        Pierwsze spotkanie z terapeutą może być stresujące. Zobacz, czego się spodziewać i jak się przygotować, żeby wykorzystać je jak najlepiej.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Mgr Karolina Budny</span>
+                        <a href="blog/jak-przygotowac-sie-do-pierwszej-wizyty.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <img src="Assets/blog/adhd-kobiety.jpg" alt="ADHD u kobiet" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">ADHD</span>
+                        <span class="blog-date">📅 28 października 2024</span>
+                    </div>
+                    <h2><a href="blog/adhd-u-kobiet-jak-sie-objawia.html">ADHD u kobiet - jak się objawia i dlaczego często jest nierozpoznawane?</a></h2>
+                    <p class="blog-excerpt">
+                        ADHD u kobiet często przybiera inną formę niż u mężczyzn. Poznaj typowe objawy i dowiedz się, dlaczego wiele kobiet przez lata pozostaje bez diagnozy.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Mgr Sylwia Borowiec-Herej</span>
+                        <a href="blog/adhd-u-kobiet-jak-sie-objawia.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card">
+                <img src="Assets/blog/leki-adhd.jpg" alt="Leczenie farmakologiczne ADHD" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">ADHD</span>
+                        <span class="blog-date">📅 25 października 2024</span>
+                    </div>
+                    <h2><a href="blog/leczenie-farmakologiczne-adhd.html">Leczenie farmakologiczne ADHD - wszystko, co musisz wiedzieć</a></h2>
+                    <p class="blog-excerpt">
+                        Kompletny przewodnik po lekach stosowanych w leczeniu ADHD u dorosłych. Poznaj dostępne opcje, ich działanie i potencjalne efekty uboczne.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Lek. Dorota Wojtłowska-Wiechetek</span>
+                        <a href="blog/leczenie-farmakologiczne-adhd.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card">
+                <img src="Assets/blog/wypalenie-zawodowe.jpg" alt="Wypalenie zawodowe" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">ZDROWIE PSYCHICZNE</span>
+                        <span class="blog-date">📅 20 października 2024</span>
+                    </div>
+                    <h2><a href="blog/wypalenie-zawodowe-objawy-i-leczenie.html">Wypalenie zawodowe - objawy, przyczyny i jak sobie z nim radzić</a></h2>
+                    <p class="blog-excerpt">
+                        Czujesz ciągłe zmęczenie i brak motywacji? Poznaj objawy wypalenia zawodowego i dowiedz się, jak odzyskać energię i radość z pracy.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Mgr Milena Filippowicz</span>
+                        <a href="blog/wypalenie-zawodowe-objawy-i-leczenie.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card">
+                <img src="Assets/blog/asd-diagnostyka.jpg" alt="Diagnostyka ASD" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">ASD</span>
+                        <span class="blog-date">📅 15 października 2024</span>
+                    </div>
+                    <h2><a href="blog/diagnostyka-asd-u-doroslych.html">Diagnostyka ASD u dorosłych - jak przebiega i czego się spodziewać</a></h2>
+                    <p class="blog-excerpt">
+                        Coraz więcej dorosłych osób otrzymuje diagnozę spektrum autyzmu. Zobacz, jak wygląda proces diagnostyczny i dlaczego warto go przejść.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">👤 Mgr Marta Kurkiewicz</span>
+                        <a href="blog/diagnostyka-asd-u-doroslych.html" class="read-more">Czytaj więcej →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+
+        // Category filter functionality
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // Here you would filter articles based on category
+            });
+        });
+    </script>
+</body>
+</html>

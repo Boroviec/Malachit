@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekspresowa Diagnoza ADHD i ASD - Centrum Terapii Malachit</title>
+    <meta name="description" content="Szybka diagnoza ADHD i spektrum autyzmu w weekend. Wyniki w 24h. Certyfikowani diagnostycy, priorytetowe terminy.">
+    <meta name="keywords" content="diagnoza ADHD Warszawa, diagnoza ASD, ADOS-2, szybka diagnoza autyzmu, diagnoza ADHD weekend">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --gold-light: #f0d577;
+            --beige: #f5f0e8;
+            --beige-dark: #e8dcc8;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .small {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text .large {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--malachite-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--malachite-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-diagnosis {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-diagnosis::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-diagnosis::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-diagnosis h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-diagnosis h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: var(--gold-light);
+        }
+
+        .hero-diagnosis p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--malachite-dark);
+            padding-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Steps */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(13, 115, 119, 0.1);
+        }
+
+        .step-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--malachite-dark);
+        }
+
+        .step-item p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Specialists */
+        .specialists-section {
+            background: white;
+            padding: 4rem 5%;
+        }
+
+        .specialists-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .specialist-highlight {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .specialist-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .specialist-highlight img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--malachite-green);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .specialist-highlight h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--malachite-dark);
+        }
+
+        .specialist-highlight p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 4rem 5%;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--malachite-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price span {
+            font-size: 1.1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--malachite-dark);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.5rem 0;
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: white;
+            padding: 4rem 5%;
+        }
+
+        .quote {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--malachite-dark);
+            margin: 3rem 0;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: normal;
+            margin-top: 1rem;
+        }
+
+        /* Contact CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-green) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section a {
+            background: white;
+            color: var(--malachite-dark);
+            font-size: 1rem;
+            padding: 1rem 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section a:hover {
+            background: var(--malachite-light);
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-diagnosis h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-diagnosis h2 {
+                font-size: 1.2rem;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .specialists-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-diagnosis">
+        <h1>Szybka diagnoza ADHD i ASD</h1>
+        <h2>Twój czas jest dla nas najważniejszy</h2>
+        <p>
+            W świecie, w którym tempo życia nie zwalnia, wiemy, jak cenny jest Twój czas. Dlatego oferujemy priorytetową, szybką diagnozę, która pomoże Ci zrozumieć źródło trudności i podjąć konkretne kroki w kierunku lepszego samopoczucia i jakości życia.
+        </p>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="container">
+        <h2 class="section-title">To szybkie i proste!</h2>
+        <p class="section-subtitle">3 kroki do twojej diagnozy</p>
+
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <h3>Wizyta w weekend</h3>
+                <p>W Centrum Terapii Malachit rozumiemy, że Twój czas w tygodniu jest mocno ograniczony, dlatego proponujemy pełną diagnozę w soboty i niedziele.</p>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <h3>2 do 4 godzin badań</h3>
+                <p>Diagnoza jest przeprowadzana przez certyfikowanego diagnostę-psychologa i psychoterapeutę. Korzystamy jedynie z przebadanych metod o udowodnionej skuteczności.</p>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <h3>Wyniki i opinia w 24h</h3>
+                <p>Cenimy Twój czas. W ciągu dwóch godzin wspólnie wykonamy niezbędne testy, a po 24 godzinach otrzymasz pisemne opracowanie wyników, opinii psychologicznej oraz zaleceń.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 1.1rem; color: #666; margin-top: 3rem; line-height: 1.8;">
+            Nasze usługi są dostosowane do Twoich unikalnych potrzeb, a specjaliści z dziedziny psychologii zapewnią Ci pełne wsparcie na każdym etapie procesu diagnostycznego.
+        </p>
+    </section>
+
+    <!-- Specialists Section -->
+    <section class="specialists-section">
+        <div class="container">
+            <h2 class="section-title">Nasi Diagnostycy</h2>
+            <p class="section-subtitle">Certyfikowani specjaliści z wieloletnim doświadczeniem</p>
+
+            <div class="specialists-cards">
+                <div class="specialist-highlight">
+                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz">
+                    <h3>mgr Milena Filippowicz</h3>
+                    <p>Certyfikowana psychoterapeutka CBT, psycholog, diagnostka ADHD i zaburzeń ze spektrum autyzmu.</p>
+                    <a href="https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1.5rem;">Umów się</a>
+                </div>
+
+                <div class="specialist-highlight">
+                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej">
+                    <h3>mgr Sylwia Borowiec-Herej</h3>
+                    <p>Psychoterapeutka CBT w trakcie szkolenia, psycholog, neurokognitywistka, diagnostka ADHD i zaburzeń ze spektrum autyzmu.</p>
+                    <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1.5rem;">Umów się</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Poznaj nasze pakiety diagnostyczne</h2>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="price">3 500<span> zł</span></div>
+                    <h3>Diagnoza ADHD</h3>
+                    <ul>
+                        <li>dla dzieci, młodzieży i dorosłych</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 24h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                        <li>zawiera elementy diagnozy różnicowej</li>
+                    </ul>
+                    <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów diagnozę ADHD</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price">5 000<span> zł</span></div>
+                    <h3>Diagnoza ASD<br>(Spektrum Autyzmu)</h3>
+                    <ul>
+                        <li>dla dzieci, młodzieży i dorosłych</li>
+                        <li>z użyciem testu ADOS-2</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 24h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                    </ul>
+                    <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów diagnozę ASD</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price">7 500<span> zł</span></div>
+                    <h3>Pełna Diagnoza<br>ADHD + ASD</h3>
+                    <ul>
+                        <li>zawiera pakiet diagnostyczny ADHD oraz ASD (spektrum autyzmu)</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 48h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                    </ul>
+                    <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów pełną diagnozę</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="quote">
+                "Decydując się na Ekspresową Diagnozę ADHD, zyskujesz nie tylko szybkie i rzetelne wyniki, ale także pewność, że jesteś w rękach specjalistów, którzy rozumieją Twoje potrzeby. Wspieramy Cię w każdym kroku, abyś mógł szybko wrócić do tego, co najważniejsze – do swojego życia."
+            </div>
+            <p style="text-align: center; font-size: 1.4rem; margin-top: 3rem; color: var(--malachite-dark); font-weight: 600;">
+                Czas na zmiany.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Masz dodatkowe pytania?</h2>
+        <p>Napisz do nas lub umów się na konsultację</p>
+        <a href="mailto:kontakt@ctmalachit.pl" class="btn-primary" style="margin-right: 1rem;">kontakt@ctmalachit.pl</a>
+        <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

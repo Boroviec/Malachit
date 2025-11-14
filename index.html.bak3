@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrum Terapii Malachit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .small {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text .large {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 600px;
+            color: #333;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        /* Specialists Grid */
+        .specialists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .specialist-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .specialist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .specialist-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialist-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #e5e5e5;
+            flex-shrink: 0;
+        }
+
+        .specialist-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .specialist-specialty {
+            font-size: 0.85rem;
+            color: #666;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+
+        .specialist-description {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .specialist-qualifications {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .qualification-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .qualification-item span:first-child {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .qualification-item span:last-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-description {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f9fafb;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e5e5e5;
+        }
+
+        /* Steps Section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer/Contact Section */
+        .footer-section {
+            background: #f9fafb;
+            padding: 4rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .map-placeholder {
+            background: #e5e5e5;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .specialists-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 1rem 3%;
+            }
+
+            .container {
+                padding: 3rem 3%;
+            }
+
+            .hero {
+                height: 350px;
+            }
+
+            .specialists-grid,
+            .services-grid,
+            .testimonials-grid,
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Center button container */
+        .center-btn {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="Assets/logo.svg" alt="Centrum Terapii Malachit">
+        </div>
+        <nav>
+            <a href="#o-nas">O NAS</a>
+            <a href="#cennik">CENNIK</a>
+            <a href="#specjalisci">SPECJALIŚCI</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 836 146</span>
+            <a href="#umow" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="#o-nas" onclick="toggleMenu()">O NAS</a>
+            <a href="#cennik" onclick="toggleMenu()">CENNIK</a>
+            <a href="#specjalisci" onclick="toggleMenu()">SPECJALIŚCI</a>
+            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Assets/hero-video.mp4" type="video/mp4">
+            <!-- Fallback for browsers that don't support video -->
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Zrób Pierwszy Krok<br>ku lepszemu życiu.</h1>
+            <a href="#umow" class="btn-primary">Umów wizytę</a>
+        </div>
+    </section>
+
+    <!-- Specialists Section -->
+    <section class="container" id="specjalisci">
+        <h2 class="section-title">Nasi Specjaliści</h2>
+        <p class="section-subtitle">
+            Zespół psychologów Centrum Terapii Malachit to specjaliści i specjalistki utrzymani psychoterapią, którzy z pasją i zaangażowaniem pomagają pacjentom w osiągnięciu swoją poszukiwaną zdrowiem psychicznym.
+        </p>
+
+        <div class="specialists-grid">
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Sylwia-Borowiec-Herej.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Sylwia Borowiec-Herej</h3>
+                        <div class="specialist-specialty">Psycholog Neurokognitywistka</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Współwłaścicielka Centrum Malachit, neurokognitywistka i psychoterapeutka CBT w trakcie szkolenia.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span>🔬</span>
+                        <span>Diagnostyka ADOS-2</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span>📋</span>
+                        <span>Diagnostyka Conners-3</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span>🧩</span>
+                        <span>Diagnoza ADHD i ASD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span>🌍</span>
+                        <span>Terapia w języku angielskim</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Lek. Dorota Wojtłowska-Wiechetek</h3>
+                        <div class="specialist-specialty">Psychiatra</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Lekarz psychiatra z ponad 15-letnim doświadczeniem w psychiatrii dorosłych.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💊</span>
+                        <span>Farmakoterapia ADHD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧠</span>
+                        <span>Leczenie PTSD i traumy</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😔</span>
+                        <span>Terapia depresji i lęku</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😴</span>
+                        <span>Leczenie bezsenności</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Karolina.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Karolina Budny</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholog i psychoterapeutka CBT pracująca z dorosłymi.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Diagnoza ADHD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🎭</span>
+                        <span>Diagnoza ASD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💭</span>
+                        <span>Terapia depresji i lęków</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">📚</span>
+                        <span>Psychoedukacja ADHD</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Milena.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Milena Filippowicz</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta certyfikowany</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psychoterapeutka z 10+ letnim doświadczeniem, specjalistka terapii traumy.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔬</span>
+                        <span>Diagnostyka ADOS-2</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💔</span>
+                        <span>Terapia PTSD (Prolonged Exposure)</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Terapia ADHD i ASD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔥</span>
+                        <span>Terapia wypalenia</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+                        <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Alina.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Alina Kyselova</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholożka i psychoterapeutka pracująca z dorosłymi w nurcie DBT i Terapii Schematów.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🎭</span>
+                        <span>DBT - emocje i relacje</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">📐</span>
+                        <span>Terapia Schematów</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💔</span>
+                        <span>Terapia traumy</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>ADHD i ASD u dorosłych</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Marta-Kurkiewicz.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Marta Kurkiewicz</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholożka specjalizująca się w pracy z kobietami ze spektrum autyzmu.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔬</span>
+                        <span>Diagnostyka ADOS-2</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">👩</span>
+                        <span>Kobiety ze spektrum autyzmu</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Terapia ASD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💭</span>
+                        <span>Trudności emocjonalne</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/marta-kurkiewicz/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+                        <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Maria.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Maria Pac</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholożka i psychoterapeutka pracująca z dorosłymi w nurcie CBT.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔄</span>
+                        <span>Terapia OCD (ERP)</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😰</span>
+                        <span>Zaburzenia lękowe</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Diagnoza ADHD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💭</span>
+                        <span>Depresja i niska samoocena</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/maria-pac-11/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Maksymilian.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Maksymilian Rosochacki</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholog i psychoterapeuta pracujący z dorosłymi, specjalista psychogastroenterologii.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🫀</span>
+                        <span>Psychogastroenterologia (IBS)</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Diagnoza ADHD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😰</span>
+                        <span>Zaburzenia lękowe</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😔</span>
+                        <span>Depresja</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/MartaSklodowska.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Marta Skłodowska</h3>
+                        <div class="specialist-specialty">Psycholog</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholog z ukończonym 4-letnim szkoleniem CBT pracująca z młodzieżą i młodymi dorosłymi.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">👨‍🎓</span>
+                        <span>Młodzież i młodzi dorośli</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😰</span>
+                        <span>Stany lękowe</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😔</span>
+                        <span>Stany depresyjne</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">💪</span>
+                        <span>Budowanie pewności siebie</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Rafal.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Rafał Suchta</h3>
+                        <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholog i psychoterapeuta CBT wykorzystujący elementy terapii schematu i ACT.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔄</span>
+                        <span>Terapia OCD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">😰</span>
+                        <span>Lęk i depresja</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Diagnostyka ADHD i ASD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">📐</span>
+                        <span>Terapia schematu i ACT</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+
+            <div class="specialist-card">
+                <div class="specialist-header">
+                    <div class="specialist-avatar" style="background-image: url('Assets/Photos/Marta Szczepaniak.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="specialist-info">
+                        <h3>Mgr Marta Szczepaniak</h3>
+                        <div class="specialist-specialty">Psycholog</div>
+                        <div class="rating">★★★★★ 5.0</div>
+                    </div>
+                </div>
+                <p class="specialist-description">
+                    Psycholog dziecięcy i neuropsycholog z certyfikatem ADOS-2.
+                </p>
+                <div class="specialist-qualifications">
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🔬</span>
+                        <span>Diagnostyka ADOS-2</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">👶</span>
+                        <span>Dzieci i młodzież</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🧩</span>
+                        <span>Diagnoza i terapia ADHD</span>
+                    </div>
+                    <div class="qualification-item">
+                        <span style="font-size: 1.2rem;">🎭</span>
+                        <span>Diagnoza i terapia ASD</span>
+                    </div>
+                </div>
+                <a href="https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container" id="cennik">
+        <h2 class="section-title">Usługi które oferujemy</h2>
+        <p class="section-subtitle">
+            Wszyscy specjaliści Centrum Terapii Malachit są wykwalifikowani psychoterapeutami, którzy nastawieni solidności takówstwa swoją energię tylko w najlepszym.
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <div class="service-title">diagnoza i terapia ADHD</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <div class="service-title">diagnoza i terapia ASD</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">😊</div>
+                <div class="service-title">zaburzenia nastroju</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <div class="service-title">zaburzenia lękowe</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <div class="service-title">terapia PTSD</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌟</div>
+                <div class="service-title">Zaburzenia osobowości</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <div class="service-title">Terapia Farmakologiczna indywidualna CBT</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <div class="service-title">Terapia wypadkowa</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <div class="service-title">Terapia zdalna poprzez telefon</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <div class="service-title">Terapia na platformie ETRIS</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <div class="service-title">Terapia dorosłych i młodzieżowych ADHD</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <div class="service-title">Terapia autocentryczna dla projektów CRFN</div>
+            </div>
+        </div>
+
+        <div class="center-btn">
+            <a href="#cennik" class="btn-primary">Umów wizytę</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Zaufaj opinii naszych pacjentów</h2>
+            <p class="section-subtitle">
+                Pomagaliśmy już ponad 350 osobom z diagnozą ADHD. Sprawdź Akademię Aby. Zostań z nami jak powstawaniem!
+            </p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Dzięki terapii w Centrum Malachit odkryłam nowe możliwości radzenia sobie z codziennymi wyzwaniami. Polecam z całego serca!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <strong>Anna K.</strong>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Profesjonalne podejście i cierpliwość terapeuty pomogły mi przejść przez trudny okres. Jestem bardzo wdzięczna."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <strong>Marek P.</strong>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Terapia zmieniła moje życie. Po raz pierwszy czuję, że mam kontrolę nad swoimi emocjami."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <strong>Katarzyna M.</strong>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Wspaniałe doświadczenie. Terapeuta był empatyczny i pomocny w każdym kroku procesu terapeutycznego."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <strong>Piotr S.</strong>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-btn">
+                <a href="#opinie" class="btn-primary">Umów wizytę</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="container">
+        <h2 class="section-title">3 kroki do Twojej diagnozy</h2>
+
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Wypełnij wstępne</h3>
+                <p class="step-description">
+                    W formularzu Terapii Malachit możesz wypełnić formularz z danymi oraz wybrać odpowiedni dla Ciebie sposób. Pamiętaj, możesz się umówić z tym profesjonalnym bez dodatkowych kosztów. Wybieramy.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Zart 4 godzia kolekat</h3>
+                <p class="step-description">
+                    Odpowiemy jeszcze tego samego dnia! Ponieważ bardzo dbamy o pracowniany niego życiu profesjonaliści w indywidualnych podejściach do każdego pacjenta, indywidualnie koncentrujemy spotkanie.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Wypisaj wizer w 24h</h3>
+                <p class="step-description">
+                    Czemu, każli wraz, który zapewnmy, że pierwsza wizyta odbędzie się w ciągu maksimum następnego następnej z nami będziesz mógł spotkają się w większości sprawdzonym psychoterapię oraz zdąc zaczyms.
+                </p>
+            </div>
+        </div>
+
+        <div class="center-btn">
+            <a href="#zapisu" class="btn-primary">Umów wizytę</a>
+        </div>
+    </section>
+
+    <!-- Footer/Contact Section -->
+    <section class="footer-section" id="kontakt">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Spotkajmy się i porozmawiajmy</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <strong>📍</strong>
+                        <span>ul. Marszałka Józefa Piłsudskiego 56/116,<br>Wrocław</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>📞</strong>
+                        <span>+48 577 836 146</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>✉️</strong>
+                        <span>sekretariat@malachit.org</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>🕐</strong>
+                        <span>Adres: Aleja Jerzego Waszyngtona 52/114 B Wrocław</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #666;">
+                    W trakcie pracy z dla prostokowy lub spotkań zrobimy nieoficjalnie spotkania ze określone okresy bez miedzy lub telefon. Oferujemy że kompleksowym zaścia się najlepszej rodziny, których pomogą dojść się Jako potencjały.
+                </p>
+                <a href="#gdpr" style="font-size: 0.8rem; color: #2563eb; margin-top: 1rem; display: inline-block;">Klauzula: Meduzę</a>
+                <div style="margin-top: 1.5rem;">
+                    <a href="#" class="btn-primary">Umów wizytę</a>
+                </div>
+            </div>
+
+            <div class="map-placeholder">
+                <p>🗺️ Mapa lokalizacji</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

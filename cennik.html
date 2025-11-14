@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik - Centrum Terapii Malachit</title>
+    <meta name="description" content="Cennik usług psychoterapeutycznych i diagnostycznych w Centrum Terapii Malachit. Przejrzyste ceny terapii, diagnozy ADHD, ASD i innych usług.">
+    <meta name="keywords" content="cennik psychoterapia Warszawa, cena terapii, diagnoza ADHD cena, cennik psycholog">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --gold-light: #f0d577;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--malachite-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--malachite-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Hero */
+        .hero-pricing {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero-pricing h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-pricing p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--malachite-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Pricing Categories */
+        .pricing-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            background: rgba(13, 115, 119, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--malachite-green);
+            margin-bottom: 2rem;
+        }
+
+        .category-header h2 {
+            font-size: 1.8rem;
+            color: var(--malachite-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Service Cards */
+        .services-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-info h3 {
+            font-size: 1.3rem;
+            color: var(--malachite-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-info p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            text-align: right;
+        }
+
+        .price-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--malachite-green);
+        }
+
+        .price-unit {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Express Pricing Highlight */
+        .express-pricing {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            color: white;
+        }
+
+        .express-pricing h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .express-pricing p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--malachite-green);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price span {
+            font-size: 1.2rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--malachite-dark);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--malachite-green);
+            font-weight: bold;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .info-box h3 {
+            color: var(--malachite-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+            color: #666;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            color: var(--malachite-dark);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+
+            .service-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .service-price {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-pricing h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .express-pricing {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-pricing">
+        <h1>Cennik Usług</h1>
+        <p>Przejrzyste ceny i profesjonalna opieka psychologiczna</p>
+    </section>
+
+    <!-- Express Diagnosis Highlight -->
+    <div class="container">
+        <div class="express-pricing">
+            <h2>⚡ Ekspresowa Diagnoza ADHD i ASD</h2>
+            <p>Priorytetowe terminy, wyniki w 24-48h, certyfikowani diagnostycy</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="price">3 500<span> zł</span></div>
+                    <h3>Diagnoza ADHD</h3>
+                    <ul>
+                        <li>dla dzieci, młodzieży i dorosłych</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 24h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                        <li>zawiera elementy diagnozy różnicowej</li>
+                    </ul>
+                    <a href="diagnoza-adhd.html" class="btn-primary">Zobacz szczegóły</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price">5 000<span> zł</span></div>
+                    <h3>Diagnoza ASD (Spektrum Autyzmu)</h3>
+                    <ul>
+                        <li>dla dzieci, młodzieży i dorosłych</li>
+                        <li>z użyciem testu ADOS-2</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 24h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                    </ul>
+                    <a href="diagnoza-adhd.html" class="btn-primary">Zobacz szczegóły</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price">7 500<span> zł</span></div>
+                    <h3>Pełna Diagnoza ADHD + ASD</h3>
+                    <ul>
+                        <li>zawiera pakiet diagnostyczny ADHD oraz ASD</li>
+                        <li>priorytetowe terminy</li>
+                        <li>wyniki do 48h</li>
+                        <li>pisemna opinia z zaleceniami</li>
+                    </ul>
+                    <a href="diagnoza-adhd.html" class="btn-primary">Zobacz szczegóły</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Psychotherapy Services -->
+    <div class="container">
+        <div class="pricing-category">
+            <div class="category-header">
+                <h2>💬 Psychoterapia Indywidualna</h2>
+                <p>Profesjonalna terapia oparta na sprawdzonych metodach (CBT, ACT, DBT, CFT)</p>
+            </div>
+            
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Sesja psychoterapii indywidualnej (50 min)</h3>
+                        <p>Terapia poznawczo-behawioralna, ACT, DBT, CFT dostosowana do Twoich potrzeb. Online lub stacjonarnie.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">250 zł</div>
+                        <div class="price-unit">za sesję</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Pierwsza konsultacja psychologiczna (50 min)</h3>
+                        <p>Spotkanie diagnostyczne, omówienie trudności i ustalenie planu terapii.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">300 zł</div>
+                        <div class="price-unit">za sesję</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Terapia par (60 min)</h3>
+                        <p>Praca z parą nad komunikacją, rozwiązywaniem konfliktów i wzmacnianiem relacji.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">400 zł</div>
+                        <div class="price-unit">za sesję</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Terapia rodzinna (60 min)</h3>
+                        <p>Systemowa praca z rodziną nad dynamiką relacji i komunikacją.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">450 zł</div>
+                        <div class="price-unit">za sesję</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagnosis Services -->
+        <div class="pricing-category">
+            <div class="category-header">
+                <h2>🔍 Diagnozy Standardowe</h2>
+                <p>Kompleksowe badania diagnostyczne z pisemną opinią psychologiczną</p>
+            </div>
+            
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Diagnoza zaburzeń nastroju (depresja, zaburzenia afektywne)</h3>
+                        <p>2-3 spotkania diagnostyczne, testy psychologiczne, pisemna opinia. Termin: 2-3 tygodnie.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">1 200 zł</div>
+                        <div class="price-unit">pakiet</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Diagnoza zaburzeń lękowych</h3>
+                        <p>2-3 spotkania diagnostyczne, kwestionariusze, pisemna opinia. Termin: 2-3 tygodnie.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">1 200 zł</div>
+                        <div class="price-unit">pakiet</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Diagnoza PTSD i zaburzeń związanych z traumą</h3>
+                        <p>3-4 spotkania, szczegółowe badanie objawów, pisemna opinia. Termin: 3-4 tygodnie.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">1 500 zł</div>
+                        <div class="price-unit">pakiet</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Diagnoza różnicowa złożonych zaburzeń</h3>
+                        <p>4-5 spotkań, rozbudowane badanie testowe, konsultacje międzyspecjalistyczne. Termin: 4-6 tygodni.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">2 500 zł</div>
+                        <div class="price-unit">pakiet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="pricing-category">
+            <div class="category-header">
+                <h2>📋 Dodatkowe Usługi</h2>
+                <p>Opinie, konsultacje i inne formy wsparcia psychologicznego</p>
+            </div>
+            
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Opinia psychologiczna (bez diagnozy)</h3>
+                        <p>Opinia na podstawie dokumentacji medycznej, bez przeprowadzania badań diagnostycznych.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">400 zł</div>
+                        <div class="price-unit">dokument</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Konsultacja superwizyjnafor psychologów</h3>
+                        <p>Wsparcie dla specjalistów prowadzących terapię, analiza przypadków. Online lub stacjonarnie (60 min).</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">350 zł</div>
+                        <div class="price-unit">za sesję</div>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Warsztat psychoedukacyjny (grupa 8-12 osób)</h3>
+                        <p>Tematyczne warsztaty grupowe: zarządzanie emocjami, mindfulness, asertywność.</p>
+                    </div>
+                    <div class="service-price">
+                        <div class="price-value">150 zł</div>
+                        <div class="price-unit">za osobę</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>ℹ️ Informacje Dodatkowe</h3>
+            <ul>
+                <li><strong>Formy płatności:</strong> gotówka, przelew, karta płatnicza, BLIK</li>
+                <li><strong>Faktury:</strong> wystawiamy faktury VAT na życzenie pacjenta</li>
+                <li><strong>Odwołanie wizyty:</strong> prosimy o odwołanie minimum 24h przed terminem, w przeciwnym razie obciążamy pełnym kosztem sesji</li>
+                <li><strong>Terapia online:</strong> dostępna dla większości usług bez dodatkowych opłat</li>
+                <li><strong>Ubezpieczenia:</strong> nie współpracujemy bezpośrednio z NFZ, ale możesz ubiegać się o zwrot kosztów w ramach prywatnych ubezpieczeń</li>
+                <li><strong>Pakiety:</strong> zapytaj o rabat przy zakupie pakietu 10 sesji terapii</li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Masz pytania dotyczące cennika?</h2>
+            <p>Skontaktuj się z nami, aby uzyskać więcej informacji lub umówić się na konsultację</p>
+            <a href="index.html#kontakt" class="btn-primary" style="margin-right: 1rem;">Skontaktuj się</a>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

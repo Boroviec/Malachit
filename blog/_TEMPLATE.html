@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- EDIT THESE META TAGS -->
+    <title>[TITLE] | Centrum Terapii Malachit</title>
+    <meta name="description" content="[META DESCRIPTION 150-160 characters]">
+    <meta name="keywords" content="[keyword1, keyword2, keyword3]">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="[TITLE]">
+    <meta property="og:description" content="[META DESCRIPTION]">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ctmalachit.pl/blog/[URL-SLUG]">
+    <meta property="og:image" content="https://ctmalachit.pl/Assets/blog/[IMAGE].jpg">
+    <meta property="article:published_time" content="[YYYY-MM-DD]T09:00:00+01:00">
+    <meta property="article:modified_time" content="[YYYY-MM-DD]T09:00:00+01:00">
+    <meta property="article:author" content="[AUTHOR NAME]">
+    <meta property="article:section" content="[CATEGORY]">
+    
+    <link rel="canonical" href="https://ctmalachit.pl/blog/[URL-SLUG]">
+    
+    <!-- Structured Data - BlogPosting Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[ARTICLE TITLE]",
+        "image": "https://ctmalachit.pl/Assets/blog/[IMAGE].jpg",
+        "datePublished": "[YYYY-MM-DD]T09:00:00+01:00",
+        "dateModified": "[YYYY-MM-DD]T09:00:00+01:00",
+        "author": {
+            "@type": "Person",
+            "name": "[AUTHOR NAME]",
+            "jobTitle": "[AUTHOR TITLE]",
+            "url": "[AUTHOR PROFILE URL]"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Centrum Terapii Malachit",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ctmalachit.pl/Assets/Logo.svg"
+            }
+        },
+        "description": "[META DESCRIPTION]",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://ctmalachit.pl/blog/[URL-SLUG]"
+        },
+        "keywords": ["[keyword1]", "[keyword2]", "[keyword3]"],
+        "articleSection": "[CATEGORY]",
+        "inLanguage": "pl-PL"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ctmalachit.pl/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://ctmalachit.pl/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "[ARTICLE TITLE]",
+                "item": "https://ctmalachit.pl/blog/[URL-SLUG]"
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --gold-light: #f0d577;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 0 0 8px 8px;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--malachite-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--malachite-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 800px;
+            margin: 2rem auto 1rem;
+            padding: 0 5%;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: var(--malachite-green);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 5% 4rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--malachite-light);
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 2rem 0;
+            background: #e5e5e5;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #1a202c;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content strong {
+            color: #1a202c;
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: var(--malachite-green);
+            text-decoration: underline;
+        }
+
+        .article-content a:hover {
+            color: var(--malachite-dark);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #f0f9fa;
+            border-left: 4px solid var(--malachite-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--malachite-green);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fff8e1;
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-box .btn-primary {
+            background: white;
+            color: var(--malachite-dark);
+        }
+
+        .cta-box .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--malachite-green);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Share Buttons */
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+            padding: 1.5rem 0;
+            border-top: 2px solid #f0f0f0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .share-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .share-facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .share-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 3px solid #e2e8f0;
+        }
+
+        .related-posts h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .related-card:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #1a202c;
+        }
+
+        .related-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="../index.html" style="display: block; height: 100%;">
+                <img src="../Assets/Logo.svg" alt="Centrum Terapii Malachit">
+            </a>
+        </div>
+        <nav>
+            <a href="../index.html">GŁÓWNA</a>
+            <a href="../o-nas.html">O NAS</a>
+            <a href="../services.html">USŁUGI</a>
+            <a href="../cennik.html">CENNIK</a>
+            <a href="../faq.html">FAQ</a>
+            <a href="../blog.html">BLOG</a>
+            <a href="../index.html#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="../index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="../o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="../services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="../cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="../blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="../index.html#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / [ARTICLE TITLE]
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <!-- Article Header -->
+        <div class="article-header">
+            <span class="article-category">[CATEGORY]</span>
+            <h1 class="article-title">[ARTICLE TITLE]</h1>
+            
+            <div class="article-meta">
+                <span class="article-meta-item">📅 [DATE]</span>
+                <span class="article-meta-item">⏱️ [X] min czytania</span>
+                <span class="article-meta-item">👁️ [VIEWS] wyświetleń</span>
+            </div>
+
+            <div class="article-author">
+                <div class="author-avatar"></div>
+                <div class="author-info">
+                    <span class="author-name">[AUTHOR NAME]</span>
+                    <span class="author-title">[AUTHOR TITLE]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Image -->
+        <img src="../Assets/blog/[IMAGE].jpg" alt="[IMAGE ALT TEXT]" class="featured-image">
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <!-- Table of Contents (optional) -->
+            <div class="toc">
+                <h3>📋 Spis treści</h3>
+                <ul>
+                    <li><a href="#section1">1. [Section Title]</a></li>
+                    <li><a href="#section2">2. [Section Title]</a></li>
+                    <li><a href="#section3">3. [Section Title]</a></li>
+                </ul>
+            </div>
+
+            <!-- Introduction -->
+            <p>
+                <strong>[Opening paragraph with main keyword]</strong>
+            </p>
+
+            <p>
+                [Introduction paragraph]
+            </p>
+
+            <!-- Main Content -->
+            <h2 id="section1">[H2 Heading]</h2>
+            
+            <p>
+                [Content paragraph]
+            </p>
+
+            <h3>[H3 Subheading]</h3>
+            
+            <ul>
+                <li>[List item 1]</li>
+                <li>[List item 2]</li>
+                <li>[List item 3]</li>
+            </ul>
+
+            <!-- Highlight Box Example -->
+            <div class="highlight-box">
+                <h4>💡 [Highlight Title]</h4>
+                <p>
+                    [Important information or tip]
+                </p>
+            </div>
+
+            <!-- Warning Box Example -->
+            <div class="warning-box">
+                <p>
+                    <strong>⚠️ Ważne:</strong> [Warning or important note]
+                </p>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="cta-box">
+                <h3>🔍 [CTA Heading]</h3>
+                <p>[CTA Description]</p>
+                <a href="[LINK]" class="btn-primary">[CTA Button Text]</a>
+            </div>
+
+            <!-- More Content -->
+            <h2 id="section2">[Another H2 Heading]</h2>
+            
+            <p>
+                [Content continues...]
+            </p>
+
+            <!-- Summary/Conclusion -->
+            <h2>Podsumowanie</h2>
+            
+            <p>
+                [Summary paragraph]
+            </p>
+
+            <ul>
+                <li>✅ [Key takeaway 1]</li>
+                <li>✅ [Key takeaway 2]</li>
+                <li>✅ [Key takeaway 3]</li>
+            </ul>
+
+            <!-- Final CTA -->
+            <div class="cta-box">
+                <h3>📞 Potrzebujesz pomocy?</h3>
+                <p>[Final call to action text]</p>
+                <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę przez ZnanyLekarz</a>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="share-buttons">
+                <span style="font-weight: 600;">Udostępnij artykuł:</span>
+                <a href="#" class="share-btn share-facebook">Facebook</a>
+                <a href="#" class="share-btn share-twitter">Twitter</a>
+                <a href="#" class="share-btn share-linkedin">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="related-posts">
+            <h3>📚 Przeczytaj również</h3>
+            <div class="related-grid">
+                <a href="[RELATED-POST-1].html" class="related-card">
+                    <h4>[Related Post 1 Title]</h4>
+                    <p>[Related Post 1 Description]</p>
+                </a>
+                <a href="[RELATED-POST-2].html" class="related-card">
+                    <h4>[Related Post 2 Title]</h4>
+                    <p>[Related Post 2 Description]</p>
+                </a>
+                <a href="[RELATED-POST-3].html" class="related-card">
+                    <h4>[Related Post 3 Title]</h4>
+                    <p>[Related Post 3 Description]</p>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

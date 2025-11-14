@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Najczęściej zadawane pytania | Centrum Terapii Malachit</title>
+    <meta name="description" content="Najczęściej zadawane pytania o psychoterapię, diagnozę ADHD, proces terapeutyczny i ubezpieczenia w Centrum Terapii Malachit.">
+    <meta name="keywords" content="pytania o psychoterapię, FAQ psycholog, jak przebiega terapia, pytania o ADHD">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --gold-light: #f0d577;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav.mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            gap: 0;
+        }
+
+        nav.mobile-menu.active {
+            display: flex;
+        }
+
+        nav.mobile-menu a {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        nav.mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--malachite-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: var(--malachite-green);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--malachite-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Hero */
+        .hero-faq {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero-faq h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-faq p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--malachite-dark);
+            padding-bottom: 1rem;
+            border-bottom: 3px solid rgba(13, 115, 119, 0.1);
+        }
+
+        /* FAQ Items */
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--malachite-dark);
+            user-select: none;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(13, 115, 119, 0.03);
+        }
+
+        .faq-question .icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            color: var(--malachite-green);
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 800px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer strong {
+            color: var(--malachite-dark);
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, var(--malachite-green) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--malachite-dark);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 968px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+
+            .header-contact .btn-primary {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-faq h1 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.2rem;
+            }
+
+            .cta-box {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-faq">
+        <h1>Najczęściej zadawane pytania</h1>
+        <p>Znajdź odpowiedzi na pytania dotyczące terapii i naszych usług</p>
+    </section>
+
+    <div class="container">
+        <!-- General Questions -->
+        <div class="faq-category">
+            <h2 class="section-title">🔍 Ogólne pytania o psychoterapię</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy potrzebuję skierowania do psychologa/psychoterapeuty?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nie, nie potrzebujesz skierowania. Możesz umówić się na wizytę bezpośrednio przez naszą stronę lub telefonicznie. Psychoterapia i konsultacje psychologiczne są dostępne dla każdego bez potrzeby posiadania skierowania od lekarza.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jak wygląda pierwsza wizyta?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Pierwsza wizyta to konsultacja diagnostyczna trwająca około 50 minut. Podczas spotkania:</p>
+                    <ul>
+                        <li>Poznamy Twoje trudności i oczekiwania wobec terapii</li>
+                        <li>Omówimy historię problemu i dotychczasowe próby radzenia sobie</li>
+                        <li>Terapeuta zaproponuje plan terapii i odpowiednią metodę pracy</li>
+                        <li>Ustalimy częstotliwość spotkań i warunki współpracy</li>
+                    </ul>
+                    <p>Po pierwszej wizycie razem zdecydujecie, czy chcesz kontynuować terapię.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jak długo trwa psychoterapia?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Długość terapii jest indywidualna i zależy od wielu czynników. <strong>Terapia krótkoterminowa</strong> (CBT, terapia skoncentrowana na rozwiązaniach) może trwać 10-20 sesji. <strong>Terapia długoterminowa</strong> przy bardziej złożonych trudnościach może potrwać kilka miesięcy lub dłużej.</p>
+                    <p>Najważniejsze to, że tempo terapii ustalasz wspólnie z terapeutą, a zakończenie następuje wtedy, gdy osiągniesz swoje cele terapeutyczne.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy mogę wybrać płeć terapeuty?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tak, oczywiście. Rozumiemy, że dla wielu osób płeć terapeuty jest ważna i wpływa na poczucie bezpieczeństwa. Przy umawianiu wizyty możesz wskazać swoją preferencję, a my dopasujemy odpowiedniego specjalistę z naszego zespołu.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy terapia online jest tak samo skuteczna jak stacjonarna?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Badania naukowe pokazują, że terapia online jest równie skuteczna jak terapia stacjonarna dla większości zaburzeń psychicznych. Terapia przez internet oferuje dodatkowe korzyści:</p>
+                    <ul>
+                        <li>Wygoda – możesz uczestniczyć z dowolnego miejsca</li>
+                        <li>Oszczędność czasu na dojazd</li>
+                        <li>Większa dostępność terminów</li>
+                        <li>Bezpieczeństwo w pandemii czy innych sytuacjach</li>
+                    </ul>
+                    <p>Przy pierwszej wizycie możesz wspólnie z terapeutą ocenić, która forma będzie dla Ciebie lepsza.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADHD/ASD Questions -->
+        <div class="faq-category">
+            <h2 class="section-title">🧠 Pytania o diagnozę ADHD i ASD</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jak przebiega diagnoza ADHD?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Diagnoza ADHD w naszym centrum obejmuje:</p>
+                    <ul>
+                        <li>Szczegółowy wywiad kliniczny (historia rozwoju, objawy aktualne i z dzieciństwa)</li>
+                        <li>Kwestionariusze diagnostyczne (dla pacjenta i osób bliskich)</li>
+                        <li>Testy uwagi i funkcji wykonawczych</li>
+                        <li>Ocenę diagnozy różnicowej (wykluczenie innych zaburzeń)</li>
+                        <li>Pisemną opinię z zaleceniami terapeutycznymi</li>
+                    </ul>
+                    <p><strong>Ekspresowa diagnoza:</strong> 1 spotkanie diagnostyczne (2-4h), wyniki w 24h, cena 3500 zł.</p>
+                    <p><strong>Diagnoza standardowa:</strong> 2-3 spotkania, wyniki w 2-3 tygodnie.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy mogę zdiagnozować ADHD u dorosłego?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tak, diagnozujemy ADHD u osób dorosłych. ADHD nie znika z wiekiem – u wielu osób objawy utrzymują się przez całe życie, choć mogą się zmieniać. U dorosłych ADHD często objawia się problemami z:</p>
+                    <ul>
+                        <li>Organizacją czasu i zadań</li>
+                        <li>Koncentracją przy pracy wymagającej uwagi</li>
+                        <li>Regulacją emocji i impulsywnością</li>
+                        <li>Utrzymaniem porządku i zarządzaniem finansami</li>
+                    </ul>
+                    <p>Nasza diagnoza uwzględnia specyfikę objawów u osób dorosłych.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Co to jest test ADOS-2 w diagnozie ASD?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>ADOS-2</strong> (Autism Diagnostic Observation Schedule) to złoty standard w diagnostyce zaburzeń ze spektrum autyzmu, uznawany na całym świecie. To ustrukturyzowane badanie obserwacyjne, w którym certyfikowany diagnostyk ocenia:</p>
+                    <ul>
+                        <li>Komunikację społeczną i wzajemność społeczną</li>
+                        <li>Zachowania powtarzalne i stereotypowe</li>
+                        <li>Grę i wyobraźnię (u dzieci)</li>
+                        <li>Interakcje społeczne w naturalnych sytuacjach</li>
+                    </ul>
+                    <p>Test jest dostosowany do wieku i poziomu rozwoju pacjenta. Nasi diagnostycy posiadają certyfikat do przeprowadzania ADOS-2.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy po diagnozie będę miał dostęp do farmakoterapii?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Jako psychologowie nie możemy przepisywać leków – to kompetencja lekarzy psychiatrów. Jednakże nasza pisemna opinia diagnostyczna jest dokumentem, który możesz przedstawić psychiatrze, który może włączyć farmakoterapię jeśli uzna to za wskazane.</p>
+                    <p>W razie potrzeby możemy polecić współpracujących z nami psychiatrów specjalizujących się w ADHD.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practical Questions -->
+        <div class="faq-category">
+            <h2 class="section-title">💼 Pytania praktyczne</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Ile kosztuje terapia?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Cennik naszych usług:</p>
+                    <ul>
+                        <li><strong>Sesja psychoterapii indywidualnej (50 min):</strong> 250 zł</li>
+                        <li><strong>Pierwsza konsultacja (50 min):</strong> 300 zł</li>
+                        <li><strong>Terapia par (60 min):</strong> 400 zł</li>
+                        <li><strong>Ekspresowa diagnoza ADHD:</strong> 3500 zł</li>
+                        <li><strong>Ekspresowa diagnoza ASD:</strong> 5000 zł</li>
+                    </ul>
+                    <p>Pełny cennik znajdziesz <a href="cennik.html" style="color: var(--malachite-green); font-weight: bold;">tutaj</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy współpracujecie z NFZ lub ubezpieczeniami prywatnymi?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>NFZ:</strong> Nie współpracujemy bezpośrednio z NFZ. Wszystkie wizyty są odpłatne i płatne z góry.</p>
+                    <p><strong>Ubezpieczenia prywatne:</strong> Nie mamy bezpośrednich umów z firmami ubezpieczeniowymi, ale wystawiamy faktury i zaświadczenia, które możesz złożyć w swoim ubezpieczeniu w celu ubiegania się o zwrot kosztów. Wiele polis zdrowotnych pokrywa częściowo lub całkowicie koszty psychoterapii – sprawdź warunki swojego ubezpieczenia.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jak odwołać lub przełożyć wizytę?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Prosimy o odwołanie lub przełożenie wizyty minimum <strong>24 godziny przed umówionym terminem</strong>. Możesz to zrobić telefonicznie lub mailowo.</p>
+                    <p><strong>Ważne:</strong> Jeśli odwołasz wizytę później niż 24h przed terminem lub nie pojawisz się bez uprzedzenia, zostaniesz obciążony pełnym kosztem sesji. Rozumiemy nieprzewidziane sytuacje – w nagłych przypadkach skontaktuj się z nami jak najszybciej.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Czy terapia jest poufna?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Tak, terapia jest całkowicie poufna.</strong> Wszyscy nasi terapeuci są związani tajemnicą zawodową zgodnie z Kodeksem Etycznym Psychologa. Oznacza to, że wszystko, o czym rozmawiasz podczas sesji, pozostaje między Tobą a terapeutą.</p>
+                    <p><strong>Wyjątki od tajemnicy:</strong></p>
+                    <ul>
+                        <li>Gdy istnieje bezpośrednie zagrożenie życia Twojego lub innych osób</li>
+                        <li>Gdy sąd nakazuje ujawnienie informacji (bardzo rzadko)</li>
+                        <li>W przypadku wykorzystywania dzieci (obowiązek zgłoszenia)</li>
+                    </ul>
+                    <p>W każdej z tych sytuacji terapeuta omówi z Tobą kolejne kroki.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jakie formy płatności akceptujecie?</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Akceptujemy następujące formy płatności:</p>
+                    <ul>
+                        <li>Gotówka (w gabinecie)</li>
+                        <li>Karta płatnicza i zbliżeniowa</li>
+                        <li>BLIK</li>
+                        <li>Przelew bankowy (przedpłata)</li>
+                    </ul>
+                    <p>Wystawiamy faktury VAT na życzenie pacjenta.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>Nie znalazłeś odpowiedzi na swoje pytanie?</h3>
+            <p>Skontaktuj się z nami, a chętnie odpowiemy na wszystkie Twoje wątpliwości</p>
+            <a href="index.html#kontakt" class="btn-white" style="margin-right: 1rem;">Skontaktuj się</a>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-white">Umów wizytę</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger-menu');
+            mobileMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
