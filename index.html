@@ -138,6 +138,8 @@
     }
     </script>
     
+    <link rel="stylesheet" href="Assets/header.css">
+    
     <style>
         :root {
             --malachite-green: #0d7377;
@@ -145,7 +147,7 @@
             --malachite-light: #14a09e;
             --gold: #d4af37;
             --gold-light: #f0d577;
-            --beige: #f5f0e8;
+            --beige: #faf9f7;
             --beige-dark: #e8dcc8;
             --text-dark: #2c3e50;
         }
@@ -161,144 +163,6 @@
             line-height: 1.6;
             color: var(--text-dark);
             background: white;
-        }
-
-        /* Header Styles */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-radius: 0 0 8px 8px;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .burger-menu span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-
-        .burger-menu.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .burger-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger-menu.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-text .small {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .logo-text .large {
-            font-size: 1.3rem;
-            font-weight: bold;
-            letter-spacing: -0.02em;
-        }
-
-        nav {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex: 1;
-            max-width: 800px;
-        }
-
-        nav.mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 1rem 5%;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            border-radius: 0 0 8px 8px;
-            gap: 0;
-        }
-
-        nav.mobile-menu.active {
-            display: flex;
-        }
-
-        nav.mobile-menu a {
-            padding: 1rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        nav.mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--malachite-green);
-        }
-
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-left: auto;
-            flex-shrink: 0;
-        }
-
-        .phone {
-            font-size: 0.8rem;
-            white-space: nowrap;
         }
 
         .btn-primary {
@@ -359,12 +223,14 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 500px;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 2rem;
+            padding-top: 120px;
+            margin-top: -100px;
             overflow: hidden;
         }
 
@@ -640,7 +506,7 @@
 
         /* Testimonials */
         .testimonials {
-            background: #f9fafb;
+            background: white;
         }
 
         .testimonials-slider-container {
@@ -868,24 +734,6 @@
         }
 
         @media (max-width: 968px) {
-            .burger-menu {
-                display: flex;
-                order: 3;
-            }
-
-            nav:not(.mobile-menu) {
-                display: none;
-            }
-
-            .header-contact {
-                order: 2;
-                margin-left: auto;
-                gap: 1rem;
-            }
-
-            .header-contact .btn-primary {
-                display: none;
-            }
 
             .hero {
                 height: 400px;
@@ -934,11 +782,12 @@
     <header>
         <div class="logo">
             <a href="index.html" style="display: block; height: 100%;">
-                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit" class="logo-desktop">
+                <img src="Assets/Logo Mobile.svg" alt="Centrum Terapii Malachit" class="logo-mobile">
             </a>
         </div>
         <nav>
-            <a href="index.html">GŁÓWNA</a>
+            <a href="index.html" class="active">STRONA GŁÓWNA</a>
             <a href="o-nas.html">O NAS</a>
             <a href="services.html">USŁUGI</a>
             <a href="cennik.html">CENNIK</a>
@@ -951,12 +800,10 @@
             <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="active-page">STRONA GŁÓWNA</span> ▼
         </div>
         <nav class="mobile-menu" id="mobileMenu">
-            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="index.html" class="active" onclick="toggleMenu()">STRONA GŁÓWNA</a>
             <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
             <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
             <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
@@ -1208,7 +1055,7 @@
                         <span>Diagnostyka ADOS-2</span>
                     </div>
                     <div class="qualification-item">
-                        <span>👩</span>
+                        <span><img src="Assets/Usługi mini/Kobiety ze spektrum autyzmu.png" alt="Kobiety ze spektrum autyzmu"></span>
                         <span>Kobiety ze spektrum autyzmu</span>
                     </div>
                     <div class="qualification-item">
@@ -1430,91 +1277,93 @@
     </section>
 
     <!-- Services Section -->
-    <section class="container" id="cennik">
-        <h2 class="section-title">Usługi które oferujemy</h2>
-        <p class="section-subtitle">
-            Wszyscy specjaliści Centrum Terapii Malachit są wykwalifikowani psychoterapeutami, którzy nastawieni solidności takówstwa swoją energię tylko w najlepszym.
-        </p>
+    <section style="background: var(--beige); padding: 4rem 0;">
+        <div class="container" id="cennik">
+            <h2 class="section-title">Usługi które oferujemy</h2>
+            <p class="section-subtitle">
+                Wszyscy specjaliści Centrum Terapii Malachit są wykwalifikowani psychoterapeutami, którzy nastawieni solidności takówstwa swoją energię tylko w najlepszym.
+            </p>
 
-        <div class="services-grid">
+            <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ADHD.png" alt="diagnoza i terapia ADHD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ADHD Background Removed.png" alt="diagnoza i terapia ADHD"></div>
                 <div class="service-title">Diagnoza i terapia ADHD</div>
                 <p class="service-description">Kompleksowa diagnostyka i wsparcie dla osób z zespołem nadpobudliwości psychoruchowej.</p>
                 <a href="services.html#adhd" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ASD.png" alt="diagnoza i terapia ASD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ASD Background Removed.png" alt="diagnoza i terapia ASD"></div>
                 <div class="service-title">Diagnoza i terapia ASD</div>
                 <p class="service-description">Specjalistyczna diagnostyka i wsparcie dla osób ze spektrum autyzmu.</p>
                 <a href="services.html#asd" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia nastroju.png" alt="zaburzenia nastroju"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia nastroju Background Removed.png" alt="zaburzenia nastroju"></div>
                 <div class="service-title">Zaburzenia nastroju</div>
                 <p class="service-description">Terapia depresji, zaburzeń afektywnych i problemów z regulacją nastroju.</p>
                 <a href="services.html#nastroju" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia lękowe.png" alt="zaburzenia lękowe"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia lękowe Background Removed.png" alt="zaburzenia lękowe"></div>
                 <div class="service-title">Zaburzenia lękowe</div>
                 <p class="service-description">Pomoc w radzeniu sobie z lękiem uogólnionym, fobiami i atakami paniki.</p>
                 <a href="services.html#lekowe" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/terapia PTSD.png" alt="terapia PTSD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/terapia PTSD Background Removed.png" alt="terapia PTSD"></div>
                 <div class="service-title">Terapia PTSD</div>
                 <p class="service-description">Specjalistyczne wsparcie w przetwarzaniu traumy i zespołu stresu pourazowego.</p>
                 <a href="services.html#ptsd" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Zaburzenia osobowości.png" alt="Zaburzenia osobowości"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Zaburzenia osobowości"></div>
                 <div class="service-title">Zaburzenia osobowości</div>
                 <p class="service-description">Terapia zaburzeń osobowości z naciskiem na regulację emocji i relacje.</p>
                 <a href="services.html#osobowosci" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT.png" alt="Terapia Poznawczo Behawioralna CBT"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="Terapia Poznawczo Behawioralna CBT"></div>
                 <div class="service-title">Terapia Poznawczo Behawioralna CBT</div>
                 <p class="service-description">Praca nad zmianą negatywnych myśli i zachowań wpływających na samopoczucie.</p>
                 <a href="services.html#cbt" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia dialektyczno-behawioralna DBT.png" alt="Terapia dialektyczno-behawioralna DBT"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia dialektyczno-behawioralna DBT Background Removed.png" alt="Terapia dialektyczno-behawioralna DBT"></div>
                 <div class="service-title">Terapia dialektyczno-behawioralna DBT</div>
                 <p class="service-description">Nauka regulacji emocji, uważności i efektywnej komunikacji w relacjach.</p>
                 <a href="services.html#dbt" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia akceptacji i zaangazowania.png" alt="Terapia akceptacji i zaangażowania ACT"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia akceptacji i zaangazowania Background Removed.png" alt="Terapia akceptacji i zaangażowania ACT"></div>
                 <div class="service-title">Terapia akceptacji i zaangażowania (ACT)</div>
                 <p class="service-description">Budowanie elastyczności psychicznej i życia zgodnego z własnymi wartościami.</p>
                 <a href="services.html#act" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia schematów (TS).png" alt="Terapia schematów (TS)"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="Terapia schematów (TS)"></div>
                 <div class="service-title">Terapia schematów (TS)</div>
                 <p class="service-description">Praca nad głębokimi przekonaniami i wzorcami kształtującymi relacje i emocje.</p>
                 <a href="services.html#ts" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na współczuciu.png" alt="Terapia skoncentrowana na współczuciu (CFT)"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na współczuciu Background Removed.png" alt="Terapia skoncentrowana na współczuciu (CFT)"></div>
                 <div class="service-title">Terapia skoncentrowana na współczuciu (CFT)</div>
                 <p class="service-description">Rozwijanie życzliwości wobec siebie i redukcja samokrytycyzmu.</p>
                 <a href="services.html#cft" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na rozwiązaniach.png" alt="Terapia skoncentrowana na rozwiązaniach"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na rozwiązaniach Background Removed.png" alt="Terapia skoncentrowana na rozwiązaniach"></div>
                 <div class="service-title">Terapia skoncentrowana na rozwiązaniach</div>
                 <p class="service-description">Krótkoterminowa terapia skupiona na konkretnych celach i rozwiązaniach.</p>
                 <a href="services.html#rozwiazania" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia systemowa.png" alt="Terapia systemowa"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia systemowa Background Removed.png" alt="Terapia systemowa"></div>
                 <div class="service-title">Terapia systemowa</div>
                 <p class="service-description">Praca z relacjami rodzinnymi i partnerskimi nad komunikacją i dynamiką.</p>
                 <a href="services.html#systemowa" class="btn-secondary">Czytaj więcej</a>
             </div>
+        </div>
         </div>
     </section>
 
@@ -1795,10 +1644,11 @@
     </script>
 
     <!-- Steps Section -->
-    <section class="container">
-        <h2 class="section-title">Jak umówić się na wizytę?</h2>
+    <section style="background: var(--beige); padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title">Jak umówić się na wizytę?</h2>
 
-        <div class="steps-container">
+            <div class="steps-container">
             <div class="step-card">
                 <div class="step-number">1</div>
                 <h3 class="step-title">Wypełnij formularz wstępny</h3>
@@ -1826,6 +1676,7 @@
 
         <div class="center-btn">
             <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę przez ZnanyLekarz</a>
+        </div>
         </div>
     </section>
 
@@ -1910,10 +1761,31 @@
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
-            const burger = document.querySelector('.burger-menu');
             mobileMenu.classList.toggle('active');
-            burger.classList.toggle('active');
         }
+
+        // Smooth page transitions
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href$=".html"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's the current page or external link
+                    if (href === window.location.pathname.split('/').pop() || this.hostname !== window.location.hostname) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    document.body.classList.add('page-transition');
+                    
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                });
+            });
+        });
     </script>
 
 </body>

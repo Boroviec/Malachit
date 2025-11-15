@@ -151,6 +151,8 @@
     }
     </script>
     
+    <link rel="stylesheet" href="Assets/header.css">
+    
     <style>
         :root {
             --malachite-green: #0d7377;
@@ -172,157 +174,36 @@
             color: #333;
         }
 
-        /* Header Styles */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .burger-menu span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-
-        .burger-menu.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .burger-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger-menu.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .logo-text {
+        /* Hero Section */
+        .hero-services {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-text .small {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-
-        .logo-text .large {
-            font-size: 1.3rem;
-            font-weight: bold;
-            letter-spacing: -0.02em;
-        }
-
-        nav {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
+            padding: 4rem 5%;
+            padding-top: 6rem;
+            margin-top: -100px;
+            text-align: center;
         }
 
-        nav.mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 1rem 5%;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            border-radius: 0 0 8px 8px;
-            gap: 0;
+        .hero-services h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        nav.mobile-menu.active {
-            display: flex;
-        }
-
-        nav.mobile-menu a {
-            padding: 1rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        nav.mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--malachite-green);
-        }
-
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .phone {
-            font-size: 0.8rem;
+        .hero-services p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 5%;
-        }
-
-        .page-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #1a202c;
-            text-align: center;
-        }
-
-        .page-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
         }
 
         .service-detail {
@@ -407,22 +288,8 @@
             margin-top: 4rem;
         }
 
-        @media (max-width: 968px) {
-            .burger-menu {
-                display: flex;
-            }
-
-            nav:not(.mobile-menu) {
-                display: none;
-            }
-
-            .header-contact .btn-primary {
-                display: none;
-            }
-        }
-
         @media (max-width: 768px) {
-            .page-title {
+            .hero-services h1 {
                 font-size: 2rem;
             }
 
@@ -440,45 +307,48 @@
     <header>
         <div class="logo">
             <a href="index.html" style="display: block; height: 100%;">
-                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit" class="logo-desktop">
+                <img src="Assets/Logo Mobile.svg" alt="Centrum Terapii Malachit" class="logo-mobile">
             </a>
         </div>
         <nav>
-            <a href="index.html">GŁÓWNA</a>
+            <a href="index.html">STRONA GŁÓWNA</a>
             <a href="o-nas.html">O NAS</a>
-            <a href="services.html">USŁUGI</a>
+            <a href="services.html" class="active">USŁUGI</a>
             <a href="cennik.html">CENNIK</a>
             <a href="faq.html">FAQ</a>
             <a href="blog.html">BLOG</a>
-            <a href="#kontakt">KONTAKT</a>
+            <a href="index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
             <span class="phone">📞 +48 577 804 146</span>
             <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="active-page">USŁUGI</span> ▼
         </div>
         <nav class="mobile-menu" id="mobileMenu">
-            <a href="index.html" onclick="toggleMenu()">GŁÓWNA</a>
+            <a href="index.html" onclick="toggleMenu()">STRONA GŁÓWNA</a>
             <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
-            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="services.html" class="active" onclick="toggleMenu()">USŁUGI</a>
             <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
             <a href="faq.html" onclick="toggleMenu()">FAQ</a>
             <a href="blog.html" onclick="toggleMenu()">BLOG</a>
-            <a href="#kontakt" onclick="toggleMenu()">KONTAKT</a>
+            <a href="index.html#kontakt" onclick="toggleMenu()">KONTAKT</a>
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero-services">
+        <h1>Nasze Usługi</h1>
+        <p>Profesjonalne wsparcie psychologiczne i psychoterapeutyczne dostosowane do Twoich potrzeb</p>
+    </section>
+
     <div class="container">
-        <h1 class="page-title">Nasze Usługi</h1>
-        <p class="page-subtitle">Profesjonalne wsparcie psychologiczne i psychoterapeutyczne dostosowane do Twoich potrzeb</p>
 
         <!-- ADHD -->
         <div class="service-detail" id="adhd">
-            <h2>🎯 Diagnoza i terapia ADHD</h2>
+            <h2><img src="Assets/Uslugi/diagnoza i terapia ADHD Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Diagnoza i terapia ADHD</h2>
             <p>ADHD (Zespół Nadpobudliwości Psychoruchowej z Deficytem Uwagi) to zaburzenie neurorozwojowe, które wpływa na zdolność koncentracji, kontroli impulsów i zarządzania aktywnością. Oferujemy kompleksową diagnostykę i terapię dla dzieci, młodzieży i dorosłych.</p>
             
             <h3>Nasza pomoc obejmuje:</h3>
@@ -496,7 +366,7 @@
 
         <!-- ASD -->
         <div class="service-detail" id="asd">
-            <h2>🧩 Diagnoza i terapia ASD</h2>
+            <h2><img src="Assets/Uslugi/diagnoza i terapia ASD Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Diagnoza i terapia ASD</h2>
             <p>Zaburzenia ze spektrum autyzmu (ASD) to grupa zaburzeń neurorozwojowych charakteryzujących się trudnościami w komunikacji społecznej i występowaniem powtarzalnych wzorców zachowań. Oferujemy specjalistyczną diagnostykę i terapię dostosowaną do indywidualnych potrzeb.</p>
             
             <h3>W ramach terapii oferujemy:</h3>
@@ -512,7 +382,7 @@
 
         <!-- Zaburzenia nastroju -->
         <div class="service-detail" id="nastroju">
-            <h2>🌤️ Zaburzenia nastroju</h2>
+            <h2><img src="Assets/Uslugi/zaburzenia nastroju Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Zaburzenia nastroju</h2>
             <p>Zaburzenia nastroju, w tym depresja i zaburzenie afektywne dwubiegunowe, znacząco wpływają na jakość życia. Oferujemy kompleksowe wsparcie terapeutyczne oparte na sprawdzonych metodach.</p>
             
             <h3>Pomagamy w:</h3>
@@ -528,7 +398,7 @@
 
         <!-- Zaburzenia lękowe -->
         <div class="service-detail" id="lekowe">
-            <h2>💭 Zaburzenia lękowe</h2>
+            <h2><img src="Assets/Uslugi/zaburzenia lękowe Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Zaburzenia lękowe</h2>
             <p>Zaburzenia lękowe obejmują szeroki zakres problemów - od lęku uogólnionego, przez fobie, aż po zaburzenie paniki. Stosujemy skuteczne metody terapeutyczne pomagające w radzeniu sobie z lękiem.</p>
             
             <h3>Terapia obejmuje:</h3>
@@ -544,7 +414,7 @@
 
         <!-- PTSD -->
         <div class="service-detail" id="ptsd">
-            <h2>🛡️ Terapia PTSD</h2>
+            <h2><img src="Assets/Uslugi/terapia PTSD Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia PTSD</h2>
             <p>Zespół Stresu Pourazowego (PTSD) rozwija się po doświadczeniu traumatycznego wydarzenia. Oferujemy specjalistyczną terapię opartą na metodach traumaterapeutycznych.</p>
             
             <h3>Nasza pomoc obejmuje:</h3>
@@ -560,7 +430,7 @@
 
         <!-- Zaburzenia osobowości -->
         <div class="service-detail" id="osobowosci">
-            <h2>👤 Zaburzenia osobowości</h2>
+            <h2><img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Zaburzenia osobowości</h2>
             <p>Zaburzenia osobowości to trwałe wzorce myślenia i zachowania, które utrudniają funkcjonowanie w życiu codziennym. Oferujemy długoterminową terapię dostosowaną do specyfiki danego zaburzenia.</p>
             
             <h3>W terapii pracujemy nad:</h3>
@@ -576,7 +446,7 @@
 
         <!-- CBT -->
         <div class="service-detail" id="cbt">
-            <h2>🧠 Terapia Poznawczo-Behawioralna (CBT)</h2>
+            <h2><img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia Poznawczo-Behawioralna (CBT)</h2>
             <p>CBT to jedna z najskuteczniejszych metod terapeutycznych opartych na badaniach naukowych. Koncentruje się na zrozumieniu powiązań między myślami, emocjami i zachowaniami.</p>
             
             <h3>Terapia CBT pomaga w:</h3>
@@ -593,7 +463,7 @@
 
         <!-- DBT -->
         <div class="service-detail" id="dbt">
-            <h2>💬 Terapia dialektyczno-behawioralna (DBT)</h2>
+            <h2><img src="Assets/Uslugi/Terapia dialektyczno-behawioralna DBT Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia dialektyczno-behawioralna (DBT)</h2>
             <p>DBT to forma terapii poznawczo-behawioralnej stworzona specjalnie dla osób z intensywnymi emocjami i trudnościami w ich regulacji. Szczególnie skuteczna w leczeniu zaburzenia osobowości borderline.</p>
             
             <h3>Program DBT obejmuje:</h3>
@@ -609,7 +479,7 @@
 
         <!-- ACT -->
         <div class="service-detail" id="act">
-            <h2>🤝 Terapia akceptacji i zaangażowania (ACT)</h2>
+            <h2><img src="Assets/Uslugi/Terapia akceptacji i zaangazowania Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia akceptacji i zaangażowania (ACT)</h2>
             <p>ACT to nowoczesne podejście terapeutyczne, które uczy akceptacji trudnych doświadczeń wewnętrznych i skupienia się na działaniach zgodnych z własnymi wartościami.</p>
             
             <h3>W ramach ACT pracujemy nad:</h3>
@@ -626,7 +496,7 @@
 
         <!-- Terapia schematów -->
         <div class="service-detail" id="ts">
-            <h2>🔍 Terapia schematów (TS)</h2>
+            <h2><img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia schematów (TS)</h2>
             <p>Terapia schematów to podejście integrujące elementy terapii poznawczo-behawioralnej, psychodynamicznej i teorii przywiązania. Koncentruje się na głębokich wzorcach myślowych i emocjonalnych ukształtowanych we wczesnym dzieciństwie.</p>
             
             <h3>Praca terapeutyczna obejmuje:</h3>
@@ -642,7 +512,7 @@
 
         <!-- CFT -->
         <div class="service-detail" id="cft">
-            <h2>💚 Terapia skoncentrowana na współczuciu (CFT)</h2>
+            <h2><img src="Assets/Uslugi/Terapia skoncentrowana na współczuciu Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia skoncentrowana na współczuciu (CFT)</h2>
             <p>CFT to podejście terapeutyczne, które pomaga w rozwijaniu współczucia dla siebie i innych. Szczególnie pomocne dla osób borykających się z intensywną samokrytyką i wstydem.</p>
             
             <h3>Terapia CFT koncentruje się na:</h3>
@@ -658,7 +528,7 @@
 
         <!-- Terapia skoncentrowana na rozwiązaniach -->
         <div class="service-detail" id="rozwiazania">
-            <h2>⚙️ Terapia skoncentrowana na rozwiązaniach</h2>
+            <h2><img src="Assets/Uslugi/Terapia skoncentrowana na rozwiązaniach Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia skoncentrowana na rozwiązaniach</h2>
             <p>To krótkoterminowe, zorientowane na cel podejście terapeutyczne, które koncentruje się na rozwiązaniach i zasobach zamiast na problemach i ich przyczynach.</p>
             
             <h3>W terapii skupiamy się na:</h3>
@@ -675,7 +545,7 @@
 
         <!-- Terapia systemowa -->
         <div class="service-detail" id="systemowa">
-            <h2>🌐 Terapia systemowa</h2>
+            <h2><img src="Assets/Uslugi/Terapia systemowa Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia systemowa</h2>
             <p>Terapia systemowa rozpatruje problemy w kontekście relacji i systemów, w których funkcjonuje człowiek - rodzina, para, środowisko pracy. Koncentruje się na wzorcach interakcji i komunikacji.</p>
             
             <h3>Oferujemy:</h3>
@@ -699,10 +569,31 @@
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
-            const burger = document.querySelector('.burger-menu');
             mobileMenu.classList.toggle('active');
-            burger.classList.toggle('active');
         }
+
+        // Smooth page transitions
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href$=".html"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's the current page or external link
+                    if (href === window.location.pathname.split('/').pop() || this.hostname !== window.location.hostname) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    document.body.classList.add('page-transition');
+                    
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                });
+            });
+        });
     </script>
 
 </body>
