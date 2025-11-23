@@ -297,6 +297,29 @@ nav a.active::after {
     box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
 }
 
+.btn-secondary {
+    background: white;
+    color: var(--malachite-green) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 2px solid var(--malachite-green);
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(13, 115, 119, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(13, 115, 119, 0.05);
+    color: var(--malachite-dark) !important;
+    border-color: var(--malachite-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+}
+
 @media (max-width: 640px) {
     .header-contact .btn-primary {
         display: none;

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamin i Polityka Prywatności - Centrum Terapii Malachit</title>
+    <meta name="description" content="Regulamin świadczenia usług oraz polityka prywatności Centrum Terapii Malachit.">
+    <link rel="stylesheet" href="Assets/header.css?v=2">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+            --gold: #d4af37;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            color: white;
+            padding: 20rem 5% 8rem;
+            margin-top: -100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .content-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--malachite-dark);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--malachite-green);
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--malachite-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section h4 {
+            font-size: 1.1rem;
+            color: var(--malachite-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: rgba(13, 115, 119, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--malachite-green);
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--malachite-dark);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit" class="logo-desktop">
+                <img src="Assets/Logo Mobile.svg" alt="Centrum Terapii Malachit" class="logo-mobile">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">STRONA GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="index.html#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span class="active-page">REGULAMIN</span> ▼
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">STRONA GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="index.html#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Regulamin i Polityka Prywatności</h1>
+    </section>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Regulamin -->
+        <div class="content-section">
+            <h2>Regulamin</h2>
+
+            <h3>1. Płatności za wizyty</h3>
+
+            <h4>a) Pierwsza wizyta</h4>
+            <p>Wymagana jest przedpłata na co najmniej 48 godzin przed planowanym terminem wizyty.</p>
+            <p>Brak zaksięgowanej płatności w tym terminie skutkuje automatycznym anulowaniem wizyty.</p>
+
+            <h4>b) Wizyta stacjonarna</h4>
+            <p>Możliwa płatność gotówką lub kartą na miejscu.</p>
+            <p>Alternatywnie, można zapłacić przelewem na minimum 2 dni robocze przed wizytą.</p>
+
+            <h4>c) Wizyta online</h4>
+            <p>Wymagana przedpłata przelewem na co najmniej 2 dni robocze przed wizytą.</p>
+            <p>W przypadku braku płatności spotkanie nie zostanie zrealizowane.</p>
+
+            <h4>d) Diagnoza psychologiczna</h4>
+            <p>Płatność z góry (gotówka, karta lub przelew).</p>
+            <p>Możliwość płatności w ratach – do indywidualnego ustalenia z psychologiem.</p>
+            <p>W przypadku spotkań online – konieczność opłacenia spotkania przelewem co najmniej 2 dni robocze przed ustalonym terminem.</p>
+
+            <h4>e) Dane do przelewu:</h4>
+            <div class="highlight-box">
+                <p><strong>Numer konta bankowego:</strong> 52 1140 2004 0000 3502 8236 7443</p>
+                <p><strong>Tytuł przelewu:</strong> data wizyty, imię i nazwisko psychologa, imię i nazwisko pacjenta (jeśli przelew wysyła inna osoba)</p>
+            </div>
+
+            <h4>f) Zaległości</h4>
+            <p>Brak uregulowania płatności za wcześniejsze wizyty może skutkować:</p>
+            <ul>
+                <li>brakiem możliwości rejestracji na kolejne spotkania,</li>
+                <li>anulowaniem już zaplanowanych wizyt.</li>
+            </ul>
+
+            <h3>2. Odwoływanie i nieobecność na wizycie</h3>
+            <p>Wizytę można bezpłatnie odwołać najpóźniej 24 godziny przed jej planowanym terminem.</p>
+            <p>W przypadku odwołania późniejszego niż 24 godziny przed wizytą lub nieobecności bez uprzedzenia – obowiązuje pełna odpłatność za wizytę zgodnie z cennikiem.</p>
+            <p>Wizyty można odwoływać przez:</p>
+            <ul>
+                <li>SMS: 577-804-146</li>
+                <li>platformę ZnanyLekarz</li>
+            </ul>
+
+            <h3>3. Konsultacje online – kwestie techniczne</h3>
+            <p>Spotkania odbywają się za pomocą aplikacji ZnanyLekarz (wideo).</p>
+            <p>Wymagane jest:</p>
+            <ul>
+                <li>stabilne połączenie internetowe,</li>
+                <li>sprawna kamera i mikrofon,</li>
+                <li>zapewnienie warunków prywatności i komfortu rozmowy.</li>
+            </ul>
+
+            <h3>4. Rejestracja i kontakt</h3>
+            <p>Terminy wizyt można sprawdzić i rezerwować poprzez:</p>
+            <ul>
+                <li>kalendarz online (ZnanyLekarz),</li>
+            </ul>
+
+            <h3>5. Zgoda na przetwarzanie danych i poufność</h3>
+            <p>Rezerwując wizytę, pacjent wyraża zgodę na przetwarzanie danych osobowych w zakresie niezbędnym do realizacji usług psychologicznych, zgodnie z RODO oraz wewnętrzną Polityką Prywatności Centrum.</p>
+            <p>Wszystkie informacje przekazane podczas procesu terapeutycznego są objęte tajemnicą zawodową, zgodnie z obowiązującymi przepisami prawa i zasadami etyki zawodu psychologa i psychoterapeuty.</p>
+
+            <h3>6. Postanowienia końcowe</h3>
+            <p>Centrum zastrzega sobie prawo do zmiany niniejszego regulaminu. Zmiany będą publikowane na stronie internetowej i w gabinecie.</p>
+            <p>Rejestracja na wizytę oznacza akceptację powyższych zasad.</p>
+        </div>
+
+        <!-- Polityka Prywatności -->
+        <div class="content-section">
+            <h2>Polityka Prywatności</h2>
+
+            <h3>Administrator Danych Osobowych</h3>
+            <p>Administratorem Pani/Pana danych osobowych jest <strong>CENTRUM TERAPII MALACHIT SPÓŁKA CYWILNA</strong>, ul. Piękna 24/26A, 00–549 Warszawa, NIP: 7011083849, REGON: 521702167, telefon: 577 804 146.</p>
+
+            <h3>Cel przetwarzania i związane z nimi podstawy przetwarzania</h3>
+            <p>Administrator przetwarza Pani/Pana dane osobowe tylko i wyłącznie na podstawie prawa i w ściśle określonych celach, tj.:</p>
+            <ul>
+                <li>w celu zapisania pacjentów na wizyty, telefonicznie pod numerem telefonu 577804146 lub za pomocą wiadomości e-mail na adres kontakt@ctmalachit. Dane obejmują imię i nazwisko, numer telefonu oraz adres e-mail pacjenta,</li>
+                <li>dane osobowe są przetwarzane na podstawie art. 6 ust. 1 lit. f RODO, w oparciu o niezbędność przetwarzania do celów wynikających z prawnie uzasadnionych interesów realizowanych przez Administratora,</li>
+                <li>prawnie uzasadnione interesy realizowane przez Centrum Terapii Malachit polegają na przeprowadzeniu diagnozy, konsultacji, poradnictwa i psychoterapii indywidualnej, a także ewentualnego stworzenia opinii psychologicznej lub zaświadczenia,</li>
+                <li>dane są przetwarzane w celu ustalenia dat i godzin spotkań w związku z diagnozą, konsultacją, poradnictwem lub psychoterapią, a także w związku z wystawianiem faktury,</li>
+                <li>Pani/Pana dane osobowe są przetwarzane ręcznie w celu przeprowadzeniu diagnozy, konsultacji, poradnictwa i psychoterapii indywidualnej, a także komputerowo w celu ewentualnego stworzenia opinii psychologicznej lub pedagogicznej i wydania zaświadczenia.</li>
+            </ul>
+
+            <h3>Okres przechowywania</h3>
+            <p>Okres przechowywania Pani/Pana danych osobowych jest uzależniony od podstawy prawnej ich przetwarzania:</p>
+            <ul>
+                <li>w przypadku, gdy dane są przetwarzane na podstawie art. 6 ust. 1 lit. c) RODO dane osobowe zebrane w celu realizacji obowiązków wynikających z przepisów prawa, w tym prawa podatkowego będą przechowywane przez okres do wypełnienia tych obowiązków i przez okres wymagany przez przepisy prawa. Dane przetwarzane na potrzeby rachunkowości oraz ze względu na obowiązki podatkowe przetwarzane są przez okres wskazany w art. 74 ustawy o rachunkowości, tj. co do zasady przez okres 5 lat od początku roku następującego po roku obrotowym, którego dane dotyczą.</li>
+                <li>w przypadku, gdy dane przetwarzane są na podstawie art. 6 ust. 1 lit. b) RODO dane osobowe przetwarzane będą do czasu zakończenia wszelkich czynności faktycznych i prawnych niezbędnych do realizacji umowy lub dla zabezpieczenia ewentualnych roszczeń.</li>
+                <li>w przypadku, gdy dane przetwarzane są na podstawie art. 6 ust. 1 lit. f) RODO dane osobowe przetwarzane będą do czasu wypełnienia prawnie uzasadnionych interesów Administratora stanowiących podstawę tego przetwarzania lub do czasu wniesienia przez Panią/Pana.</li>
+                <li>W przypadku przetwarzania danych osobowych w celu dochodzenia roszczeń – dane te będą przetwarzane do czasu ostatecznego zakończenia sporu.</li>
+                <li>W przypadku, gdy dane przetwarzane są na podstawie art. 6 ust. 1 lit. a) RODO dane osobowe przetwarzane będą do czasu cofnięcia przez Panią/Pana tej zgody.</li>
+            </ul>
+            <p>Pani/Pana dane osobowe są objęte tajemnicą zawodową psychologa, pedagoga z wyjątkiem zwolnienia z obowiązku z zachowania poufności przez prokuratora lub sąd albo jeśli życie pacjentki/pacjenta lub innych osób będzie poważnie zagrożone.</p>
+
+            <h3>Prawa</h3>
+            <p>Przysługuje Pani/Panu prawo dostępu do swoich danych osobowych, sprostowania danych, usunięcia ich z bazy, ograniczenia ich przetwarzania, wniesienia sprzeciwu wobec przetwarzania danych, przenoszenia danych, wniesienia skargi do organu nadzorczego, cofnięcia zgody na przetwarzanie danych osobowych.</p>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html" class="btn-secondary">Powrót do strony głównej</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Contact Info -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
+                <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+                
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Regulamin</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none; transition: color 0.3s;">FAQ</a></p>
+            </div>
+
+            <!-- Social / Hours -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+                <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+            © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+</body>
+</html>

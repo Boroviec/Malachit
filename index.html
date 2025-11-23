@@ -32,8 +32,8 @@
                 },
                 "image": "https://ctmalachit.pl/Assets/Logo.svg",
                 "description": "Profesjonalna diagnoza i terapia ADHD, ASD, depresji, lęku, PTSD i innych zaburzeń. Oferujemy terapię CBT, ACT, DBT, CFT i systemową w Warszawie.",
-                "telephone": "+48577836146",
-                "email": "sekretariat@malachit.org",
+                "telephone": "+48577804146",
+                "email": "kontakt@ctmalachit.pl",
                 "address": [
                     {
                         "@type": "PostalAddress",
@@ -138,7 +138,7 @@
     }
     </script>
     
-    <link rel="stylesheet" href="Assets/header.css">
+    <link rel="stylesheet" href="Assets/header.css?v=2">
     
     <style>
         :root {
@@ -163,28 +163,6 @@
             line-height: 1.6;
             color: var(--text-dark);
             background: white;
-        }
-
-        .btn-primary {
-            background: var(--malachite-green);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none !important;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--malachite-dark);
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
         }
 
         .btn-secondary {
@@ -326,6 +304,20 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
+        .specialist-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .specialist-actions .btn-primary,
+        .specialist-actions .btn-secondary {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
+
         .specialist-header {
             display: flex;
             gap: 1rem;
@@ -399,7 +391,8 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
             line-height: 1.5;
-            min-height: 4.5em;
+            height: 8em;
+            overflow: hidden;
         }
 
         .specialist-qualifications {
@@ -659,6 +652,9 @@
 
         .step-card {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .step-number {
@@ -672,12 +668,14 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            max-width: 400px;
         }
 
         .step-description {
             font-size: 0.9rem;
             color: #666;
             line-height: 1.6;
+            max-width: 400px;
         }
 
         /* Footer/Contact Section */
@@ -821,7 +819,8 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Zrób Pierwszy Krok<br>ku lepszemu życiu.</h1>
+            <h1>Twoja droga do lepszego życia zaczyna się tutaj</h1>
+            <p>Diagnoza i terapia ADHD/ASD</p>
             <a href="#umow" class="btn-primary">Umów wizytę</a>
         </div>
     </section>
@@ -830,7 +829,7 @@
     <section class="container" id="specjalisci">
         <h2 class="section-title">Nasi Specjaliści</h2>
         <p class="section-subtitle">
-            Zespół psychologów Centrum Terapii Malachit to specjaliści i specjalistki utrzymani psychoterapią, którzy z pasją i zaangażowaniem pomagają pacjentom w osiągnięciu swoją poszukiwaną zdrowiem psychicznym.
+            Zespół psychologów i psychoterapeutów Centrum Terapii Malachit to doświadczeni specjaliści, którzy z pasją i zaangażowaniem pomagają pacjentom w osiągnięciu równowagi psychicznej i lepszego samopoczucia.
         </p>
 
         <div class="specialists-grid">
@@ -847,7 +846,7 @@
                     </div>
                 </div>
                 <p class="specialist-description">
-                    Łączę psychologię z wiedzą o funkcjonowaniu mózgu, by lepiej zrozumieć człowieka w całej jego złożoności. Pracuję z dorosłymi i dziećmi — także w języku angielskim — tworząc przestrzeń zrozumienia i rozwoju.
+                    Łączę psychologię z wiedzą o funkcjonowaniu mózgu. Pracuję z dorosłymi i dziećmi — także w języku angielskim — tworząc przestrzeń zrozumienia i rozwoju.
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
@@ -867,11 +866,14 @@
                         <span>Diagnoza ASD</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Terapia w języku angielskim.png" alt="Terapia w języku angielskim"></span>
-                        <span>Terapia w języku angielskim</span>
+                        <span><img src="Assets/Usługi mini/Terapia w języku angielskim.png" alt="Terapia po angielsku"></span>
+                        <span>Terapia po angielsku</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="sylwia-borowiec-herej.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -887,7 +889,7 @@
                     </div>
                 </div>
                 <p class="specialist-description">
-                    Od piętnastu lat pomagam dorosłym i młodzieży odzyskać spokój po trudnych doświadczeniach. Moi pacjenci wiedzą, że trafiają w miejsce, gdzie empatia łączy się z rzetelną wiedzą i doświadczeniem klinicznym.
+                    Od piętnastu lat pomagam dorosłym i młodzieży odzyskać spokój po trudnych doświadczeniach. Łączę empatię z wiedzą i doświadczeniem klinicznym.
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
@@ -895,8 +897,8 @@
                         <span>Farmakoterapia ADHD</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Terapia PTSD.png" alt="Leczenie PTSD i traumy"></span>
-                        <span>Leczenie PTSD i traumy</span>
+                        <span><img src="Assets/Usługi mini/Terapia PTSD.png" alt="PTSD i trauma"></span>
+                        <span>PTSD i trauma</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Zaburzenia nastroju.png" alt="Terapia depresji"></span>
@@ -911,7 +913,10 @@
                         <span>Zaburzenia lękowe</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="dorota-wojtlowska-wiechetek.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -951,7 +956,10 @@
                         <span>Terapia CBT</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="karolina-budny.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -975,8 +983,8 @@
                         <span>Diagnostyka ADOS-2</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Terapia PTSD.png" alt="Terapia PTSD (Prolonged Exposure)"></span>
-                        <span>Terapia PTSD (Prolonged Exposure)</span>
+                        <span><img src="Assets/Usługi mini/Terapia PTSD.png" alt="Terapia PTSD"></span>
+                        <span>Terapia PTSD</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Diagnoza i terapia ADHD.png" alt="Terapia ADHD"></span>
@@ -991,7 +999,10 @@
                         <span>Terapia wypalenia</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="milena-filippowicz.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
                         <div class="specialist-card">
@@ -1007,12 +1018,12 @@
                     </div>
                 </div>
                 <p class="specialist-description">
-                    Pomagam dzieciom, nastolatkom i dorosłym odnaleźć zrozumienie i wsparcie — w języku polskim, angielskim i ukraińskim. Wierzę, że terapia to przestrzeń, w której można poczuć się naprawdę wysłuchanym.
+                    Pomagam odnaleźć zrozumienie i wsparcie — w języku polskim, angielskim i ukraińskim. Terapia to przestrzeń, w której można poczuć się naprawdę wysłuchanym.
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Terapia dialektyczno-behawioralna DBT.png" alt="DBT - emocje i relacje"></span>
-                        <span>DBT - emocje i relacje</span>
+                        <span><img src="Assets/Usługi mini/Terapia dialektyczno-behawioralna DBT.png" alt="Terapia DBT"></span>
+                        <span>Terapia DBT</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Terapia schematów (TS).png" alt="Terapia Schematów"></span>
@@ -1031,7 +1042,10 @@
                         <span>ASD u dorosłych</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="alina-kyselova.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -1055,8 +1069,8 @@
                         <span>Diagnostyka ADOS-2</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Kobiety ze spektrum autyzmu.png" alt="Kobiety ze spektrum autyzmu"></span>
-                        <span>Kobiety ze spektrum autyzmu</span>
+                        <span><img src="Assets/Usługi mini/Kobiety ze spektrum autyzmu.png" alt="Kobiety i autyzm"></span>
+                        <span>Kobiety i autyzm</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Diagnoza i terapia ASD.png" alt="Terapia ASD"></span>
@@ -1071,7 +1085,10 @@
                         <span>Terapia CBT</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/marta-kurkiewicz/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/marta-kurkiewicz-2/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="marta-kurkiewicz.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
                         <div class="specialist-card">
@@ -1080,7 +1097,7 @@
                     <div class="specialist-info">
                         <h3>Mgr Maria Pac</h3>
                         <div class="specialist-specialty">Psycholog, Psychoterapeuta</div>
-                        <a href="https://www.znanylekarz.pl/maria-pac-11/psycholog-psychoterapeuta/warszawa#profile-reviews" target="_blank" rel="noopener noreferrer" class="rating">
+                        <a href="https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa#profile-reviews" target="_blank" rel="noopener noreferrer" class="rating">
                             <span class="rating-stars">★★★★★</span>
                             <span class="rating-count">(11 opinii)</span>
                         </a>
@@ -1111,7 +1128,10 @@
                         <span>Terapia CBT</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/maria-pac-11/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="maria-pac.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -1131,8 +1151,8 @@
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Psychogastroenterologia (IBS).png" alt="Psychogastroenterologia (IBS)"></span>
-                        <span>Psychogastroenterologia (IBS)</span>
+                        <span><img src="Assets/Usługi mini/Psychogastroenterologia (IBS).png" alt="Psychogastroenterologia"></span>
+                        <span>Psychogastroenterologia</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Diagnoza i terapia ADHD.png" alt="Diagnoza ADHD"></span>
@@ -1151,7 +1171,10 @@
                         <span>Terapia CBT</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="MaksymilianRosochacki.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -1167,12 +1190,12 @@
                     </div>
                 </div>
                 <p class="specialist-description">
-                    Towarzyszę młodym ludziom w odkrywaniu ich własnej siły i wartości, kiedy świat wydaje się przytłaczający. Pomagam im odzyskać równowagę, pewność siebie i spokój w codziennym życiu.
+                    Towarzyszę młodym ludziom w odkrywaniu ich siły i wartości. Pomagam odzyskać równowagę, pewność siebie i spokój w codziennym życiu.
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Młodzież i młodzi dorośli.png" alt="Młodzież i młodzi dorośli"></span>
-                        <span>Młodzież i młodzi dorośli</span>
+                        <span><img src="Assets/Usługi mini/Młodzież i młodzi dorośli.png" alt="Młodzież"></span>
+                        <span>Młodzież</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Zaburzenia lękowe.png" alt="Zaburzenia lękowe"></span>
@@ -1183,15 +1206,18 @@
                         <span>Terapia depresji</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Budowanie pewności siebie.png" alt="Budowanie pewności siebie"></span>
-                        <span>Budowanie pewności siebie</span>
+                        <span><img src="Assets/Usługi mini/Budowanie pewności siebie.png" alt="Pewność siebie"></span>
+                        <span>Pewność siebie</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Terapia Poznawczo Behawioralna CBT.png" alt="Terapia CBT"></span>
                         <span>Terapia CBT</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="marta-sklodowska.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -1215,8 +1241,8 @@
                         <span>Terapia OCD</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Zaburzenia lękowe.png" alt="Zaburzenia lękowe i depresja"></span>
-                        <span>Zaburzenia lękowe i depresja</span>
+                        <span><img src="Assets/Usługi mini/Zaburzenia lękowe.png" alt="Zaburzenia lękowe"></span>
+                        <span>Zaburzenia lękowe</span>
                     </div>
                     <div class="qualification-item">
                         <span><img src="Assets/Usługi mini/Diagnoza i terapia ADHD.png" alt="Diagnostyka ADHD"></span>
@@ -1227,11 +1253,14 @@
                         <span>Diagnostyka ASD</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Terapia schematów (TS).png" alt="Terapia schematu i ACT"></span>
-                        <span>Terapia schematu i ACT</span>
+                        <span><img src="Assets/Usługi mini/Terapia schematów (TS).png" alt="Terapia schematów"></span>
+                        <span>Terapia schematów</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="rafal-suchta.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
 
             <div class="specialist-card">
@@ -1247,7 +1276,7 @@
                     </div>
                 </div>
                 <p class="specialist-description">
-                    Tworzę bezpieczną przestrzeń, w której dzieci i ich rodzice mogą lepiej zrozumieć emocje i zachowania. Wierzę, że każde dziecko ma w sobie potencjał do rozwoju — wystarczy je uważnie usłyszeć i wspierać z troską.
+                    Tworzę przestrzeń, w której dzieci i rodzice mogą lepiej zrozumieć emocje i zachowania. Każde dziecko ma potencjał do rozwoju — wystarczy je uważnie usłyszeć.
                 </p>
                 <div class="specialist-qualifications">
                     <div class="qualification-item">
@@ -1267,11 +1296,14 @@
                         <span>Diagnoza i terapia ASD</span>
                     </div>
                     <div class="qualification-item">
-                        <span><img src="Assets/Usługi mini/Neuropsychologia dziecięca.png" alt="Neuropsychologia dziecięca"></span>
-                        <span>Neuropsychologia dziecięca</span>
+                        <span><img src="Assets/Usługi mini/Neuropsychologia dziecięca.png" alt="Neuropsychologia"></span>
+                        <span>Neuropsychologia</span>
                     </div>
                 </div>
-                <a href="https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                <div class="specialist-actions">
+                    <a href="https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+                    <a href="marta-szczepaniak.html" class="btn-secondary">Poznaj lepiej</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1286,31 +1318,31 @@
 
             <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ADHD Background Removed.png" alt="diagnoza i terapia ADHD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="diagnoza i terapia ADHD"></div>
                 <div class="service-title">Diagnoza i terapia ADHD</div>
                 <p class="service-description">Kompleksowa diagnostyka i wsparcie dla osób z zespołem nadpobudliwości psychoruchowej.</p>
                 <a href="services.html#adhd" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/diagnoza i terapia ASD Background Removed.png" alt="diagnoza i terapia ASD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="diagnoza i terapia ASD"></div>
                 <div class="service-title">Diagnoza i terapia ASD</div>
                 <p class="service-description">Specjalistyczna diagnostyka i wsparcie dla osób ze spektrum autyzmu.</p>
                 <a href="services.html#asd" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia nastroju Background Removed.png" alt="zaburzenia nastroju"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="zaburzenia nastroju"></div>
                 <div class="service-title">Zaburzenia nastroju</div>
                 <p class="service-description">Terapia depresji, zaburzeń afektywnych i problemów z regulacją nastroju.</p>
                 <a href="services.html#nastroju" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/zaburzenia lękowe Background Removed.png" alt="zaburzenia lękowe"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="zaburzenia lękowe"></div>
                 <div class="service-title">Zaburzenia lękowe</div>
                 <p class="service-description">Pomoc w radzeniu sobie z lękiem uogólnionym, fobiami i atakami paniki.</p>
                 <a href="services.html#lekowe" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/terapia PTSD Background Removed.png" alt="terapia PTSD"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia PTSD Background Removed.png" alt="terapia PTSD"></div>
                 <div class="service-title">Terapia PTSD</div>
                 <p class="service-description">Specjalistyczne wsparcie w przetwarzaniu traumy i zespołu stresu pourazowego.</p>
                 <a href="services.html#ptsd" class="btn-secondary">Czytaj więcej</a>
@@ -1346,7 +1378,7 @@
                 <a href="services.html#ts" class="btn-secondary">Czytaj więcej</a>
             </div>
             <div class="service-card">
-                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na współczuciu Background Removed.png" alt="Terapia skoncentrowana na współczuciu (CFT)"></div>
+                <div class="service-icon"><img src="Assets/Uslugi/Terapia skoncentrowana na wspolczuciu CFT Background Removed.png" alt="Terapia skoncentrowana na współczuciu (CFT)"></div>
                 <div class="service-title">Terapia skoncentrowana na współczuciu (CFT)</div>
                 <p class="service-description">Rozwijanie życzliwości wobec siebie i redukcja samokrytycyzmu.</p>
                 <a href="services.html#cft" class="btn-secondary">Czytaj więcej</a>
@@ -1710,7 +1742,7 @@
                     </div>
                 </div>
 
-                <a href="diagnoza-adhd.html" class="btn-primary" style="background: white; color: var(--malachite-dark) !important; font-size: 1rem; padding: 1rem 3rem; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">Poznaj szczegóły i cennik</a>
+                <a href="diagnoza-adhd.html" class="btn-secondary" style="font-size: 1rem; padding: 1rem 3rem; display: inline-block;">Poznaj szczegóły i cennik</a>
             </div>
         </div>
     </section>
@@ -1757,6 +1789,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Contact Info -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
+                <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+                
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Regulamin</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none; transition: color 0.3s;">FAQ</a></p>
+            </div>
+
+            <!-- Social / Hours -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+                <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+            © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
 
     <script>
         function toggleMenu() {

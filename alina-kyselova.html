@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alina Kyselova - Psycholog / Psychoterapeuta</title>
+    <meta name="description" content="Alina Kyselova - Psychoterapeuta DBT/CBT/TS specjalizująca się w zaburzeniach lękowych, depresji, borderline i PTSD. Terapia w 4 językach.">
+    <link rel="stylesheet" href="Assets/header.css?v=2">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5a5d;
+            --malachite-light: #14a09e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #111;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(255,255,255,0.9), -2px -2px 8px rgba(255,255,255,0.9);
+        }
+
+        .hero .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .stars {
+            color: var(--malachite-green);
+            font-size: 1.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--malachite-dark);
+            text-align: left;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Qualifications Section */
+        .qualifications-section {
+            background: #f8f9fa;
+        }
+
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--malachite-dark);
+            margin-bottom: 1.5rem;
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qualification-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .qualification-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .qualification-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+
+        .qualification-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--malachite-dark);
+        }
+
+        .qualification-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Experience Timeline */
+        .experience-section {
+            background: white;
+        }
+
+        .timeline {
+            margin: 0;
+        }
+
+        .timeline-item {
+            padding: 2rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            color: var(--malachite-dark);
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .timeline-item .company {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .qualifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item h3 {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit" class="logo-desktop">
+                <img src="Assets/Logo Mobile.svg" alt="Centrum Terapii Malachit" class="logo-mobile">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">STRONA GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="index.html#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 804 146</span>
+            <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span class="active-page">ALINA KYSELOVA</span> ▼
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">STRONA GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="index.html#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="Assets/HeroTerapeuta/14652902_2560_1440_60fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Mgr Alina Kyselova</h1>
+            <p class="subtitle">Psycholog / Psychoterapeuta (DBT/CBT/TS)</p>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">(19 opinii)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">O mnie</h2>
+            <p>Jestem psychologiem i psychoterapeutą specjalizującym się w terapii dialektyczno-behawioralnej (DBT), poznawczo-behawioralnej (CBT) oraz terapii schematów (TS). Pracuję z osobami doświadczającymi zaburzeń lękowych, depresji, PTSD oraz zaburzeń osobowości, w tym borderline.</p>
+            
+            <p>Prowadzę terapię w czterech językach: polskim, angielskim, ukraińskim i rosyjskim, co pozwala mi oferować wsparcie osobom z różnych środowisk kulturowych. Wierzę, że możliwość wyrażania się w swoim ojczystym języku jest kluczowa dla efektywności terapii.</p>
+            
+            <p>W mojej pracy łączę różne podejścia terapeutyczne, dostosowując je do indywidualnych potrzeb każdego pacjenta. Szczególnie cenię sobie możliwość pomocy osobom zmagającym się z intensywnymi emocjami i trudnościami w relacjach interpersonalnych, oferując im narzędzia do lepszego radzenia sobie w codziennym życiu.</p>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section class="qualifications-section">
+        <div class="container">
+            <h2 class="section-title">Specjalizacje i kompetencje</h2>
+            
+            <!-- Zaburzenia -->
+            <h3 class="category-title">🧠 Zaburzenia i trudności</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
+                    <h3>Zaburzenia lękowe</h3>
+                    <p>Kompleksowa terapia lęków i zaburzeń lękowych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja">
+                    <h3>Depresja</h3>
+                    <p>Terapia zaburzeń nastroju</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Borderline">
+                    <h3>Borderline</h3>
+                    <p>Specjalistyczna terapia DBT dla zaburzeń osobowości borderline</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia PTSD Background Removed.png" alt="PTSD">
+                    <h3>PTSD</h3>
+                    <p>Praca z traumą i stresem pourazowym</p>
+                </div>
+            </div>
+
+            <!-- Metody terapeutyczne -->
+            <h3 class="category-title" style="margin-top: 3rem;">💡 Metody terapeutyczne</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia dialektyczno-behawioralna (DBT) Background Removed.png" alt="DBT">
+                    <h3>Terapia DBT</h3>
+                    <p>Terapia dialektyczno-behawioralna do pracy z intensywnymi emocjami</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia poznawczo-behawioralna (CBT) Background Removed.png" alt="CBT">
+                    <h3>Terapia CBT</h3>
+                    <p>Metody poznawczo-behawioralne</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="TS">
+                    <h3>Terapia schematów (TS)</h3>
+                    <p>Praca z głęboko zakorzenionymi wzorcami myślenia i zachowania</p>
+                </div>
+            </div>
+
+            <!-- Języki -->
+            <h3 class="category-title" style="margin-top: 3rem;">🌍 Języki terapii</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <h3>🇵🇱 Polski</h3>
+                    <p>Język ojczysty / fluent</p>
+                </div>
+                <div class="qualification-card">
+                    <h3>🇬🇧 Angielski</h3>
+                    <p>Płynna komunikacja</p>
+                </div>
+                <div class="qualification-card">
+                    <h3>🇺🇦 Ukraiński</h3>
+                    <p>Płynna komunikacja</p>
+                </div>
+                <div class="qualification-card">
+                    <h3>🇷🇺 Rosyjski</h3>
+                    <p>Płynna komunikacja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Wykształcenie i doświadczenie</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Terapia dialektyczno-behawioralna (DBT)</h3>
+                    <p class="company">Szkolenie specjalistyczne</p>
+                    <p class="date">Certyfikat</p>
+                    <p>Ukończone szkolenie w zakresie terapii DBT</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Terapia poznawczo-behawioralna (CBT)</h3>
+                    <p class="company">Szkolenie podyplomowe</p>
+                    <p class="date">Certyfikat</p>
+                    <p>Ukończone szkolenie w zakresie terapii CBT</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Terapia schematów (TS)</h3>
+                    <p class="company">Szkolenie specjalistyczne</p>
+                    <p class="date">Certyfikat</p>
+                    <p>Ukończone szkolenie w zakresie terapii schematów</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Magister Psychologii</h3>
+                    <p class="company">Uniwersytet</p>
+                    <p class="date">Dyplom magistra</p>
+                    <p>Ukończone studia magisterskie na kierunku psychologia</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Psychoterapeuta</h3>
+                    <p class="company">Centrum Terapii Malachit</p>
+                    <p class="date">Obecnie</p>
+                    <p>Prowadzenie psychoterapii indywidualnej w czterech językach</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Psychoterapeuta</h3>
+                    <p class="company">Praktyka prywatna</p>
+                    <p class="date">Doświadczenie</p>
+                    <p>Wieloletnia praktyka w pracy z zaburzeniami lękowymi, depresją, borderline i PTSD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Gotowy na pierwszy krok?</h2>
+            <p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
+            <div class="cta-buttons">
+                <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów konsultację</a>
+                <a href="index.html#kontakt" class="btn-secondary" style="background: white; color: var(--malachite-green);">Skontaktuj się</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
+                <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+                
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+            </div>
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none;">Regulamin</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none;">Polityka Prywatności</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none;">Cennik</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none;">FAQ</a></p>
+            </div>
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+                <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+            </div>
+        </div>
+        <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+            © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
+</body>
+</html>

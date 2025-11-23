@@ -1,0 +1,465 @@
+[
+  {
+    "id": "maksymilian-rosochacki",
+    "name": "Maksymilian Rosochacki",
+    "firstName": "Maksymilian",
+    "lastName": "Rosochacki",
+    "title": "Mgr",
+    "role": "Psycholog / Psychoterapeuta CBT",
+    "photo": "Assets/Photos/Maksymilian.jpg",
+    "profilePage": "MaksymilianRosochacki.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 4,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Trauma i PTSD",
+      "Zaburzenia osobowości",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Inne specjalistyczne"
+    ],
+    "services": [
+      "Psychogastroenterologia",
+      "Diagnoza ADHD",
+      "Zaburzenia lękowe",
+      "Depresja",
+      "Terapia CBT"
+    ],
+    "description": "Pomagam odzyskać kontakt ze sobą, zrozumieć emocje i nauczyć się życzliwości wobec siebie. W bezpiecznej atmosferze wspólnie szukamy drogi do trwałej zmiany i spokoju.",
+    "experience": [
+      "Prywatne gabinety na terenie Warszawy",
+      "Oddział psychiatryczny Szpitala Bielańskiego",
+      "Fundacja Una",
+      "Praktyki kliniczne przy USWPS"
+    ],
+    "education": [
+      "Centrum CBT – Psychoterapeuta",
+      "Centrum CBT – Psychogastroenterolog",
+      "SWPS – Magister Psychologii"
+    ],
+    "languages": ["polski"]
+  },
+  {
+    "id": "sylwia-borowiec-herej",
+    "name": "Sylwia Borowiec-Herej",
+    "firstName": "Sylwia",
+    "lastName": "Borowiec-Herej",
+    "title": "Mgr",
+    "role": "Psycholog, w trakcie psychoterapii CBT",
+    "photo": "Assets/Photos/Sylwia-Borowiec-Herej.jpg",
+    "profilePage": "sylwia-borowiec-herej.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa",
+    "rating": 5,
+    "reviewCount": 68,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Zaburzenia emocjonalne",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Dzieci i młodzież",
+      "Inne specjalistyczne"
+    ],
+    "services": [
+      "Diagnostyka ADOS-2",
+      "Diagnostyka Conners-3",
+      "Diagnoza ADHD",
+      "Diagnoza ASD",
+      "Terapia po angielsku"
+    ],
+    "description": "Łączę psychologię z wiedzą o funkcjonowaniu mózgu. Pracuję z dorosłymi i dziećmi — także w języku angielskim — tworząc przestrzeń zrozumienia i rozwoju.",
+    "experience": [
+      "Diagnoza spektrum autyzmu – dzieci, młodzież, dorośli",
+      "Oddział XIII Zaburzeń Nerwicowych – badania nad osobowością i przeciążeniem poznawczym",
+      "Międzynarodowy grant WUM + College of William & Mary – funkcje poznawcze, pupilometria",
+      "Grant FNP"
+    ],
+    "education": [
+      "SWPS Warszawa – Psychologia",
+      "ALK Warszawa",
+      "Szkoła Psychoterapii Poznawczo-Behawioralnej SWPS"
+    ],
+    "languages": ["polski", "angielski"]
+  },
+  {
+    "id": "karolina-budny",
+    "name": "Karolina Budny",
+    "firstName": "Karolina",
+    "lastName": "Budny",
+    "title": "Mgr",
+    "role": "Psycholog, psychoterapeuta",
+    "photo": "Assets/Photos/Karolina.jpeg",
+    "profilePage": "karolina-budny.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 6,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Zaburzenia osobowości",
+      "Zaburzenia emocjonalne",
+      "Zaburzenia relacji",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Dzieci i młodzież"
+    ],
+    "services": [
+      "Diagnoza ADHD",
+      "Diagnoza ASD",
+      "Zaburzenia lękowe",
+      "Psychoedukacja ADHD",
+      "Terapia CBT"
+    ],
+    "description": "Tworzę relację opartą na zaufaniu, w której można bez lęku mówić o trudnościach. Pomagam zrozumieć emocje i odnaleźć sposoby, by żyć spokojniej i z większą pewnością siebie.",
+    "experience": ["Brak szczegółów w źródle"],
+    "education": ["Psycholog, psychoterapeuta (szczegóły niepodane)"],
+    "languages": ["polski"]
+  },
+  {
+    "id": "milena-filippowicz",
+    "name": "Milena Filippowicz",
+    "firstName": "Milena",
+    "lastName": "Filippowicz",
+    "title": "Mgr",
+    "role": "Psycholog, certyfikowany psychoterapeuta CBT",
+    "photo": "Assets/Photos/Milena.jpeg",
+    "profilePage": "milena-filippowicz.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 37,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Trauma i PTSD",
+      "Zaburzenia emocjonalne",
+      "Zaburzenia relacji",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Inne specjalistyczne"
+    ],
+    "services": [
+      "Diagnostyka ADOS-2",
+      "Terapia PTSD",
+      "Terapia ADHD",
+      "Terapia ASD",
+      "Terapia wypalenia"
+    ],
+    "description": "Wierzę w siłę relacji, która leczy i pomaga odzyskać równowagę. W pracy kieruję się empatią, akceptacją i przekonaniem, że każdy ma w sobie potencjał, by żyć pełniej i spokojniej.",
+    "experience": [
+      "Szpital im. J. Babińskiego w Krakowie",
+      "Szpital MSWiA w Otwocku",
+      "Kampania \"Mówię NIE depresji\""
+    ],
+    "education": [
+      "Certyfikat PTTPB (1552)",
+      "ADOS-2 – Fundacja JiM",
+      "Szkoła CBT SWPS",
+      "Uniwersytet Jagielloński – Psychologia stosowana"
+    ],
+    "languages": ["polski", "angielski"]
+  },
+  {
+    "id": "dorota-wojtlowska-wiechetek",
+    "name": "Dorota Wojtłowska-Wiechetek",
+    "firstName": "Dorota",
+    "lastName": "Wojtłowska-Wiechetek",
+    "title": "Lek.",
+    "role": "Psychiatra",
+    "photo": "Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg",
+    "profilePage": "dorota-wojtlowska-wiechetek.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa",
+    "rating": 5,
+    "reviewCount": 62,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "Trauma i PTSD",
+      "Zaburzenia osobowości",
+      "Psychosomatyka i sen"
+    ],
+    "services": [
+      "Farmakoterapia ADHD",
+      "PTSD i trauma",
+      "Terapia depresji",
+      "Leczenie bezsenności",
+      "Zaburzenia lękowe"
+    ],
+    "description": "Od piętnastu lat pomagam dorosłym i młodzieży odzyskać spokój po trudnych doświadczeniach. Łączę empatię z wiedzą i doświadczeniem klinicznym.",
+    "experience": [
+      "Klinika Psychiatrii i Stresu Bojowego WIM",
+      "Publikacje naukowe",
+      "Nagrody: Złota Synapsa 2015"
+    ],
+    "education": [
+      "Uniwersytet Medyczny w Białymstoku (2008)",
+      "Certyfikaty specjalistyczne"
+    ],
+    "languages": ["polski"]
+  },
+  {
+    "id": "alina-kyselova",
+    "name": "Alina Kyselova",
+    "firstName": "Alina",
+    "lastName": "Kyselova",
+    "title": "Mgr",
+    "role": "Psycholog, psychoterapeutka (DBT / CBT / Terapia Schematu)",
+    "photo": "Assets/Photos/Alina.jpeg",
+    "profilePage": "alina-kyselova.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa",
+    "rating": 4,
+    "reviewCount": 19,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Zaburzenia osobowości",
+      "Zaburzenia emocjonalne",
+      "Psychosomatyka i sen",
+      "Inne specjalistyczne"
+    ],
+    "services": [
+      "Terapia DBT",
+      "Terapia Schematów",
+      "Terapia traumy",
+      "ADHD u dorosłych",
+      "ASD u dorosłych"
+    ],
+    "description": "Pomagam odnaleźć zrozumienie i wsparcie — w języku polskim, angielskim i ukraińskim. Terapia to przestrzeń, w której można poczuć się naprawdę wysłuchanym.",
+    "experience": [
+      "Psychologiczne centrum Cherduck",
+      "Fundacja Krok-po-Kroku",
+      "Fundacja ITAKA",
+      "Publikacje naukowe"
+    ],
+    "education": [
+      "AWP Freiburg – Dialectical Behavioral Therapy",
+      "DBT for Children – CTG LLC",
+      "Ukraiński Uniwersytet CBT – Terapia schematów",
+      "SWPS – Psychologia (BA/MA)",
+      "Szkoła CBT SWPS (w trakcie)"
+    ],
+    "languages": ["angielski", "ukraiński", "polski", "rosyjski"]
+  },
+  {
+    "id": "marta-kurkiewicz",
+    "name": "Marta Kurkiewicz",
+    "firstName": "Marta",
+    "lastName": "Kurkiewicz",
+    "title": "Mgr",
+    "role": "Psycholog, psychoterapeuta",
+    "photo": "Assets/Photos/Marta-Kurkiewicz.jpg",
+    "profilePage": "marta-kurkiewicz.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/marta-kurkiewicz-2/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 29,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Zaburzenia emocjonalne",
+      "Zaburzenia relacji",
+      "Psychosomatyka i sen"
+    ],
+    "services": [
+      "Diagnostyka ADOS-2",
+      "Kobiety i autyzm",
+      "Terapia ASD",
+      "Terapia depresji",
+      "Terapia CBT"
+    ],
+    "description": "Tworzę przestrzeń, w której można zrozumieć swoje emocje, odzyskać równowagę i poczucie wartości. W pracy diagnostycznej pomagam odkryć, co stoi za trudnościami — z uważnością i spokojem.",
+    "experience": ["Brak informacji w źródle"],
+    "education": [
+      "UKSW – Psychologia",
+      "SWPS – Diagnoza kliniczna",
+      "AMiE – Psychoterapia CBT",
+      "ADOS-2 – Centrum Spectrum"
+    ],
+    "languages": ["polski"]
+  },
+  {
+    "id": "maria-pac",
+    "name": "Maria Pac",
+    "firstName": "Maria",
+    "lastName": "Pac",
+    "title": "Mgr",
+    "role": "Psycholog, psychoterapeuta",
+    "photo": "Assets/Photos/Maria.jpg",
+    "profilePage": "maria-pac.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 11,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Zaburzenia emocjonalne",
+      "Psychosomatyka i sen",
+      "Niska samoocena"
+    ],
+    "services": [
+      "Terapia OCD (ERP)",
+      "Zaburzenia lękowe",
+      "Diagnoza ADHD",
+      "Niska samoocena",
+      "Terapia CBT"
+    ],
+    "description": "Wspieram dorosłych i młodzież w odzyskiwaniu równowagi i zrozumienia siebie. Pomagam poukładać codzienność i odnaleźć spokój — krok po kroku, w atmosferze szacunku i uważności.",
+    "experience": [
+      "Centrum Terapii Malachit",
+      "Oddział Psychiatryczny – Uzdrowisko Konstancin",
+      "NZOZ Victi",
+      "Stowarzyszenie Terapeutów",
+      "Fundacja Druga Strona Lustra"
+    ],
+    "education": [
+      "UW – Psychologia",
+      "SWPS – Psychologia kryzysu i interwencja kryzysowa"
+    ],
+    "languages": ["polski", "angielski"]
+  },
+  {
+    "id": "marta-sklodowska",
+    "name": "Marta Skłodowska",
+    "firstName": "Marta",
+    "lastName": "Skłodowska",
+    "title": "Mgr",
+    "role": "Psycholog",
+    "photo": "Assets/Photos/MartaSklodowska.jpeg",
+    "profilePage": "marta-sklodowska.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa",
+    "rating": 5,
+    "reviewCount": 10,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Zaburzenia emocjonalne",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Dzieci i młodzież",
+      "Inne specjalistyczne"
+    ],
+    "services": [
+      "Młodzież",
+      "Zaburzenia lękowe",
+      "Terapia depresji",
+      "Pewność siebie",
+      "Terapia CBT"
+    ],
+    "description": "Towarzyszę młodym ludziom w odkrywaniu ich siły i wartości. Pomagam odzyskać równowagę, pewność siebie i spokój w codziennym życiu.",
+    "experience": [
+      "Terapeutyczne Przedszkole Szczęśliwe Dzieci",
+      "Placówki Opiekuńczo-Wychowawcze Nr 2",
+      "Poradnia Konwaliowa",
+      "Ośrodek KaarMed"
+    ],
+    "education": [
+      "Uniwersytet SWPS",
+      "Certyfikaty specjalistyczne"
+    ],
+    "languages": ["polski", "angielski"]
+  },
+  {
+    "id": "rafal-suchta",
+    "name": "Rafał Suchta",
+    "firstName": "Rafał",
+    "lastName": "Suchta",
+    "title": "Mgr",
+    "role": "Psycholog, psychoterapeuta CBT",
+    "photo": "Assets/Photos/Rafal.jpeg",
+    "profilePage": "rafal-suchta.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa",
+    "rating": 5,
+    "reviewCount": 41,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "Zaburzenia nastroju",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Trauma i PTSD",
+      "Zaburzenia osobowości",
+      "Zaburzenia emocjonalne",
+      "Dzieci i młodzież"
+    ],
+    "services": [
+      "Terapia OCD",
+      "Zaburzenia lękowe",
+      "Diagnostyka ADHD",
+      "Diagnostyka ASD",
+      "Terapia schematów"
+    ],
+    "description": "Pomagam osobom w każdym wieku zrozumieć siebie i poradzić sobie z emocjami, które utrudniają codzienne życie. W terapii ważne są dla mnie autentyczność, akceptacja i poczucie bezpieczeństwa.",
+    "experience": [
+      "KaarMed – Ośrodek środowiskowy",
+      "Mazowiecki Szpital Wojewódzki Drewnica",
+      "Yellow Glasses",
+      "Poradnia Terapii Mutyzmu \"Mówię\"",
+      "Stowarzyszenie Terapeutów"
+    ],
+    "education": [
+      "AMiE – Psychoterapia CBT",
+      "Instytut Psychologii Zdrowia – Interwencja kryzysowa",
+      "SWPS – Diagnoza kliniczna",
+      "UKSW – Psychologia",
+      "ADOS-2 – Centrum Spectrum"
+    ],
+    "languages": ["polski"]
+  },
+  {
+    "id": "marta-szczepaniak",
+    "name": "Marta Szczepaniak",
+    "firstName": "Marta",
+    "lastName": "Szczepaniak",
+    "title": "Mgr",
+    "role": "Psycholog",
+    "photo": "Assets/Photos/Marta Szczepaniak.jpeg",
+    "profilePage": "marta-szczepaniak.html",
+    "znanyLekarzUrl": "https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa",
+    "rating": 5,
+    "reviewCount": 5,
+    "specializations": [
+      "Zaburzenia lękowe",
+      "ADHD",
+      "Autyzm (ASD)",
+      "Zaburzenia emocjonalne",
+      "Psychosomatyka i sen",
+      "Niska samoocena",
+      "Dzieci i młodzież"
+    ],
+    "services": [
+      "Diagnostyka ADOS-2",
+      "Dzieci i młodzież",
+      "Diagnoza i terapia ADHD",
+      "Diagnoza i terapia ASD",
+      "Neuropsychologia"
+    ],
+    "description": "Tworzę przestrzeń, w której dzieci i rodzice mogą lepiej zrozumieć emocje i zachowania. Każde dziecko ma potencjał do rozwoju — wystarczy je uważnie usłyszeć.",
+    "experience": [
+      "Gabinet prywatny (od 2021)",
+      "Ośrodek Dziennej Rehabilitacji Neurologicznej (2017–2024)",
+      "Centrum Wspierania Rozwoju Esperi – TUS",
+      "Szkoła Podstawowa 191",
+      "Przedszkole Owieczka",
+      "Żłobek Lalibam",
+      "Praktyki kliniczne"
+    ],
+    "education": [
+      "UKSW – Psychologia (2008–2013)",
+      "SWPS – Neuropsychologia kliniczna (podyplomowe)"
+    ],
+    "languages": ["polski"]
+  }
+]

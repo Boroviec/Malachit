@@ -6,7 +6,7 @@
     <title>O Nas - Centrum Terapii Malachit</title>
     <meta name="description" content="Poznaj historię Centrum Terapii Malachit w Warszawie. Nasz zespół psychologów i psychoterapeutów z pasją wspiera pacjentów w drodze do zdrowia psychicznego.">
     <meta name="keywords" content="Centrum Terapii Malachit, psychoterapia Warszawa, o nas, zespół psychologów">
-    <link rel="stylesheet" href="Assets/header.css">
+    <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
             --malachite-green: #0d7377;
@@ -28,27 +28,6 @@
             line-height: 1.6;
             color: var(--text-dark);
             background: white;
-        }
-
-        .btn-primary {
-            background: var(--malachite-green);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--malachite-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
         }
 
         /* Hero Section */
@@ -270,31 +249,6 @@
             box-shadow: 0 6px 16px rgba(0,0,0,0.3);
         }
 
-        @media (max-width: 1200px) {
-            .burger-menu {
-                display: flex;
-                order: 2;
-            }
-
-            nav:not(.mobile-menu) {
-                display: none;
-            }
-
-            .header-contact {
-                order: 1;
-            }
-
-            .logo {
-                order: 0;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .header-contact .btn-primary {
-                display: none;
-            }
-        }
-
         @media (max-width: 968px) {
             .hero-about h1 {
                 font-size: 2rem;
@@ -358,9 +312,9 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-about">
-        <h1>O Centrum Terapii Malachit</h1>
-        <p>Profesjonalne wsparcie psychologiczne oparte na najnowszej wiedzy i empatii</p>
+    <section class="hero-about" style="background-image: url('Assets/Photos/Biuro/biuro1.jpg'); background-size: cover; background-position: center;">
+        <h1 style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);">O Centrum Terapii Malachit</h1>
+        <p style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5); max-width: 400px;">Profesjonalne wsparcie psychologiczne oparte na najnowszej wiedzy i empatii</p>
     </section>
 
     <!-- Story Section -->
@@ -387,44 +341,44 @@
     <!-- Values Section -->
     <section class="values-section">
         <div class="container">
-            <h2 class="section-title">Nasze Wartości</h2>
+            <h2 class="section-title">Co nas wyróżnia</h2>
             <p class="section-subtitle">Fundamenty, na których opieramy naszą codzienną pracę</p>
             
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Zaufanie i Bezpieczeństwo</h3>
-                    <p>Tworzymy przestrzeń pełną akceptacji i zrozumienia, gdzie każdy pacjent może otworzyć się bez strachu przed oceną. Poufność i bezpieczeństwo emocjonalne to podstawa naszej pracy.</p>
+                    <div class="value-icon">🎓</div>
+                    <h3>Profesjonalny Zespół</h3>
+                    <p>Stawiamy na najwyższy poziom profesjonalizmu, zapewniając naszym pacjentom rzetelną i kompleksową pomoc psychoterapeutyczną.</p>
                 </div>
 
                 <div class="value-card">
-                    <div class="value-icon">🎓</div>
-                    <h3>Profesjonalizm</h3>
-                    <p>Opieramy się na sprawdzonych, naukowo potwierdzonych metodach terapeutycznych. Nasz zespół regularnie się szkoli i uczestniczy w superwizjach, aby zapewniać najwyższą jakość usług.</p>
+                    <div class="value-icon">📍</div>
+                    <h3>Dogodne Lokalizacje</h3>
+                    <p>Nasza placówka zlokalizowana jest w centrum Warszawy, aby umożliwić wygodny dojazd.</p>
                 </div>
 
                 <div class="value-card">
                     <div class="value-icon">💚</div>
-                    <h3>Empatia i Szacunek</h3>
-                    <p>Każdy pacjent jest dla nas wyjątkowy. Podchodzimy do każdej osoby z głębokim szacunkiem i zrozumieniem, dostosowując terapię do indywidualnych potrzeb i możliwości.</p>
+                    <h3>Indywidualne Podejście</h3>
+                    <p>Nasze podejście jest indywidualnie dopasowane do potrzeb każdego pacjenta, co pozwala na skuteczne wsparcie w procesie zdrowienia i rozwoju.</p>
                 </div>
 
                 <div class="value-card">
-                    <div class="value-icon">🌱</div>
-                    <h3>Rozwój i Transformacja</h3>
-                    <p>Wierzymy w możliwość zmiany i rozwoju w każdym wieku. Wspieramy naszych pacjentów w odkrywaniu ich potencjału i budowaniu życia zgodnego z ich wartościami.</p>
+                    <div class="value-icon">🤝</div>
+                    <h3>Życzliwość i Prywatność</h3>
+                    <p>Gwarantujemy pełną prywatność i dyskrecję, dbając o to, by każda wizyta odbywała się w atmosferze zaufania i bezpieczeństwa.</p>
                 </div>
 
                 <div class="value-card">
-                    <div class="value-icon">🌈</div>
-                    <h3>Otwartość i Różnorodność</h3>
-                    <p>Jesteśmy przyjazni dla osób LGBTQ+ i każdej grupy społecznej. Różnorodność wzbogaca nas, a każdy człowiek zasługuje na profesjonalne wsparcie psychologiczne.</p>
+                    <div class="value-icon">💻</div>
+                    <h3>Sesje Online</h3>
+                    <p>Oferujemy także sesje online. Możesz połączyć się z nami z każdego zakątka Ziemi.</p>
                 </div>
 
                 <div class="value-card">
-                    <div class="value-icon">⚖️</div>
-                    <h3>Etyka i Odpowiedzialność</h3>
-                    <p>Kierujemy się najwyższymi standardami etycznymi zawodu psychologa i psychoterapeuty. Odpowiedzialność za dobro pacjenta jest dla nas wartością nadrzędną.</p>
+                    <div class="value-icon">🛠️</div>
+                    <h3>Praktyczne Umiejętności</h3>
+                    <p>Nauczymy Cię praktycznych umiejętności radzenia sobie z trudnościami. To wiedza, którą będziesz mógł wykorzystać nawet po zakończeniu terapii, aby zapobiec nawrotom.</p>
                 </div>
             </div>
         </div>
@@ -433,8 +387,8 @@
     <!-- Mission Section -->
     <section class="mission-section">
         <div class="container">
-            <div class="mission-box">
-                <h2>Nasza Misja</h2>
+            <h2 class="section-title">Nasza Misja</h2>
+            <div style="max-width: 900px; margin: 2rem auto; font-size: 1.2rem; line-height: 1.8; color: #4a5568; text-align: center;">
                 <p>
                     Misją Centrum Terapii Malachit jest wspieranie zdrowia psychicznego i dobrostanu naszych pacjentów poprzez profesjonalną, opartą na najnowszej wiedzy naukowej psychoterapię. 
                 </p>
@@ -458,21 +412,67 @@
                 </p>
             </div>
 
-            <div class="cta-box">
-                <h3>Poznaj Naszych Specjalistów</h3>
-                <p>Przejdź do strony głównej, aby zobaczyć profile naszego zespołu i umówić się na konsultację</p>
-                <a href="index.html#specjalisci" class="btn-white">Zobacz Zespół</a>
+            <!-- Team Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 240px)); justify-content: center; gap: 3rem; margin-top: 5rem;">
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Sylwia-Borowiec-Herej.jpg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Sylwia Borowiec-Herej</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog Neurokognitywistka</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Lek. Dorota Wojtłowska-Wiechetek</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psychiatra</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Karolina.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Karolina Budny</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Milena.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Milena Filippowicz</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Alina.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Alina Kyselova</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Marta-Kurkiewicz.jpg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Marta Kurkiewicz</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Maria.jpg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Maria Pac</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Maksymilian.jpg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Maksymilian Rosochacki</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/MartaSklodowska.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Marta Skłodowska</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Rafal.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Rafał Suchta</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog, Psychoterapeuta</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1rem; background: url('Assets/Photos/Marta Szczepaniak.jpeg') center/cover; border: 3px solid var(--malachite-green);"></div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.3rem;">Mgr Marta Szczepaniak</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Psycholog</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="mission-section">
-        <div class="container">
-            <div class="cta-box">
-                <h3>Gotowy na pierwszy krok?</h3>
-                <p>Umów się na konsultację i rozpocznij swoją drogę do lepszego samopoczucia</p>
-                <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-white">Umów wizytę</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html#specjalisci" class="btn-secondary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Poznaj zespół</a>
             </div>
         </div>
     </section>
@@ -497,6 +497,43 @@
             });
         });
     </script>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Contact Info -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
+                <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+                
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Regulamin</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none; transition: color 0.3s;">FAQ</a></p>
+            </div>
+
+            <!-- Social / Hours -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+                <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+            © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
 
 </body>
 </html>

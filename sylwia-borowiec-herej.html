@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mgr Sylwia Borowiec-Herej - Psycholog Neurokognitywistka | Centrum Terapii Malachit</title>
+    <meta name="description" content="Mgr Sylwia Borowiec-Herej - Psycholog specjalizująca się w diagnostyce i terapii ADHD, ASD. Diagnostyka ADOS-2, Conners-3. Terapia w języku angielskim.">
+    <link rel="stylesheet" href="Assets/header.css?v=2">
+    <style>
+        :root {
+            --malachite-green: #0d7377;
+            --malachite-dark: #0a5c5f;
+            --malachite-light: #10989d;
+            --beige: #faf9f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+
+        /* Hero Section */
+        .hero-therapist {
+            background: white;
+            color: #333;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero-therapist::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .therapist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background-size: cover;
+            background-position: center;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-therapist h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 0.5rem;
+            color: var(--malachite-green);
+            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+        }
+
+        .hero-therapist .specialty {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+            color: #111;
+            font-weight: 600;
+            text-shadow: 0 3px 6px rgba(255,255,255,1), 0 1px 3px rgba(255,255,255,0.8);
+        }
+
+        .hero-therapist .rating {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #333;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .hero-therapist .rating-stars {
+            color: var(--malachite-green);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 80px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 20px;
+            }
+            
+            .timeline-item h3 {
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--malachite-green);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 1200px;
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Qualifications Grid */
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 420px));
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: flex-start;
+        }
+
+        .qualification-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(13, 115, 119, 0.1);
+        }
+
+        .qualification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .qualification-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-card h3 {
+            font-size: 1.25rem;
+            color: var(--malachite-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .qualification-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            margin: 0;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(13, 115, 119, 0.1);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-item h3 {
+            color: var(--malachite-green);
+            margin-bottom: 0.75rem;
+            margin-left: 0;
+            padding-left: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .timeline-item .year {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .timeline-item p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Approach Section */
+        .approach-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .approach-card {
+            background: var(--beige);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--malachite-green);
+        }
+
+        .approach-card h3 {
+            color: var(--malachite-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .approach-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .approach-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .approach-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--malachite-green);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--malachite-dark), var(--malachite-light));
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Buttons */
+        .btn-secondary {
+            background: white;
+            color: var(--malachite-green);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .qualifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+        }
+
+        /* Page Transitions */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="display: block; height: 100%;">
+                <img src="Assets/Logo.svg" alt="Centrum Terapii Malachit" class="logo-desktop">
+                <img src="Assets/Logo Mobile.svg" alt="Centrum Terapii Malachit" class="logo-mobile">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">STRONA GŁÓWNA</a>
+            <a href="o-nas.html">O NAS</a>
+            <a href="services.html">USŁUGI</a>
+            <a href="cennik.html">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">BLOG</a>
+            <a href="index.html#kontakt">KONTAKT</a>
+        </nav>
+        <div class="header-contact">
+            <span class="phone">📞 +48 577 836 146</span>
+            <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span class="active-page">SYLWIA BOROWIEC-HEREJ</span> ▼
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">STRONA GŁÓWNA</a>
+            <a href="o-nas.html" onclick="toggleMenu()">O NAS</a>
+            <a href="services.html" onclick="toggleMenu()">USŁUGI</a>
+            <a href="cennik.html" onclick="toggleMenu()">CENNIK</a>
+            <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+            <a href="blog.html" onclick="toggleMenu()">BLOG</a>
+            <a href="index.html#kontakt" onclick="toggleMenu()">KONTAKT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-therapist">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="Assets/HeroTerapeuta/HeroSylwia.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <div class="therapist-avatar-large" style="background-image: url('Assets/Photos/Sylwia-Borowiec-Herej.jpg');"></div>
+            <h1>Mgr Sylwia Borowiec-Herej</h1>
+            <p class="specialty">Psycholog Neurokognitywistka</p>
+            <div class="rating">
+                <span class="rating-stars">★★★★★</span>
+                <span>(53 opinie na ZnanyLekarz)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container">
+        <h2 class="section-title" style="text-align: left;">O mnie</h2>
+        <div class="about-content">
+            <p>
+                Łączę psychologię z wiedzą o funkcjonowaniu mózgu, by lepiej zrozumieć człowieka w całej jego złożoności. Pracuję z dorosłymi i dziećmi — także w języku angielskim — tworząc przestrzeń zrozumienia i rozwoju.
+            </p>
+            <p>
+                Specjalizuję się w diagnostyce i terapii zaburzeń neurorozwojowych, w szczególności ADHD i ASD. Moim celem jest nie tylko postawienie diagnozy, ale przede wszystkim zrozumienie unikalnego funkcjonowania każdej osoby i wsparcie jej w odkrywaniu własnego potencjału.
+            </p>
+            <p>
+                Wierzę, że każdy człowiek zasługuje na to, by być zrozumianym i akceptowanym. W mojej pracy stawiam na empatię, autentyczność i bazowanie na aktualnej wiedzy naukowej.
+            </p>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section style="background: var(--beige);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: left;">Specjalizacje i kompetencje</h2>
+            
+            <!-- Diagnostyka -->
+            <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🔍 Diagnostyka</h3>
+        <div class="qualifications-grid">
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Diagnostyka ADOS-2 Background Removed.png" alt="Diagnostyka ADOS-2">
+                <h3>Diagnostyka ADOS-2</h3>
+                <p>Certyfikowana diagnostyka zaburzeń ze spektrum autyzmu przy użyciu złotego standardu ADOS-2</p>
+            </div>
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Diagnostyka Conners-3 Background Removed.png" alt="Diagnostyka Conners-3">
+                <h3>Diagnostyka Conners-3</h3>
+                <p>Specjalistyczna ocena ADHD z wykorzystaniem kompleksowego narzędzia Conners-3</p>
+            </div>
+        </div>
+
+        <!-- Zaburzenia i trudności -->
+        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🧩 Zaburzenia i trudności</h3>
+        <div class="qualifications-grid">
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="Diagnoza ADHD">
+                <h3>Diagnoza i terapia ADHD</h3>
+                <p>Kompleksowa diagnostyka i terapia ADHD u dzieci i dorosłych</p>
+            </div>
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Diagnoza ASD">
+                <h3>Diagnoza i terapia ASD</h3>
+                <p>Specjalistyczna diagnostyka i wsparcie osób ze spektrum autyzmu</p>
+            </div>
+        </div>
+
+        <!-- Grupy wiekowe -->
+        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">👥 Grupy wiekowe</h3>
+        <div class="qualifications-grid">
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Dzieci i młodzież Background Removed.png" alt="Dzieci i młodzież">
+                <h3>Dzieci i młodzież</h3>
+                <p>Specjalistyczna praca z dziećmi i młodzieżą w zakresie zaburzeń neurorozwojowych</p>
+            </div>
+        </div>
+
+        <!-- Języki -->
+        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🌍 Języki</h3>
+        <div class="qualifications-grid">
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Terapia w języku angielskim Background Removed.png" alt="Terapia w języku angielskim">
+                <h3>Terapia w języku angielskim</h3>
+                <p>Prowadzę terapię zarówno w języku polskim, jak i angielskim</p>
+            </div>
+        </div>
+
+        <!-- Metody terapeutyczne -->
+        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">💡 Metody terapeutyczne</h3>
+        <div class="qualifications-grid">
+            <div class="qualification-card">
+                <img src="Assets/Uslugi/Neuropsychologia dziecięca Background Removed.png" alt="Neuropsychologia">
+                <h3>Neuropsychologia</h3>
+                <p>Podejście neurokognitywne w rozumieniu i terapii zaburzeń neurorozwojowych</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="container">
+        <h2 class="section-title" style="text-align: left;">Wykształcenie i doświadczenie</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>CEO, psycholog, psychoterapeutka</h3>
+                <p class="year">Centrum Terapii Malachit · Maj 2022 - obecnie · 3 lata 7 m-cy</p>
+                <p>Warszawa, Woj. Mazowieckie, Polska · Stacjonarnie</p>
+                <p>Założycielka oraz psycholog i psychoterapeutka CBT w Centrum Terapii Malachit.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Psycholog</h3>
+                <p class="year">Szpital „Żelazna" i Fundacja Dajemy Dzieciom Siłę · Paź 2020 - obecnie · 5 lat 2 m-ce</p>
+                <p>Warszawa i okolice</p>
+                <p>Centrum Medyczne „Żelazna" sp. z o.o. w Partnerstwie z Fundacją Dajemy Dzieciom Siłę realizuje projekt dofinansowany z Funduszy Europejskich „Program w zakresie edukacji i profilaktyki depresji poporodowej w makroregionie centralnym".</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Psychoterapeuta poznawczo-behawioralny (CBT)</h3>
+                <p class="year">Prywatna Praktyka Psychoterapeutyczna · Sty 2020 - obecnie · 5 lat 11 m-cy</p>
+                <p>Warszawa, Woj. Mazowieckie, Polska</p>
+                <p>Konsultacje psychologiczne oraz psychoterapia indywidualna w formie online.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Co-Founder</h3>
+                <p class="year">Ayla App · Lut 2023 - Mar 2024 · 1 rok 2 m-ce</p>
+                <p>Polska · Stacjonarnie</p>
+                <p>Startup tworzący innowacyjną aplikację w trosce o zdrowie psychiczne.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Psycholog</h3>
+                <p class="year">Służby mundurowe · Sty 2017 - Cze 2021 · 4 lata 6 m-cy</p>
+                <p>Warszawa, Woj. Mazowieckie, Polska</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Gotowy/a na zmianę?</h2>
+        <p>Umów się na pierwszą konsultację i rozpocznij swoją drogę do lepszego zrozumienia siebie</p>
+        <div class="cta-buttons">
+            <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę online</a>
+            <a href="tel:+48577836146" class="btn-secondary">Zadzwoń: 577 836 146</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Contact Info -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
+                <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+                
+                <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+                <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Regulamin</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
+                <p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none; transition: color 0.3s;">FAQ</a></p>
+            </div>
+
+            <!-- Social / Hours -->
+            <div>
+                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+                <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+            © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
