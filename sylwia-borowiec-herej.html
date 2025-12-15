@@ -29,15 +29,13 @@
 
         /* Hero Section */
         .hero-therapist {
-            background: white;
-            color: #333;
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
             min-height: 90vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem 5%;
+            padding: 8rem 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -49,10 +47,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.35;
             z-index: 0;
         }
-
+        
         .hero-therapist::before {
             content: '';
             position: absolute;
@@ -60,14 +58,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
         .therapist-avatar-large {
@@ -75,175 +73,122 @@
             height: 200px;
             border-radius: 50%;
             margin: 0 auto 2rem;
-            background-size: cover;
-            background-position: center;
             border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            object-fit: cover;
         }
 
         .hero-therapist h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 3rem;
             margin-bottom: 0.5rem;
-            color: var(--malachite-green);
-            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .hero-therapist .specialty {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: 1.5rem;
+            color: white;
             margin-bottom: 1rem;
-            color: #111;
-            font-weight: 600;
-            text-shadow: 0 3px 6px rgba(255,255,255,1), 0 1px 3px rgba(255,255,255,0.8);
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        .hero-therapist .rating {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .rating {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 0.5rem;
-            color: #333;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            margin-top: 1rem;
         }
 
-        .hero-therapist .rating-stars {
-            color: var(--malachite-green);
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 80px;
+        .rating span:not(.rating-stars) {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 3rem 20px;
-            }
-            
-            .timeline-item h3 {
-                margin-left: 0;
-                padding-left: 0;
-            }
-        }
+        /* Container sizing is handled globally in Assets/header.css */
 
         /* Section Styles */
         .section-title {
-            text-align: center;
+            text-align: left;
             font-size: clamp(1.8rem, 3vw, 2.5rem);
             margin-bottom: 2rem;
             color: var(--malachite-green);
             font-weight: 700;
         }
 
+        /* .category-title styling is centralized in Assets/header.css */
+
         .section-subtitle {
             text-align: center;
             color: #666;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
             font-size: 1.1rem;
         }
 
-        /* About Section */
-        .about-content {
-            max-width: 1200px;
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            text-align: justify;
+        .about-section {
+            background: var(--beige);
         }
 
-        .about-content p {
-            margin-bottom: 1.5rem;
+        .about-section strong {
+            color: var(--malachite-dark);
+            font-weight: 600;
         }
 
         /* Qualifications Grid */
         .qualifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 420px));
-            gap: 2rem;
-            margin-top: 2rem;
-            justify-content: flex-start;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .qualification-card {
-            background: white;
+            background: #f8f9fa;
+            padding: 2rem;
             border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(13, 115, 119, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
         }
 
         .qualification-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(13, 115, 119, 0.15);
+            border-color: var(--malachite-light);
         }
 
         .qualification-card img {
             width: 80px;
             height: 80px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
         }
 
         .qualification-card h3 {
-            font-size: 1.25rem;
-            color: var(--malachite-green);
-            margin-bottom: 1rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--malachite-dark);
         }
 
         .qualification-card p {
+            color: #666;
             font-size: 1rem;
-            color: #555;
             line-height: 1.6;
         }
 
-        /* Experience Timeline */
-        .timeline {
-            margin: 0;
-            position: relative;
-            padding-left: 0;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 0;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(13, 115, 119, 0.1);
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-item h3 {
-            color: var(--malachite-green);
-            margin-bottom: 0.75rem;
-            margin-left: 0;
-            padding-left: 0;
-            font-size: 1.3rem;
-            font-weight: 600;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .timeline-item .year {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-        }
-
-        .timeline-item p {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 0.5rem;
-        }
+        /* Timeline styling is centralized in Assets/header.css */
 
         /* Approach Section */
         .approach-cards {
@@ -305,26 +250,6 @@
             opacity: 0.95;
         }
 
-        /* Buttons */
-        .btn-secondary {
-            background: white;
-            color: var(--malachite-green);
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -342,13 +267,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .timeline {
-                padding-left: 1rem;
-            }
-
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
+            /* Timeline spacing is handled globally in Assets/header.css */
         }
 
         /* Page Transitions */
@@ -406,146 +325,167 @@
 
     <!-- Hero Section -->
     <section class="hero-therapist">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="Assets/HeroTerapeuta/HeroSylwia.mp4" type="video/mp4">
-        </video>
+        <img src="Assets/HeroTerapeuta/kitera-dent-z4ky2zXIjDM-unsplash.jpg" alt="" class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0;">
         <div class="hero-content">
-            <div class="therapist-avatar-large" style="background-image: url('Assets/Photos/Sylwia-Borowiec-Herej.jpg');"></div>
+            <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-avatar-large">
             <h1>Mgr Sylwia Borowiec-Herej</h1>
-            <p class="specialty">Psycholog Neurokognitywistka</p>
+            <p class="specialty">Psycholog neurokognitywistka, psychoterapeutka CBT w trakcie</p>
             <div class="rating">
                 <span class="rating-stars">★★★★★</span>
-                <span>(53 opinie na ZnanyLekarz)</span>
+                <span>(55 opinii)</span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="container">
-        <h2 class="section-title" style="text-align: left;">O mnie</h2>
+    <section class="about-section">
+        <div class="container container-wide">
+        <h3 class="category-title">👤 O mnie</h3>
         <div class="about-content">
-            <p>
-                Łączę psychologię z wiedzą o funkcjonowaniu mózgu, by lepiej zrozumieć człowieka w całej jego złożoności. Pracuję z dorosłymi i dziećmi — także w języku angielskim — tworząc przestrzeń zrozumienia i rozwoju.
-            </p>
-            <p>
-                Specjalizuję się w diagnostyce i terapii zaburzeń neurorozwojowych, w szczególności ADHD i ASD. Moim celem jest nie tylko postawienie diagnozy, ale przede wszystkim zrozumienie unikalnego funkcjonowania każdej osoby i wsparcie jej w odkrywaniu własnego potencjału.
-            </p>
-            <p>
-                Wierzę, że każdy człowiek zasługuje na to, by być zrozumianym i akceptowanym. W mojej pracy stawiam na empatię, autentyczność i bazowanie na aktualnej wiedzy naukowej.
-            </p>
+            <p>Jestem neurokognitywistką i dzięki tej interdyscyplinarnej specjalności łączę w pracy psychologię z najnowszą wiedzą na temat funkcjonowania mózgu (neurofizjologią poznawczą). To w tym duchu – duchu wiedzy i badań zarówno evidence, jak i practice-based – zajmuję się diagnostyką dzieci i dorosłych, a także terapią poznawczo-behawioralną. Każda osoba, neurotypowa czy neuroróżnorodna, poczuje się u mnie w gabinecie zaakceptowana i wysłuchana.</p>
+            <p>Jestem również psychoterapeutą w trakcie szkolenia CBT (czyli w nurcie poznawczo-behawioralnym). Pracuję z osobami z zaburzeniami nastroju, depresją, depresją poporodową, niską samooceną, prowadzę też psychoedukację dla osób neuroróżnorodnych, konsultuję rodziców dzieci z ADHD i w spektrum autyzmu.</p>
+            <p>Jestem certyfikowaną specjalistką metody i terapii słuchowej Tomatisa oraz Johansena. I lived in the USA for some time, English is my second language, so I will take good care of English-speaking patients.</p>
+        </div>
         </div>
     </section>
 
     <!-- Qualifications Section -->
-    <section style="background: var(--beige);">
-        <div class="container">
-            <h2 class="section-title" style="text-align: left;">Specjalizacje i kompetencje</h2>
-            
-            <!-- Diagnostyka -->
-            <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🔍 Diagnostyka</h3>
-        <div class="qualifications-grid">
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Diagnostyka ADOS-2 Background Removed.png" alt="Diagnostyka ADOS-2">
-                <h3>Diagnostyka ADOS-2</h3>
-                <p>Certyfikowana diagnostyka zaburzeń ze spektrum autyzmu przy użyciu złotego standardu ADOS-2</p>
+    <section class="qualifications-section">
+        <div class="container container-wide">
+            <h3 class="category-title">🧠 Obszary specjalizacji</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
+                    <h3>ADHD</h3>
+                    <p>Diagnostyka i terapia ADHD u dzieci i dorosłych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Autyzm (ASD)">
+                    <h3>Autyzm (ASD)</h3>
+                    <p>Specjalistyczna diagnostyka i wsparcie osób ze spektrum autyzmu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Dzieci i młodzież Background Removed.png" alt="Dzieci i młodzież">
+                    <h3>Dzieci i młodzież</h3>
+                    <p>Specjalistyczna praca z dziećmi i młodzieżą</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
+                    <h3>Zaburzenia lękowe</h3>
+                    <p>Terapia lęków i zaburzeń lękowych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Zaburzenia nastroju">
+                    <h3>Zaburzenia nastroju</h3>
+                    <p>Wsparcie w zaburzeniach nastroju i depresji</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Kryzysy emocjonalne Background Removed.png" alt="Zaburzenia emocjonalne">
+                    <h3>Zaburzenia emocjonalne</h3>
+                    <p>Pomoc w regulacji emocji i zaburzeniach emocjonalnych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Psychosomatyka i sen">
+                    <h3>Psychosomatyka i sen</h3>
+                    <p>Terapia zaburzeń psychosomatycznych i snu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Budowanie pewności siebie Background Removed.png" alt="Niska samoocena">
+                    <h3>Niska samoocena</h3>
+                    <p>Budowanie pewności siebie i poczucia wartości</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Inne specjalistyczne">
+                    <h3>Inne specjalistyczne</h3>
+                    <p>Dodatkowe obszary specjalizacji</p>
+                </div>
             </div>
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Diagnostyka Conners-3 Background Removed.png" alt="Diagnostyka Conners-3">
-                <h3>Diagnostyka Conners-3</h3>
-                <p>Specjalistyczna ocena ADHD z wykorzystaniem kompleksowego narzędzia Conners-3</p>
-            </div>
-        </div>
 
-        <!-- Zaburzenia i trudności -->
-        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🧩 Zaburzenia i trudności</h3>
-        <div class="qualifications-grid">
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="Diagnoza ADHD">
-                <h3>Diagnoza i terapia ADHD</h3>
-                <p>Kompleksowa diagnostyka i terapia ADHD u dzieci i dorosłych</p>
+            <h3 class="category-title category-title--spaced">💡 Metody i usługi</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnostyka ADOS-2 Background Removed.png" alt="Diagnostyka ADOS-2">
+                    <h3>Diagnostyka ADOS-2</h3>
+                    <p>Certyfikowana diagnostyka zaburzeń ze spektrum autyzmu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnostyka Conners-3 Background Removed.png" alt="Diagnostyka Conners-3">
+                    <h3>Diagnostyka Conners-3</h3>
+                    <p>Specjalistyczna ocena ADHD</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="Diagnoza ADHD">
+                    <h3>Diagnoza ADHD</h3>
+                    <p>Kompleksowa diagnostyka ADHD</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Diagnoza ASD">
+                    <h3>Diagnoza ASD</h3>
+                    <p>Diagnostyka spektrum autyzmu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia w języku angielskim Background Removed.png" alt="Terapia po angielsku">
+                    <h3>Terapia po angielsku</h3>
+                    <p>Terapia w języku angielskim</p>
+                </div>
             </div>
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Diagnoza ASD">
-                <h3>Diagnoza i terapia ASD</h3>
-                <p>Specjalistyczna diagnostyka i wsparcie osób ze spektrum autyzmu</p>
-            </div>
-        </div>
-
-        <!-- Grupy wiekowe -->
-        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">👥 Grupy wiekowe</h3>
-        <div class="qualifications-grid">
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Dzieci i młodzież Background Removed.png" alt="Dzieci i młodzież">
-                <h3>Dzieci i młodzież</h3>
-                <p>Specjalistyczna praca z dziećmi i młodzieżą w zakresie zaburzeń neurorozwojowych</p>
-            </div>
-        </div>
-
-        <!-- Języki -->
-        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">🌍 Języki</h3>
-        <div class="qualifications-grid">
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Terapia w języku angielskim Background Removed.png" alt="Terapia w języku angielskim">
-                <h3>Terapia w języku angielskim</h3>
-                <p>Prowadzę terapię zarówno w języku polskim, jak i angielskim</p>
-            </div>
-        </div>
-
-        <!-- Metody terapeutyczne -->
-        <h3 style="color: var(--malachite-green); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 600;">💡 Metody terapeutyczne</h3>
-        <div class="qualifications-grid">
-            <div class="qualification-card">
-                <img src="Assets/Uslugi/Neuropsychologia dziecięca Background Removed.png" alt="Neuropsychologia">
-                <h3>Neuropsychologia</h3>
-                <p>Podejście neurokognitywne w rozumieniu i terapii zaburzeń neurorozwojowych</p>
-            </div>
-        </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="container">
-        <h2 class="section-title" style="text-align: left;">Wykształcenie i doświadczenie</h2>
+    <section class="experience-section">
+        <div class="container container-wide">
         <div class="timeline">
             <div class="timeline-item">
-                <h3>CEO, psycholog, psychoterapeutka</h3>
-                <p class="year">Centrum Terapii Malachit · Maj 2022 - obecnie · 3 lata 7 m-cy</p>
-                <p>Warszawa, Woj. Mazowieckie, Polska · Stacjonarnie</p>
-                <p>Założycielka oraz psycholog i psychoterapeutka CBT w Centrum Terapii Malachit.</p>
+                <h3 class="category-title">💼 Doświadczenie zawodowe</h3>
+                <ul>
+                    <li>Współwłaścicielka Centrum Terapii Malachit</li>
+                    <li>Prywatny gabinet logopedyczno-psychologiczny Laboratorium Mowy</li>
+                    <li>Diagnoza spektrum autyzmu (ADOS-2, ASRS) u dzieci, młodzieży i dorosłych</li>
+                    <li>Diagnostyka ADHD (Conners-3, DIVA-5) u dzieci, młodzieży i dorosłych</li>
+                    <li>Oddział XIII Dzienny Zaburzeń Nerwicowych Dolna 42 – dwuletnie badania grantowe nad zaburzeniami osobowości i przeciążeniem poznawczym</li>
+                    <li>Dwuletni międzynarodowy grant WUM + College of William & Mary – funkcje poznawcze, pupilometria</li>
+                    <li>Dwuletni międzynarodowy grant FNP</li>
+                    <li>Certyfikowana specjalistka terapii słuchowej Tomatisa i Johansena</li>
+                    <li>Członkini Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej (PTTPB)</li>
+                </ul>
             </div>
             <div class="timeline-item">
-                <h3>Psycholog</h3>
-                <p class="year">Szpital „Żelazna" i Fundacja Dajemy Dzieciom Siłę · Paź 2020 - obecnie · 5 lat 2 m-ce</p>
-                <p>Warszawa i okolice</p>
-                <p>Centrum Medyczne „Żelazna" sp. z o.o. w Partnerstwie z Fundacją Dajemy Dzieciom Siłę realizuje projekt dofinansowany z Funduszy Europejskich „Program w zakresie edukacji i profilaktyki depresji poporodowej w makroregionie centralnym".</p>
+                <h3 class="category-title">🎓 Wykształcenie i certyfikaty</h3>
+                <ul>
+                    <li>Uniwersytet SWPS – Neurokognitywistyka (2013)</li>
+                    <li>Akademia Leona Koźmińskiego – studia podyplomowe (2015)</li>
+                    <li>Szkoła Psychoterapii Poznawczo-Behawioralnej SWPS (w trakcie 4-letniego szkolenia)</li>
+                    <li>Certyfikowana diagnostka Conners-3 i ADOS-2</li>
+                </ul>
             </div>
             <div class="timeline-item">
-                <h3>Psychoterapeuta poznawczo-behawioralny (CBT)</h3>
-                <p class="year">Prywatna Praktyka Psychoterapeutyczna · Sty 2020 - obecnie · 5 lat 11 m-cy</p>
-                <p>Warszawa, Woj. Mazowieckie, Polska</p>
-                <p>Konsultacje psychologiczne oraz psychoterapia indywidualna w formie online.</p>
+                <h3 class="category-title">🏅 Nagrody i wyróżnienia</h3>
+                <ul>
+                    <li>Stypendystka Fundacji na rzecz Nauki Polskiej (FNP)</li>
+                    <li>Stypendystka ICACS – Interdisciplinary Center for Applied Cognitive Studies</li>
+                </ul>
             </div>
             <div class="timeline-item">
-                <h3>Co-Founder</h3>
-                <p class="year">Ayla App · Lut 2023 - Mar 2024 · 1 rok 2 m-ce</p>
-                <p>Polska · Stacjonarnie</p>
-                <p>Startup tworzący innowacyjną aplikację w trosce o zdrowie psychiczne.</p>
+                <h3 class="category-title">📚 Publikacje naukowe</h3>
+                <ul>
+                    <li>Herej, S. Reakcja źrenicy jako wskaźnik przetwarzania informacji podczas wykonywania zadania emocjonalny n-back</li>
+                    <li>Age differences in the roles of cognitive and psychophysiological processes in shaping reactions to stress and the use of feedback about stress reaction as a clinical intervention</li>
+                </ul>
             </div>
-            <div class="timeline-item">
-                <h3>Psycholog</h3>
-                <p class="year">Służby mundurowe · Sty 2017 - Cze 2021 · 4 lata 6 m-cy</p>
-                <p>Warszawa, Woj. Mazowieckie, Polska</p>
-            </div>
+        </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <h2>Gotowy/a na zmianę?</h2>
-        <p>Umów się na pierwszą konsultację i rozpocznij swoją drogę do lepszego zrozumienia siebie</p>
-        <div class="cta-buttons">
-            <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę online</a>
-            <a href="tel:+48577836146" class="btn-secondary">Zadzwoń: 577 836 146</a>
+        <div class="container container-wide">
+            <h2>Gotowy/a na zmianę?</h2>
+            <p>Umów się na pierwszą konsultację i rozpocznij swoją drogę do lepszego zrozumienia siebie</p>
+            <div class="cta-buttons">
+                <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
+                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
+            </div>
         </div>
     </section>
 

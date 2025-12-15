@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alina Kyselova - Psycholog / Psychoterapeuta</title>
-    <meta name="description" content="Alina Kyselova - Psychoterapeuta DBT/CBT/TS specjalizująca się w zaburzeniach lękowych, depresji, borderline i PTSD. Terapia w 4 językach.">
+    <title>Mgr Alina Kyselova - Psycholog, Psychoterapeuta poznawczo-behawioralny | Centrum Terapii Malachit</title>
+    <meta name="description" content="Mgr Alina Kyselova - Psycholog i psychoterapeuta DBT/CBT/TS. Terapia borderline, zaburzeń lękowych, depresji i PTSD w 4 językach (polski, angielski, ukraiński, rosyjski).">
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
             --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-dark: #0a5c5f;
+            --malachite-light: #10989d;
+            --beige: #faf9f7;
         }
 
         * {
@@ -20,16 +21,16 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #2c3e50;
             background: white;
         }
 
         /* Hero Section */
-        .hero {
-            background: white;
-            min-height: 500px;
+        .hero-therapist {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,7 +47,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.35;
             z-index: 0;
         }
 
@@ -57,32 +58,42 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
-        .hero h1 {
+        .therapist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        .hero-therapist h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
             color: white;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .hero .subtitle {
+        .hero-therapist .specialty {
             font-size: 1.5rem;
-            color: #111;
+            color: white;
             margin-bottom: 1rem;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(255,255,255,0.9), -2px -2px 8px rgba(255,255,255,0.9);
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        .hero .rating {
+        .rating {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,17 +101,18 @@
             margin-top: 1rem;
         }
 
-        .stars {
-            color: var(--malachite-green);
+        .rating-stars {
+            color: #ffd700;
             font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 80px;
+        .rating span:not(.rating-stars) {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
+
+        /* Container spacing is centralized in Assets/header.css */
 
         .section-title {
             font-size: 2rem;
@@ -112,54 +124,42 @@
 
         /* About Section */
         .about-section {
-            background: white;
+            background: var(--beige);
         }
 
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
+        /* About section typography is standardized in Assets/header.css */
 
         /* Qualifications Section */
         .qualifications-section {
-            background: #f8f9fa;
+            background: white;
         }
 
         .qualifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--malachite-dark);
-            margin-bottom: 1.5rem;
-            text-align: left;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        /* .category-title styling is centralized in Assets/header.css */
 
         .qualification-card {
-            background: white;
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s;
             border: 1px solid #e0e0e0;
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
 
         .qualification-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(13, 115, 119, 0.15);
+            border-color: var(--malachite-light);
         }
 
         .qualification-card img {
@@ -181,37 +181,7 @@
             line-height: 1.6;
         }
 
-        /* Experience Timeline */
-        .experience-section {
-            background: white;
-        }
-
-        .timeline {
-            margin: 0;
-        }
-
-        .timeline-item {
-            padding: 2rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            color: var(--malachite-dark);
-            margin-bottom: 0.5rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .timeline-item .company {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
+        /* Timeline styling is centralized in Assets/header.css */
 
         .timeline-item .date {
             font-size: 0.9rem;
@@ -224,10 +194,9 @@
             line-height: 1.6;
         }
 
-        /* CTA Section */
+        /* CTA Section (spacing is centralized in Assets/header.css) */
         .cta-section {
             background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
-            padding: 4rem 2rem;
             text-align: center;
             color: white;
         }
@@ -250,11 +219,18 @@
             flex-wrap: wrap;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 20px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -309,100 +285,137 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="Assets/HeroTerapeuta/14652902_2560_1440_60fps.mp4" type="video/mp4">
-        </video>
+    <section class="hero-therapist">
+        <img src="Assets/HeroTerapeuta/holly-raven-mandarich-kCpCd6oQTCw-unsplash.jpg" alt="" class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0;">
         <div class="hero-content">
+            <img src="Assets/Photos/Alina.jpeg" alt="Mgr Alina Kyselova" class="therapist-avatar-large">
             <h1>Mgr Alina Kyselova</h1>
-            <p class="subtitle">Psycholog / Psychoterapeuta (DBT/CBT/TS)</p>
+            <p class="specialty">Psycholog, Psychoterapeuta poznawczo-behawioralny</p>
             <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">(19 opinii)</span>
+                <span class="rating-stars">★★★★★</span>
+                <span>(19 opinii)</span>
             </div>
         </div>
     </section>
 
+    <!-- Language Section -->
+    <section class="about-section">
+        <div class="container container-wide">
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 class="category-title" style="text-align: center;" data-translate="lang-title">🌍 Terapia w trzech językach</h3>
+                <p style="margin-bottom: 1rem; text-align: center;" data-translate="lang-intro">Prowadzę sesje terapeutyczne w trzech językach, co pozwala mi oferować wsparcie osobom z różnych środowisk kulturowych:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <div onclick="switchLanguage('pl')" style="text-align: center; padding: 1rem; cursor: pointer; border-radius: 8px; transition: all 0.3s; background: #e8e8e8;" onmouseover="this.style.background='#f0f0f0'" onmouseout="if(!this.classList.contains('active-lang')) this.style.background='transparent'" class="lang-option active-lang" data-lang="pl">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇵🇱</div>
+                        <strong>Polski</strong>
+                    </div>
+                    <div onclick="switchLanguage('en')" style="text-align: center; padding: 1rem; cursor: pointer; border-radius: 8px; transition: all 0.3s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="if(!this.classList.contains('active-lang')) this.style.background='transparent'" class="lang-option" data-lang="en">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇬🇧</div>
+                        <strong>English</strong>
+                    </div>
+                    <div onclick="switchLanguage('uk')" style="text-align: center; padding: 1rem; cursor: pointer; border-radius: 8px; transition: all 0.3s;" onmouseover="this.style.background='#f0f0f0'" onmouseout="if(!this.classList.contains('active-lang')) this.style.background='transparent'" class="lang-option" data-lang="uk">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇺🇦</div>
+                        <strong>Українська</strong>
+                    </div>
+                </div>
+                <div id="language-description" style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; min-height: 80px; text-align: center;">
+                    <p class="lang-text" data-lang="pl" style="font-style: italic; color: #666;">Możliwość wyrażania się w ojczystym języku jest kluczowa dla efektywności terapii i budowania głębokiej relacji terapeutycznej.</p>
+                    <p class="lang-text" data-lang="en" style="display: none; font-style: italic; color: #666;">The ability to express yourself in your native language is crucial for the effectiveness of therapy and building a deep therapeutic relationship.</p>
+                    <p class="lang-text" data-lang="uk" style="display: none; font-style: italic; color: #666;">Можливість висловлюватися рідною мовою має вирішальне значення для ефективності терапії та побудови глибоких терапевтичних відносин.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- About Section -->
     <section class="about-section">
-        <div class="container">
-            <h2 class="section-title">O mnie</h2>
-            <p>Jestem psychologiem i psychoterapeutą specjalizującym się w terapii dialektyczno-behawioralnej (DBT), poznawczo-behawioralnej (CBT) oraz terapii schematów (TS). Pracuję z osobami doświadczającymi zaburzeń lękowych, depresji, PTSD oraz zaburzeń osobowości, w tym borderline.</p>
-            
-            <p>Prowadzę terapię w czterech językach: polskim, angielskim, ukraińskim i rosyjskim, co pozwala mi oferować wsparcie osobom z różnych środowisk kulturowych. Wierzę, że możliwość wyrażania się w swoim ojczystym języku jest kluczowa dla efektywności terapii.</p>
-            
-            <p>W mojej pracy łączę różne podejścia terapeutyczne, dostosowując je do indywidualnych potrzeb każdego pacjenta. Szczególnie cenię sobie możliwość pomocy osobom zmagającym się z intensywnymi emocjami i trudnościami w relacjach interpersonalnych, oferując im narzędzia do lepszego radzenia sobie w codziennym życiu.</p>
+        <div class="container container-wide">
+            <h3 class="category-title" data-translate="about-title">👤 O mnie</h3>
+            <div class="about-content">
+                <p data-translate="quote"><em>„Nie da się zmienić przeszłości, można jednak zmienić wnioski, jakie wyciągamy dziś, opierając się na przeszłych zdarzeniach."</em> – A. Arntz</p>
+                
+                <p data-translate="intro">Jestem psycholożką oraz psychoterapeutką specjalizującą się w podejściu poznawczo-behawioralnym. Moja praca terapeutyczna opiera się na łączeniu tradycyjnych metod tego podejścia z zaawansowanymi technikami trzeciej fali terapii – Dialektyczno-Behawioralnej Terapii (DBT) oraz Terapii Schematów (TS).</p>
+                
+                <p data-translate="approach">W terapii podchodzę do każdej osoby indywidualnie, dążąc do stworzenia planu terapeutycznego doskonale dopasowanego do zgłoszonych trudności oraz potrzeb. Jednym z kluczowych elementów mojej pracy jest budowanie pozytywnej relacji terapeutycznej opartej na życzliwości i otwartości. Wierzę, że ta relacja stanowi fundament efektywnego procesu terapeutycznego.</p>
+                
+                <p data-translate="experience">Moje doświadczenie obejmuje pracę z różnymi grupami wiekowymi – dziećmi, nastolatkami oraz dorosłymi. Dodatkowo posiadam specjalizację w diagnozowaniu ADHD. Prowadzę terapię w trzech językach: <strong>polskim, angielskim i ukraińskim</strong>.</p>
+            </div>
         </div>
     </section>
 
     <!-- Qualifications Section -->
     <section class="qualifications-section">
-        <div class="container">
-            <h2 class="section-title">Specjalizacje i kompetencje</h2>
-            
-            <!-- Zaburzenia -->
-            <h3 class="category-title">🧠 Zaburzenia i trudności</h3>
+        <div class="container container-wide">
+            <h3 class="category-title" data-translate="areas-title">🧠 Obszary specjalizacji</h3>
             <div class="qualifications-grid">
                 <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Borderline">
+                    <h3 data-translate="card-borderline">Borderline (zaburzenia osobowości)</h3>
+                    <p data-translate="card-borderline-desc">Specjalistyczna terapia DBT dla zaburzeń osobowości borderline</p>
+                </div>
+                <div class="qualification-card">
                     <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
-                    <h3>Zaburzenia lękowe</h3>
-                    <p>Kompleksowa terapia lęków i zaburzeń lękowych</p>
+                    <h3 data-translate="card-anxiety">Zaburzenia lękowe</h3>
+                    <p data-translate="card-anxiety-desc">Terapia lęków, nerwic, ataków paniki, OCD i fobii</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja">
-                    <h3>Depresja</h3>
-                    <p>Terapia zaburzeń nastroju</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Borderline">
-                    <h3>Borderline</h3>
-                    <p>Specjalistyczna terapia DBT dla zaburzeń osobowości borderline</p>
+                    <h3 data-translate="card-depression">Depresja i zaburzenia nastroju</h3>
+                    <p data-translate="card-depression-desc">Wsparcie w depresji, w tym okołoporodowej</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Terapia PTSD Background Removed.png" alt="PTSD">
-                    <h3>PTSD</h3>
-                    <p>Praca z traumą i stresem pourazowym</p>
+                    <h3 data-translate="card-ptsd">PTSD i trauma</h3>
+                    <p data-translate="card-ptsd-desc">Specjalistyczna psychoterapia traumy</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
+                    <h3 data-translate="card-adhd">ADHD</h3>
+                    <p data-translate="card-adhd-desc">Diagnoza i terapia ADHD u dzieci i dorosłych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Autyzm">
+                    <h3 data-translate="card-autism">Autyzm i Zespół Aspergera</h3>
+                    <p data-translate="card-autism-desc">Praca z osobami ze spektrum autyzmu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia odżywiania Background Removed.png" alt="Zaburzenia odżywiania">
+                    <h3 data-translate="card-eating">Zaburzenia odżywiania</h3>
+                    <p data-translate="card-eating-desc">Terapia zaburzeń odżywiania</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Kryzysy emocjonalne Background Removed.png" alt="Kryzys emocjonalny">
+                    <h3 data-translate="card-crisis">Kryzysy emocjonalne</h3>
+                    <p data-translate="card-crisis-desc">Wsparcie w trudnych momentach i regulacja emocji</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Bezsenność">
+                    <h3 data-translate="card-insomnia">Bezsenność</h3>
+                    <p data-translate="card-insomnia-desc">Terapia zaburzeń snu</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Dzieci i młodzież Background Removed.png" alt="Dzieci i młodzież">
+                    <h3 data-translate="card-children">Dzieci i młodzież</h3>
+                    <p data-translate="card-children-desc">Psychoterapia dzieci, nastolatków i młodych dorosłych</p>
                 </div>
             </div>
 
             <!-- Metody terapeutyczne -->
-            <h3 class="category-title" style="margin-top: 3rem;">💡 Metody terapeutyczne</h3>
+            <h3 class="category-title category-title--spaced" data-translate="methods-title">💡 Metody i usługi</h3>
             <div class="qualifications-grid">
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Terapia dialektyczno-behawioralna (DBT) Background Removed.png" alt="DBT">
-                    <h3>Terapia DBT</h3>
-                    <p>Terapia dialektyczno-behawioralna do pracy z intensywnymi emocjami</p>
+                    <img src="Assets/Uslugi/Terapia dialektyczno-behawioralna DBT Background Removed.png" alt="DBT">
+                    <h3 data-translate="method-dbt">Terapia Dialektyczno-Behawioralna (DBT)</h3>
+                    <p data-translate="method-dbt-desc">Specjalistyczna praca z intensywnymi emocjami i borderline</p>
                 </div>
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Terapia poznawczo-behawioralna (CBT) Background Removed.png" alt="CBT">
-                    <h3>Terapia CBT</h3>
-                    <p>Metody poznawczo-behawioralne</p>
+                    <img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="CBT">
+                    <h3 data-translate="method-cbt">Psychoterapia Poznawczo-Behawioralna (CBT)</h3>
+                    <p data-translate="method-cbt-desc">Certyfikowana terapia poznawczo-behawioralna</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="TS">
-                    <h3>Terapia schematów (TS)</h3>
-                    <p>Praca z głęboko zakorzenionymi wzorcami myślenia i zachowania</p>
-                </div>
-            </div>
-
-            <!-- Języki -->
-            <h3 class="category-title" style="margin-top: 3rem;">🌍 Języki terapii</h3>
-            <div class="qualifications-grid">
-                <div class="qualification-card">
-                    <h3>🇵🇱 Polski</h3>
-                    <p>Język ojczysty / fluent</p>
-                </div>
-                <div class="qualification-card">
-                    <h3>🇬🇧 Angielski</h3>
-                    <p>Płynna komunikacja</p>
-                </div>
-                <div class="qualification-card">
-                    <h3>🇺🇦 Ukraiński</h3>
-                    <p>Płynna komunikacja</p>
-                </div>
-                <div class="qualification-card">
-                    <h3>🇷🇺 Rosyjski</h3>
-                    <p>Płynna komunikacja</p>
+                    <h3 data-translate="method-schema">Terapia Schematów (TS)</h3>
+                    <p data-translate="method-schema-desc">Praca z głęboko zakorzenionymi wzorcami myślenia</p>
                 </div>
             </div>
         </div>
@@ -410,49 +423,36 @@
 
     <!-- Experience Section -->
     <section class="experience-section">
-        <div class="container">
-            <h2 class="section-title">Wykształcenie i doświadczenie</h2>
+        <div class="container container-wide">
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Terapia dialektyczno-behawioralna (DBT)</h3>
-                    <p class="company">Szkolenie specjalistyczne</p>
-                    <p class="date">Certyfikat</p>
-                    <p>Ukończone szkolenie w zakresie terapii DBT</p>
+                    <h3 class="category-title" data-translate="exp-work-title">💼 Doświadczenie zawodowe</h3>
+                    <ul id="exp-work-list">
+                        <li>Psychologiczne centrum internetowe Cherduck (online-center) – praca z klientami online</li>
+                        <li>Fundacja Krok-po-Kroku (Warszawa) – psychoterapia indywidualna i grupowa</li>
+                        <li>Fundacja ITAKA (online) – wsparcie psychologiczne dla osób poszukiwanych i ich rodzin</li>
+                        <li>Centrum Terapii Malachit – psychoterapia indywidualna w 3 językach (polski, angielski, ukraiński)</li>
+                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Terapia poznawczo-behawioralna (CBT)</h3>
-                    <p class="company">Szkolenie podyplomowe</p>
-                    <p class="date">Certyfikat</p>
-                    <p>Ukończone szkolenie w zakresie terapii CBT</p>
+                    <h3 class="category-title category-title--spaced" data-translate="exp-edu-title">🎓 Wykształcenie i certyfikaty</h3>
+                    <ul id="exp-edu-list">
+                        <li>AWP Freiburg – Dialectic-Behavioral Therapy (studia podyplomowe)</li>
+                        <li>DBT for Children Center for Training and Guidance, LLC (studia podyplomowe)</li>
+                        <li>Ukraiński Uniwersytet Poznawczo-Behawioralnej Terapii – Terapia Schematów (studia podyplomowe)</li>
+                        <li>SWPS Uniwersytet – Psychologia w języku angielskim (MA)</li>
+                        <li>SWPS Uniwersytet – Psychologia w języku angielskim (BA)</li>
+                        <li>SWPS Uniwersytet – Szkoła Psychoterapii Poznawczo-Behawioralnej (w trakcie szkolenia)</li>
+                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Terapia schematów (TS)</h3>
-                    <p class="company">Szkolenie specjalistyczne</p>
-                    <p class="date">Certyfikat</p>
-                    <p>Ukończone szkolenie w zakresie terapii schematów</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Magister Psychologii</h3>
-                    <p class="company">Uniwersytet</p>
-                    <p class="date">Dyplom magistra</p>
-                    <p>Ukończone studia magisterskie na kierunku psychologia</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Psychoterapeuta</h3>
-                    <p class="company">Centrum Terapii Malachit</p>
-                    <p class="date">Obecnie</p>
-                    <p>Prowadzenie psychoterapii indywidualnej w czterech językach</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Psychoterapeuta</h3>
-                    <p class="company">Praktyka prywatna</p>
-                    <p class="date">Doświadczenie</p>
-                    <p>Wieloletnia praktyka w pracy z zaburzeniami lękowymi, depresją, borderline i PTSD</p>
+                    <h3 class="category-title" data-translate="exp-pub-title">📚 Publikacje naukowe</h3>
+                    <ul>
+                        <li><a href="https://old-zdia.znu.edu.ua/gazeta/MNPIK_207.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--malachite-green);" data-translate="exp-pub-1">Publikacja naukowa MNPIK_207</a></li>
+                        <li><a href="https://old-zdia.znu.edu.ua/gazeta/MNK_131.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--malachite-green);" data-translate="exp-pub-2">Publikacja naukowa MNK_131</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -460,12 +460,12 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <h2>Gotowy na pierwszy krok?</h2>
-            <p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
+        <div class="container container-wide">
+            <h2 data-translate="cta-title">Gotowa na wsparcie?</h2>
+            <p data-translate="cta-text">Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
             <div class="cta-buttons">
-                <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów konsultację</a>
-                <a href="index.html#kontakt" class="btn-secondary" style="background: white; color: var(--malachite-green);">Skontaktuj się</a>
+                <a href="https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
+                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
             </div>
         </div>
     </section>
@@ -474,6 +474,264 @@
         function toggleMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Translations dictionary
+        const translations = {
+            pl: {
+                'about-title': 'O mnie',
+                'quote': '<em>„Nie da się zmienić przeszłości, można jednak zmienić wnioski, jakie wyciągamy dziś, opierając się na przeszłych zdarzeniach."</em> – A. Arntz',
+                'intro': 'Jestem psycholożką oraz psychoterapeutką specjalizującą się w podejściu poznawczo-behawioralnym. Moja praca terapeutyczna opiera się na łączeniu tradycyjnych metod tego podejścia z zaawansowanymi technikami trzeciej fali terapii – Dialektyczno-Behawioralnej Terapii (DBT) oraz Terapii Schematów (TS).',
+                'approach': 'W terapii podchodzę do każdej osoby indywidualnie, dążąc do stworzenia planu terapeutycznego doskonale dopasowanego do zgłoszonych trudności oraz potrzeb. Jednym z kluczowych elementów mojej pracy jest budowanie pozytywnej relacji terapeutycznej opartej na życzliwości i otwartości. Wierzę, że ta relacja stanowi fundament efektywnego procesu terapeutycznego.',
+                'experience': 'Moje doświadczenie obejmuje pracę z różnymi grupami wiekowymi – dziećmi, nastolatkami oraz dorosłymi. Dodatkowo posiadam specjalizację w diagnozowaniu ADHD. Prowadzę terapię w trzech językach: <strong>polskim, angielskim i ukraińskim</strong>.',
+                'lang-title': '🌍 Terapia w trzech językach',
+                'lang-intro': 'Prowadzę sesje terapeutyczne w trzech językach, co pozwala mi oferować wsparcie osobom z różnych środowisk kulturowych:',
+                'spec-title': 'Specjalizacje i kompetencje',
+                'areas-title': '🧠 Obszary specjalizacji',
+                'methods-title': '💡 Metody i usługi',
+                'exp-title': '💼 Doświadczenie zawodowe',
+                'cta-title': 'Gotowa na wsparcie?',
+                'cta-text': 'Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia',
+                'cta-button': 'Umów konsultację online',
+                'cta-contact': 'Skontaktuj się',
+                'card-borderline': 'Borderline (zaburzenia osobowości)',
+                'card-borderline-desc': 'Specjalistyczna terapia DBT dla zaburzeń osobowości borderline',
+                'card-anxiety': 'Zaburzenia lękowe',
+                'card-anxiety-desc': 'Terapia lęków, nerwic, ataków paniki, OCD i fobii',
+                'card-depression': 'Depresja i zaburzenia nastroju',
+                'card-depression-desc': 'Wsparcie w depresji, w tym okołoporodowej',
+                'card-ptsd': 'PTSD i trauma',
+                'card-ptsd-desc': 'Specjalistyczna psychoterapia traumy',
+                'card-adhd': 'ADHD',
+                'card-adhd-desc': 'Diagnoza i terapia ADHD u dzieci i dorosłych',
+                'card-autism': 'Autyzm i Zespół Aspergera',
+                'card-autism-desc': 'Praca z osobami ze spektrum autyzmu',
+                'card-eating': 'Zaburzenia odżywiania',
+                'card-eating-desc': 'Terapia zaburzeń odżywiania',
+                'card-crisis': 'Kryzysy emocjonalne',
+                'card-crisis-desc': 'Wsparcie w trudnych momentach i regulacja emocji',
+                'card-insomnia': 'Bezsenność',
+                'card-insomnia-desc': 'Terapia zaburzeń snu',
+                'card-children': 'Dzieci i młodzież',
+                'card-children-desc': 'Psychoterapia dzieci, nastolatków i młodych dorosłych',
+                'method-dbt': 'Terapia Dialektyczno-Behawioralna (DBT)',
+                'method-dbt-desc': 'Specjalistyczna praca z intensywnymi emocjami i borderline',
+                'method-cbt': 'Psychoterapia Poznawczo-Behawioralna (CBT)',
+                'method-cbt-desc': 'Certyfikowana terapia poznawczo-behawioralna',
+                'method-schema': 'Terapia Schematów (TS)',
+                'method-schema-desc': 'Praca z głęboko zakorzenionymi wzorcami myślenia',
+                'exp-work-title': '💼 Doświadczenie zawodowe',
+                'exp-edu-title': '🎓 Wykształcenie i certyfikaty',
+                'exp-pub-title': 'Publikacje',
+                'exp-pub-1': 'Publikacja naukowa MNPIK_207',
+                'exp-pub-2': 'Publikacja naukowa MNK_131'
+            },
+            en: {
+                'about-title': 'About Me',
+                'quote': '<em>"You can\'t change the past, but you can change the conclusions you draw today based on past events."</em> – A. Arntz',
+                'intro': 'I am a psychologist and psychotherapist specializing in the cognitive-behavioral approach. My therapeutic work is based on combining traditional methods of this approach with advanced techniques from the third wave of therapy – Dialectical Behavioral Therapy (DBT) and Schema Therapy (ST).',
+                'approach': 'In therapy, I approach each person individually, aiming to create a therapeutic plan that is perfectly tailored to the reported difficulties and needs. One of the key elements of my work is building a positive therapeutic relationship based on kindness and openness. I believe that this relationship forms the foundation of an effective therapeutic process.',
+                'experience': 'My experience includes working with various age groups – children, adolescents, and adults. Additionally, I have specialization in diagnosing ADHD. I conduct therapy in three languages: <strong>Polish, English, and Ukrainian</strong>.',
+                'lang-title': '🌍 Therapy in Three Languages',
+                'lang-intro': 'I conduct therapy sessions in three languages, which allows me to offer support to people from various cultural backgrounds:',
+                'spec-title': 'Specializations and Competences',
+                'areas-title': '🧠 Areas of Specialization',
+                'methods-title': '💡 Methods & services',
+                'exp-title': '💼 Professional Experience',
+                'cta-title': 'Ready for Support?',
+                'cta-text': 'Schedule a consultation and start your journey to better well-being',
+                'cta-button': 'Book Online Consultation',
+                'cta-contact': 'Contact Us',
+                'card-borderline': 'Borderline (Personality Disorders)',
+                'card-borderline-desc': 'Specialized DBT therapy for borderline personality disorder',
+                'card-anxiety': 'Anxiety Disorders',
+                'card-anxiety-desc': 'Therapy for anxiety, neuroses, panic attacks, OCD and phobias',
+                'card-depression': 'Depression and Mood Disorders',
+                'card-depression-desc': 'Support for depression, including postpartum',
+                'card-ptsd': 'PTSD and Trauma',
+                'card-ptsd-desc': 'Specialized trauma psychotherapy',
+                'card-adhd': 'ADHD',
+                'card-adhd-desc': 'ADHD diagnosis and therapy for children and adults',
+                'card-autism': 'Autism and Asperger\'s Syndrome',
+                'card-autism-desc': 'Working with individuals on the autism spectrum',
+                'card-eating': 'Eating Disorders',
+                'card-eating-desc': 'Eating disorder therapy',
+                'card-crisis': 'Emotional Crises',
+                'card-crisis-desc': 'Support in difficult moments and emotion regulation',
+                'card-insomnia': 'Insomnia',
+                'card-insomnia-desc': 'Sleep disorder therapy',
+                'card-children': 'Children and Adolescents',
+                'card-children-desc': 'Psychotherapy for children, teenagers and young adults',
+                'method-dbt': 'Dialectical Behavioral Therapy (DBT)',
+                'method-dbt-desc': 'Specialized work with intense emotions and borderline',
+                'method-cbt': 'Cognitive Behavioral Psychotherapy (CBT)',
+                'method-cbt-desc': 'Certified cognitive-behavioral therapy',
+                'method-schema': 'Schema Therapy (ST)',
+                'method-schema-desc': 'Working with deeply rooted thinking patterns',
+                'exp-work-title': '💼 Professional Experience',
+                'exp-edu-title': '🎓 Education & certificates',
+                'exp-pub-title': 'Publications',
+                'exp-pub-1': 'Scientific publication MNPIK_207',
+                'exp-pub-2': 'Scientific publication MNK_131'
+            },
+            uk: {
+                'about-title': 'Про мене',
+                'quote': '<em>"Не можна змінити минуле, але ви можете змінити висновки, які ви робите сьогодні на основі минулих подій."</em> – А. Арнтц',
+                'intro': 'Я психолог і психотерапевт, спеціалізуюся на підході когнітивно-поведінкового підходу. Моя терапевтична робота базується на поєднанні традиційних методів цього підходу з передовими техніками третьої хвилі терапії – Діалектично-поведінковій терапії (ДПТ) та Терапії Схем (ТС).',
+                'approach': 'У терапії я підходжу до кожної особи унікально, намагаючись створити терапевтичний план, який ідеально відповідає заявленим труднощам та потребам. Один з ключових елементів моєї роботи - будівництво позитивних терапевтичних відносин на основі доброзичливості та відкритості. Я вірю, що ці відносини становлять основу ефективного терапевтичного процесу.',
+                'experience': 'Мій досвід включає роботу з різними віковими групами - дітьми, підлітками та дорослими. Додатково, у мене є спеціалізація на діагностиці РДУГ. Я проводжу терапію трьома мовами: <strong>польською, англійською та українською</strong>.',
+                'lang-title': '🌍 Терапія трьома мовами',
+                'lang-intro': 'Я проводжу терапевтичні сесії трьома мовами, що дозволяє мені пропонувати підтримку людям з різних культурних середовищ:',
+                'spec-title': 'Спеціалізації та компетенції',
+                'areas-title': '🧠 Сфери спеціалізації',
+                'methods-title': '💡 Методи та послуги',
+                'exp-title': '💼 Професійний досвід',
+                'cta-title': 'Готові до підтримки?',
+                'cta-text': 'Запишіться на консультацію та почніть свій шлях до кращого самопочуття',
+                'cta-button': 'Записатися на онлайн-консультацію',
+                'cta-contact': 'Зв\'язатися з нами',
+                'card-borderline': 'Borderline (розлади особистості)',
+                'card-borderline-desc': 'Спеціалізована ДПТ терапія для розладів особистості borderline',
+                'card-anxiety': 'Тривожні розлади',
+                'card-anxiety-desc': 'Терапія тривоги, неврозів, панічних атак, ОКР та фобій',
+                'card-depression': 'Депресія та розлади настрою',
+                'card-depression-desc': 'Підтримка при депресії, включно з післяпологовою',
+                'card-ptsd': 'ПТСР та травма',
+                'card-ptsd-desc': 'Спеціалізована психотерапія травми',
+                'card-adhd': 'РДУГ',
+                'card-adhd-desc': 'Діагностика та терапія РДУГ у дітей та дорослих',
+                'card-autism': 'Аутизм та синдром Аспергера',
+                'card-autism-desc': 'Робота з особами зі спектру аутизму',
+                'card-eating': 'Розлади харчової поведінки',
+                'card-eating-desc': 'Терапія розладів харчової поведінки',
+                'card-crisis': 'Емоційні кризи',
+                'card-crisis-desc': 'Підтримка у важкі моменти та регуляція емоцій',
+                'card-insomnia': 'Безсоння',
+                'card-insomnia-desc': 'Терапія розладів сну',
+                'card-children': 'Діти та підлітки',
+                'card-children-desc': 'Психотерапія дітей, підлітків та молодих дорослих',
+                'method-dbt': 'Діалектично-поведінкова терапія (ДПТ)',
+                'method-dbt-desc': 'Спеціалізована робота з інтенсивними емоціями та borderline',
+                'method-cbt': 'Когнітивно-поведінкова психотерапія (КПТ)',
+                'method-cbt-desc': 'Сертифікована когнітивно-поведінкова терапія',
+                'method-schema': 'Терапія схем (ТС)',
+                'method-schema-desc': 'Робота з глибоко закоріненими патернами мислення',
+                'exp-work-title': '💼 Професійний досвід',
+                'exp-edu-title': '🎓 Освіта та сертифікати',
+                'exp-pub-title': 'Публікації',
+                'exp-pub-1': 'Наукова публікація MNPIK_207',
+                'exp-pub-2': 'Наукова публікація MNK_131'
+            }
+        };
+
+        // Language switcher
+        function switchLanguage(lang) {
+            // Hide all language texts
+            document.querySelectorAll('.lang-text').forEach(text => {
+                text.style.display = 'none';
+            });
+            
+            // Show selected language text
+            const selectedText = document.querySelector(`.lang-text[data-lang="${lang}"]`);
+            if (selectedText) {
+                selectedText.style.display = 'block';
+            }
+            
+            // Update active language styling
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.style.background = 'transparent';
+                option.style.border = 'none';
+                option.classList.remove('active-lang');
+            });
+            
+            const activeOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+            if (activeOption) {
+                activeOption.style.background = '#e8e8e8';
+                activeOption.style.borderRadius = '8px';
+                activeOption.classList.add('active-lang');
+            }
+
+            // Translate all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Translate work experience list
+            const workList = document.getElementById('exp-work-list');
+            if (workList) {
+                if (lang === 'pl') {
+                    workList.innerHTML = `
+                        <li>Psychologiczne centrum internetowe Cherduck (online-center) – praca z klientami online</li>
+                        <li>Fundacja Krok-po-Kroku (Warszawa) – psychoterapia indywidualna i grupowa</li>
+                        <li>Fundacja ITAKA (online) – wsparcie psychologiczne dla osób poszukiwanych i ich rodzin</li>
+                        <li>Centrum Terapii Malachit – psychoterapia indywidualna w 3 językach (polski, angielski, ukraiński)</li>
+                    `;
+                } else if (lang === 'en') {
+                    workList.innerHTML = `
+                        <li>Cherduck Online Psychological Center – working with online clients</li>
+                        <li>Step by Step Foundation (Warsaw) – individual and group psychotherapy</li>
+                        <li>ITAKA Foundation (online) – psychological support for missing persons and their families</li>
+                        <li>Malachit Therapy Center – individual psychotherapy in 3 languages (Polish, English, Ukrainian)</li>
+                    `;
+                } else if (lang === 'uk') {
+                    workList.innerHTML = `
+                        <li>Психологічний інтернет-центр Cherduck (онлайн-центр) – робота з клієнтами онлайн</li>
+                        <li>Фундація Крок-по-Кроку (Варшава) – індивідуальна та групова психотерапія</li>
+                        <li>Фундація ITAKA (онлайн) – психологічна підтримка для зниклих осіб та їхніх родин</li>
+                        <li>Центр терапії Малахіт – індивідуальна психотерапія 3 мовами (польська, англійська, українська)</li>
+                    `;
+                }
+            }
+
+            // Translate education list
+            const eduList = document.getElementById('exp-edu-list');
+            if (eduList) {
+                if (lang === 'pl') {
+                    eduList.innerHTML = `
+                        <li>AWP Freiburg – Dialectic-Behavioral Therapy (studia podyplomowe)</li>
+                        <li>DBT for Children Center for Training and Guidance, LLC (studia podyplomowe)</li>
+                        <li>Ukraiński Uniwersytet Poznawczo-Behawioralnej Terapii – Terapia Schematów (studia podyplomowe)</li>
+                        <li>SWPS Uniwersytet – Psychologia w języku angielskim (MA)</li>
+                        <li>SWPS Uniwersytet – Psychologia w języku angielskim (BA)</li>
+                        <li>SWPS Uniwersytet – Szkoła Psychoterapii Poznawczo-Behawioralnej (w trakcie szkolenia)</li>
+                    `;
+                } else if (lang === 'en') {
+                    eduList.innerHTML = `
+                        <li>AWP Freiburg – Dialectic-Behavioral Therapy (postgraduate studies)</li>
+                        <li>DBT for Children Center for Training and Guidance, LLC (postgraduate studies)</li>
+                        <li>Ukrainian University of Cognitive-Behavioral Therapy – Schema Therapy (postgraduate studies)</li>
+                        <li>SWPS University – Psychology in English (MA)</li>
+                        <li>SWPS University – Psychology in English (BA)</li>
+                        <li>SWPS University – School of Cognitive-Behavioral Psychotherapy (in training)</li>
+                    `;
+                } else if (lang === 'uk') {
+                    eduList.innerHTML = `
+                        <li>AWP Freiburg – Діалектично-поведінкова терапія (післядипломні студії)</li>
+                        <li>DBT for Children Center for Training and Guidance, LLC (післядипломні студії)</li>
+                        <li>Український Університет Когнітивно-Поведінкової Терапії – Терапія Схем (післядипломні студії)</li>
+                        <li>Університет SWPS – Психологія англійською мовою (MA)</li>
+                        <li>Університет SWPS – Психологія англійською мовою (BA)</li>
+                        <li>Університет SWPS – Школа когнітивно-поведінкової психотерапії (в процесі навчання)</li>
+                    `;
+                }
+            }
         }
     </script>
 

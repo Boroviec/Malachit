@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dorota Wojtłowska-Wiechetek - Lekarz Psychiatra</title>
-    <meta name="description" content="Dorota Wojtłowska-Wiechetek - Lekarz Psychiatra specjalizująca się w leczeniu zaburzeń lękowych, depresji, OCD, ADHD i autyzmu.">
+    <title>Dr n. med. Dorota Wojtłowska-Wiechetek - Lekarz Psychiatra | Centrum Terapii Malachit</title>
+    <meta name="description" content="Dr n. med. Dorota Wojtłowska-Wiechetek - Lekarz Psychiatra specjalizująca się w leczeniu zaburzeń lękowych, depresji, PTSD, ADHD i autyzmu. PWZ: 2453528.">
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
             --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-dark: #0a5c5f;
+            --malachite-light: #10989d;
+            --beige: #faf9f7;
         }
 
         * {
@@ -20,16 +21,16 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
+            color: #333;
             background: white;
         }
 
         /* Hero Section */
-        .hero {
-            background: white;
-            min-height: 500px;
+        .hero-therapist {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,7 +47,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.35;
             z-index: 0;
         }
 
@@ -57,32 +58,42 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
-        .hero h1 {
+        .therapist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        .hero-therapist h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
             color: white;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .hero .subtitle {
+        .hero-therapist .specialty {
             font-size: 1.5rem;
-            color: #111;
+            color: white;
             margin-bottom: 1rem;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(255,255,255,0.9), -2px -2px 8px rgba(255,255,255,0.9);
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        .hero .rating {
+        .rating {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,76 +101,79 @@
             margin-top: 1rem;
         }
 
-        .stars {
-            color: var(--malachite-green);
+        .rating-stars {
+            color: #ffd700;
             font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 80px;
+        .rating span:not(.rating-stars) {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
+        /* Container spacing is centralized in Assets/header.css */
+
+        @media (max-width: 768px) {
+            .timeline-item h3 {
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+
+        /* Section Styles */
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--malachite-dark);
             text-align: left;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--malachite-green);
+            font-weight: 700;
         }
 
-        /* About Section */
-        .about-section {
-            background: white;
-        }
+        /* .category-title styling is centralized in Assets/header.css */
 
-        .about-section p {
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1rem;
-            text-align: justify;
         }
 
-        /* Qualifications Section */
-        .qualifications-section {
-            background: #f8f9fa;
+        .about-section {
+            background: var(--beige);
         }
 
+        .about-section strong {
+            color: var(--malachite-dark);
+            font-weight: 600;
+        }
+
+        /* Qualifications Grid */
         .qualifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--malachite-dark);
-            margin-bottom: 1.5rem;
-            text-align: left;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .qualification-card {
-            background: white;
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s;
             border: 1px solid #e0e0e0;
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
 
         .qualification-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(13, 115, 119, 0.15);
+            border-color: var(--malachite-light);
         }
 
         .qualification-card img {
@@ -181,64 +195,62 @@
             line-height: 1.6;
         }
 
-        /* Experience Timeline */
-        .experience-section {
-            background: white;
+        /* Timeline styling is centralized in Assets/header.css */
+
+        /* Approach Section */
+        .approach-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .timeline {
-            margin: 0;
+        .approach-card {
+            background: var(--beige);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--malachite-green);
         }
 
-        .timeline-item {
-            padding: 2rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            color: var(--malachite-dark);
-            margin-bottom: 0.5rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .timeline-item .company {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item .date {
-            font-size: 0.9rem;
-            color: #999;
+        .approach-card h3 {
+            color: var(--malachite-green);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
-        .timeline-item p {
-            color: #555;
-            line-height: 1.6;
+        .approach-card ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        /* CTA Section */
+        .approach-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .approach-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--malachite-green);
+            font-weight: bold;
+        }
+
+        /* CTA Section (spacing is centralized in Assets/header.css) */
         .cta-section {
-            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
-            padding: 4rem 2rem;
-            text-align: center;
+            background: linear-gradient(135deg, var(--malachite-dark), var(--malachite-light));
             color: white;
+            text-align: center;
         }
 
         .cta-section h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.95;
         }
@@ -250,26 +262,33 @@
             flex-wrap: wrap;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 20px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
             .qualifications-grid {
                 grid-template-columns: 1fr;
             }
 
-            .timeline-item h3 {
-                margin: 0;
+            .approach-cards {
+                grid-template-columns: 1fr;
             }
+
+            /* Timeline spacing is handled globally in Assets/header.css */
+        }
+
+        /* Page Transitions */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
@@ -309,44 +328,44 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="Assets/HeroTerapeuta/14127300_3840_2160_60fps.mp4" type="video/mp4">
-        </video>
+    <section class="hero-therapist">
+        <img src="Assets/HeroTerapeuta/luca-bravo-zAjdgNXsMeg-unsplash.jpg" alt="" class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0;">
         <div class="hero-content">
+            <img src="Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg" alt="Dorota Wojtłowska-Wiechetek" class="therapist-avatar-large">
             <h1>Dr n. med. Dorota Wojtłowska-Wiechetek</h1>
-            <p class="subtitle">Lekarz Psychiatra</p>
+            <p class="specialty">Lekarz Psychiatra</p>
             <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">(62 opinie)</span>
+                <span class="rating-stars">★★★★★</span>
+                <span>(66 opinii)</span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about-section">
-        <div class="container">
-            <h2 class="section-title">O mnie</h2>
-            <p>Jestem lekarzem psychiatrą z wieloletnim doświadczeniem w diagnostyce i leczeniu zaburzeń psychicznych. Specjalizuję się w kompleksowej opiece psychiatrycznej, łącząc farmakoterapię z elementami psychoterapii poznawczo-behawioralnej.</p>
+        <div class="container container-wide">
+            <h3 class="category-title">👤 O mnie</h3>
+            <div class="about-content">
+            <p>Posiadam ponad 15-letnie doświadczenie kliniczne w zakresie psychiatrii. Ukończyłam specjalizację II stopnia z psychiatrii oraz uzyskałam stopień naukowy doktora nauk medycznych. Przez lata pracy zawodowej prowadziłam leczenie pacjentów z szerokim spektrum zaburzeń psychicznych, od zaburzeń lękowych, poprzez depresje, zaburzenia obsesyjno-kompulsyjne, po choroby cięższe takie jak zaburzenia psychotyczne oraz chorobę afektywną dwubiegunową.</p>
             
-            <p>W mojej praktyce szczególną uwagę poświęcam zaburzeniom lękowym, depresji oraz zaburzeniom obsesyjno-kompulsywnym. Pracuję również z pacjentami z ADHD i autyzmem, oferując im kompleksową diagnostykę i wsparcie. Mam doświadczenie w leczeniu zaburzeń okołoporodowych oraz chorób psychosomatycznych.</p>
+            <p>Mój numer wpisu do rejestru lekarzy: PWZ 2453528.</p>
             
-            <p>Wierzę w holistyczne podejście do pacjenta, w którym kluczowa jest nie tylko farmakoterapia, ale również zrozumienie kontekstu życiowego i emocjonalnego pacjenta. Stale podnoszę swoje kwalifikacje, uczestnicząc w szkoleniach i konferencjach naukowych.</p>
+            <p>W swojej pracy klinicznej szczególny nacisk kładę na holistyczne podejście do pacjenta. Łączę wiedzę z zakresu farmakoterapii z elementami psychoterapii poznawczo-behawioralnej, co pozwala mi na kompleksowe wsparcie pacjentów. Cenię sobie otwartą komunikację i tworzenie bezpiecznej przestrzeni terapeutycznej, w której pacjent czuje się wysłuchany i zrozumiany.</p>
+            
+            <p>Stale podnoszę swoje kwalifikacje, uczestnicząc w szkoleniach i konferencjach naukowych, co pozwala mi być na bieżąco z najnowszymi standardami leczenia psychiatrycznego.</p>
+            </div>
         </div>
     </section>
 
     <!-- Qualifications Section -->
     <section class="qualifications-section">
-        <div class="container">
-            <h2 class="section-title">Specjalizacje i kompetencje</h2>
-            
-            <!-- Zaburzenia -->
-            <h3 class="category-title">🧠 Zaburzenia i trudności</h3>
+        <div class="container container-wide">
+            <h3 class="category-title">🧠 Obszary specjalizacji</h3>
             <div class="qualifications-grid">
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
-                    <h3>Zaburzenia lękowe</h3>
-                    <p>Kompleksowe leczenie wszystkich rodzajów zaburzeń lękowych</p>
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="PTSD">
+                    <h3>PTSD</h3>
+                    <p>Leczenie zaburzeń stresu pourazowego</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja">
@@ -354,24 +373,9 @@
                     <p>Farmakoterapia i wsparcie w zaburzeniach nastroju</p>
                 </div>
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Nerwica">
-                    <h3>Nerwica</h3>
-                    <p>Leczenie nerwic i zaburzeń nerwicowych</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Lęki okołoporodowe">
-                    <h3>Lęki okołoporodowe</h3>
-                    <p>Wsparcie psychiatryczne w okresie okołoporodowym</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Psychogastroenterologia (IBS) Background Removed.png" alt="Choroby psychosomatyczne">
-                    <h3>Choroby psychosomatyczne</h3>
-                    <p>Leczenie zaburzeń o podłożu psychosomatycznym</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Terapia OCD (ERP) Background Removed.png" alt="OCD">
-                    <h3>Zaburzenia obsesyjno-kompulsywne</h3>
-                    <p>Kompleksowe leczenie OCD</p>
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
+                    <h3>Zaburzenia lękowe</h3>
+                    <p>Kompleksowe leczenie wszystkich rodzajów zaburzeń lękowych</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
@@ -379,9 +383,38 @@
                     <p>Diagnostyka i leczenie psychiatryczne ADHD</p>
                 </div>
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Autyzm">
-                    <h3>Autyzm</h3>
-                    <p>Opieka psychiatryczna dla osób ze spektrum autyzmu</p>
+                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Bezsenność">
+                    <h3>Bezsenność</h3>
+                    <p>Leczenie zaburzeń snu i bezsenności</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Nerwica">
+                    <h3>Nerwica</h3>
+                    <p>Leczenie nerwic i zaburzeń nerwicowych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Psychoza i schizofrenia">
+                    <h3>Psychoza i schizofrenia</h3>
+                    <p>Leczenie psychiatryczne zaburzeń psychotycznych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Choroba afektywna dwubiegunowa">
+                    <h3>Choroba afektywna dwubiegunowa</h3>
+                    <p>Specjalistyczne leczenie choroby afektywnej dwubiegunowej</p>
+                </div>
+            </div>
+
+            <h3 class="category-title category-title--spaced">💡 Metody i usługi</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Psychoedukacja ADHD Background Removed.png" alt="Konsultacja psychiatryczna">
+                    <h3>Konsultacja psychiatryczna</h3>
+                    <p>Kompleksowa ocena stanu psychicznego i plan leczenia</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Farmakoterapia Background Removed.png" alt="Farmakoterapia">
+                    <h3>Farmakoterapia</h3>
+                    <p>Dobór i optymalizacja leczenia farmakologicznego</p>
                 </div>
             </div>
         </div>
@@ -389,42 +422,38 @@
 
     <!-- Experience Section -->
     <section class="experience-section">
-        <div class="container">
-            <h2 class="section-title">Wykształcenie i doświadczenie</h2>
+        <div class="container container-wide">
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Specjalizacja II stopnia z psychiatrii</h3>
-                    <p class="company">Warszawski Uniwersytet Medyczny</p>
-                    <p class="date">Specjalizacja</p>
-                    <p>Ukończona specjalizacja psychiatryczna</p>
+                    <h3 class="category-title">💼 Doświadczenie zawodowe</h3>
+                    <ul>
+                        <li>Klinika Psychiatrii WIM – lekarz psychiatra, opieka nad pacjentami z ciężkimi zaburzeniami psychicznymi</li>
+                        <li>Mazowieckie Centrum Neuropsychiatrii – praca w środowisku wielospecjalistycznej opieki psychiatrycznej</li>
+                        <li>Centrum Detoksykacji – doświadczenie w leczeniu uzależnień i ich konsekwencji psychiatrycznych</li>
+                        <li>Uniwersytet Medyczny w Białymstoku – doświadczenie akademickie i badawcze w zakresie psychiatrii</li>
+                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Doktor nauk medycznych</h3>
-                    <p class="company">Warszawski Uniwersytet Medyczny</p>
-                    <p class="date">Stopień naukowy</p>
-                    <p>Tytuł doktora nauk medycznych w zakresie psychiatrii</p>
+                    <h3 class="category-title category-title--spaced">🎓 Wykształcenie i certyfikaty</h3>
+                    <ul>
+                        <li>Specjalizacja II stopnia z psychiatrii – Warszawski Uniwersytet Medyczny</li>
+                        <li>Doktor nauk medycznych (dr n. med.) – stopień naukowy w zakresie psychiatrii</li>
+                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Lekarz medycyny</h3>
-                    <p class="company">Warszawski Uniwersytet Medyczny</p>
-                    <p class="date">Dyplom lekarza</p>
-                    <p>Ukończone studia na Wydziale Lekarskim</p>
+                    <h3 class="category-title">🏅 Nagrody i wyróżnienia</h3>
+                    <ul>
+                        <li>Złota Synapsa 2015 – nagroda za osiągnięcia w psychiatrii</li>
+                    </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3>Psychiatra</h3>
-                    <p class="company">Centrum Terapii Malachit</p>
-                    <p class="date">Obecnie</p>
-                    <p>Prowadzenie konsultacji psychiatrycznych i opieka nad pacjentami</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Lekarz Psychiatra</h3>
-                    <p class="company">Praktyka prywatna</p>
-                    <p class="date">Doświadczenie</p>
-                    <p>Wieloletnia praktyka w zakresie psychiatrii klinicznej</p>
+                    <h3 class="category-title">📚 Publikacje naukowe</h3>
+                    <ul>
+                        <li>Autorka publikacji naukowych z zakresu psychiatrii klinicznej</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -432,12 +461,12 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <h2>Gotowy na pierwszy krok?</h2>
-            <p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
+        <div class="container container-wide">
+            <h2>Gotowy/a na zmianę?</h2>
+            <p>Umów się na pierwszą konsultację psychiatryczną i rozpocznij drogę do lepszego samopoczucia</p>
             <div class="cta-buttons">
-                <a href="https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów konsultację</a>
-                <a href="index.html#kontakt" class="btn-secondary" style="background: white; color: var(--malachite-green);">Skontaktuj się</a>
+                <a href="https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
+                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
             </div>
         </div>
     </section>
@@ -447,6 +476,17 @@
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
         }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 
     <!-- Footer -->

@@ -113,6 +113,237 @@ header.scrolled {
     letter-spacing: -0.02em;
 }
 
+/* Therapist profiles: consistent section spacing */
+.about-section,
+.qualifications-section,
+.experience-section,
+.cta-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Therapist profiles: ensure clear separation after the About section */
+.about-section + section {
+    padding-top: 4rem;
+}
+
+/* If a page has standardized sections back-to-back, avoid doubling padding.
+   The next section should start right after Qualifications' bottom padding. */
+.qualifications-section + section {
+    padding-top: 0;
+}
+
+@media (max-width: 768px) {
+    .about-section,
+    .qualifications-section,
+    .experience-section,
+    .cta-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .about-section + section {
+        padding-top: 3rem;
+    }
+
+    .qualifications-section + section {
+        padding-top: 0;
+    }
+}
+
+/* Therapist profile: default backgrounds for standardized sections */
+.qualifications-section {
+    background: white;
+}
+
+/* Therapist profile: Experience / Education */
+.experience-section .timeline {
+    margin: 0;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Therapist profile: About long-form text */
+.about-section .about-content {
+    max-width: none;
+}
+
+.about-section .about-content > :first-child {
+    margin-top: 0;
+}
+
+.about-section .about-content > :last-child {
+    margin-bottom: 0;
+}
+
+.about-section .about-content p {
+    margin: 0 0 1rem;
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .about-section .about-content p {
+        font-size: 1.02rem;
+    }
+}
+
+.about-section .about-content a {
+    color: var(--malachite-green);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.about-section .about-content a:hover {
+    color: var(--malachite-dark);
+}
+
+.about-section .about-content strong,
+.about-section .about-content b {
+    color: var(--malachite-dark);
+    font-weight: 700;
+}
+
+.about-section .about-content em,
+.about-section .about-content i {
+    font-style: italic;
+}
+
+.about-section .about-content ul,
+.about-section .about-content ol {
+    margin: 0 0 1rem;
+    padding-left: 1.35rem;
+    color: #444;
+    line-height: 1.75;
+}
+
+.about-section .about-content li {
+    margin: 0.35rem 0;
+}
+
+/* Therapist profile: CTA phone line (non-button) */
+.cta-section .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-section .cta-buttons .btn-primary-dark {
+    flex: 0 0 auto;
+}
+
+.cta-section .cta-phone {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 480px) {
+    .cta-section .cta-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Therapist profile: Unified section headings (About/Areas/Methods/Experience/Education/etc.) */
+.profile-heading,
+.category-title,
+.about-section h3 {
+    max-width: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    text-align: left;
+    color: var(--malachite-green);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .profile-heading,
+    .category-title,
+    .about-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+/* Consistent spacing when a profile has stacked subheadings in one section */
+.profile-heading + .qualifications-grid,
+.category-title + .qualifications-grid {
+    margin-top: 1.5rem;
+}
+
+.profile-heading--spaced,
+.category-title--spaced {
+    margin-top: 3rem;
+}
+
+/* Therapist profile pages often include a local `.category-title` block inside <style>.
+   Force left alignment within the standard container wrappers to prevent accidental centering. */
+.container .category-title,
+.container-wide .category-title,
+.container-narrow .category-title {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container .profile-heading,
+.container-wide .profile-heading,
+.container-narrow .profile-heading {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.experience-section .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.experience-section .timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.experience-section .timeline-item h3.profile-heading,
+.experience-section .timeline-item h3.category-title {
+    margin-bottom: 1.5rem;
+}
+
+.experience-section .timeline ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-section .timeline ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.experience-section .timeline ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--malachite-green);
+    font-weight: 700;
+}
+
+.experience-section .timeline ul li:last-child {
+    margin-bottom: 0;
+}
+
 .burger-menu {
     display: none;
     align-items: center;
@@ -320,6 +551,75 @@ nav a.active::after {
     box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
 }
 
+/* Button variants for dark backgrounds (CTA sections with gradient) */
+.btn-primary-dark {
+    background: white;
+    color: var(--malachite-green) !important;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid white;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary-dark:hover {
+    background: transparent;
+    color: white !important;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary-dark {
+    background: transparent;
+    color: white !important;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid white;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-secondary-dark:hover {
+    background: white;
+    color: var(--malachite-green) !important;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Content width utilities (shared) */
+.container-wide {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(16px, 4vw, 40px);
+    padding-right: clamp(16px, 4vw, 40px);
+}
+
+.container-narrow {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(16px, 4vw, 40px);
+    padding-right: clamp(16px, 4vw, 40px);
+}
+
+@media (max-width: 860px) {
+    .container-narrow {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     .header-contact .btn-primary {
         display: none;
@@ -328,4 +628,16 @@ nav a.active::after {
     .phone {
         font-size: 0.75rem;
     }
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
 }

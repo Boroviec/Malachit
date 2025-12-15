@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maksymilian Rosochacki - Psycholog / Psychoterapeuta CBT</title>
-    <meta name="description" content="Maksymilian Rosochacki - Psycholog i psychoterapeuta CBT specjalizujący się w leczeniu depresji, lęków, OCD, ADHD i traumy.">
+    <title>Maksymilian Rosochacki - Psycholog, Psychoterapeuta CBT, Psychogastroenterolog</title>
+    <meta name="description" content="Maksymilian Rosochacki - Psycholog i psychoterapeuta CBT, psychogastroenterolog. Specjalizacja: IBS, SIBO, dyspepsja, lęki, depresja, OCD, ADHD, trauma. Centrum CBT, PTTPB.">
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
             --malachite-green: #0d7377;
             --malachite-dark: #0a5a5d;
             --malachite-light: #14a09e;
+            --beige: #faf9f7;
         }
 
         * {
@@ -27,9 +28,9 @@
         }
 
         /* Hero Section */
-        .hero {
-            background: white;
-            min-height: 500px;
+        .hero-therapist {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,7 +47,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.35;
             z-index: 0;
         }
 
@@ -57,32 +58,42 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
-        .hero h1 {
+        .therapist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        .hero-therapist h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
             color: white;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .hero .subtitle {
+        .specialty {
             font-size: 1.5rem;
-            color: #111;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(255,255,255,0.9), -2px -2px 8px rgba(255,255,255,0.9);
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        .hero .rating {
+        .rating {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,16 +101,21 @@
             margin-top: 1rem;
         }
 
-        .stars {
-            color: var(--malachite-green);
+        .rating-stars {
+            color: #ffd700;
             font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .rating span:not(.rating-stars) {
+            color: white;
         }
 
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 80px;
+            padding: 4rem 80px;
         }
 
         .section-title {
@@ -110,56 +126,65 @@
             text-align: left;
         }
 
+        /* .category-title styling is centralized in Assets/header.css */
+
         /* About Section */
         .about-section {
-            background: white;
+            background: var(--beige);
         }
 
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1rem;
-            text-align: justify;
+        /* About section typography is standardized in Assets/header.css */
+
+        .highlight-box {
+            background: white;
+            border-left: 4px solid var(--malachite-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box h3 {
+            color: var(--malachite-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
 
         /* Qualifications Section */
         .qualifications-section {
-            background: #f8f9fa;
+            background: white;
         }
 
         .qualifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--malachite-dark);
-            margin-bottom: 1.5rem;
-            text-align: left;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         .qualification-card {
-            background: white;
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s;
             border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
             text-align: left;
         }
 
         .qualification-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(13,115,119,0.15);
+            border-color: var(--malachite-light);
         }
 
         .qualification-card img {
@@ -181,47 +206,39 @@
             line-height: 1.6;
         }
 
-        /* Experience Timeline */
-        .experience-section {
-            background: white;
-        }
-
-        .timeline {
-            margin: 0;
-        }
-
-        .timeline-item {
-            padding: 2rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            color: var(--malachite-dark);
-            margin-bottom: 0.5rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .timeline-item .company {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item .date {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 1rem;
-        }
+        /* Timeline styling is centralized in Assets/header.css */
 
         .timeline-item p {
             color: #555;
             line-height: 1.6;
+        }
+
+        .timeline ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .timeline ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .timeline ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--malachite-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .timeline ul li:last-child {
+            margin-bottom: 0;
         }
 
         /* CTA Section */
@@ -255,12 +272,17 @@
                 padding: 20px 20px;
             }
 
-            .hero h1 {
+            .hero-therapist h1 {
                 font-size: 2rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.2rem;
+            .specialty {
+                font-size: 1.1rem;
+            }
+
+            .therapist-avatar-large {
+                width: 150px;
+                height: 150px;
             }
 
             .qualifications-grid {
@@ -309,54 +331,78 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="Assets/HeroTerapeuta/12217651_3840_2160_30fps.mp4" type="video/mp4">
-        </video>
+    <section class="hero-therapist">
+        <img src="Assets/HeroTerapeuta/henry-be-IicyiaPYGGI-unsplash.jpg" alt="" class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0;">
         <div class="hero-content">
+            <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-avatar-large">
             <h1>Maksymilian Rosochacki</h1>
-            <p class="subtitle">Psycholog / Psychoterapeuta CBT</p>
+            <p class="specialty">Psycholog, Psychoterapeuta CBT<br>Psychogastroenterolog</p>
             <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">5.0</span>
+                <span class="rating-stars">★★★★★</span>
+                <span>(5 opinii)</span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about-section">
-        <div class="container">
-            <h2 class="section-title">O mnie</h2>
-            <p>Jestem psychologiem i certyfikowanym psychoterapeutą poznawczo-behawioralnym (CBT). Specjalizuję się w pracy z osobami doświadczającymi szerokiego spektrum trudności psychicznych, w tym zaburzeń lękowych, depresji, ADHD, autyzmu oraz zaburzeń osobowości.</p>
+        <div class="container container-wide">
+            <h3 class="category-title">👤 O mnie</h3>
+            <p>Jestem psychologiem oraz psychoterapeutą poznawczo-behawioralnym, w trakcie pełnego, czteroletniego szkolenia w Centrum CBT – placówce rekomendowanej przez PTTPB. Ukończyłem jednolite studia magisterskie z psychologii o specjalności klinicznej na Uniwersytecie SWPS.</p>
             
-            <p>W swojej praktyce klinicznej łączę wiedzę naukową z empatycznym podejściem do pacjenta. Wierzę, że każdy człowiek zasługuje na indywidualne traktowanie i dostosowaną do jego potrzeb terapię. Stosuję metody oparte na dowodach naukowych, które skutecznie pomagają w radzeniu sobie z trudnościami dnia codziennego.</p>
+            <p>W pracy terapeutycznej opieram się na podejściu poznawczo-behawioralnym, które integruję z elementami terapii skoncentrowanej na rozwiązaniach, DBT oraz praktyką uważności. Dużą wagę przykładam do budowania bezpiecznej, pełnej zaufania atmosfery. Bliskie jest mi podejście empatyczne, oparte na akceptacji i szacunku.</p>
             
-            <p>Moje doświadczenie obejmuje pracę w prywatnych gabinetach na terenie Warszawy, oddziale psychiatrycznym Szpitala Bielańskiego, Fundacji Una oraz praktyki kliniczne przy SWPS. Regularnie uczestniczę w superwizjach i szkoleniach, aby stale podnosić swoje kwalifikacje i oferować pacjentom najlepszą możliwą opiekę.</p>
+            <p>Do zdrowia psychicznego podchodzę uwzględniając ścisły związek między ciałem a psychiką. Szczególnie interesuję się wpływem jakości snu na dobrostan oraz osią mózgowo-jelitową. Należę do PTTPB i regularnie korzystam z superwizji.</p>
+
+            <div class="highlight-box">
+                <h3>🩺 Psychogastroenterologia – specjalizacja</h3>
+                <p>Ukończyłem roczny kurs psychogastroenterologii w Centrum CBT. Specjalizuję się w leczeniu problemów trzewnych (IBS, dyspepsja, SIBO, zgaga, ból brzucha) przy użyciu psychoterapii.</p>
+                <p>Szczególnie interesuję mnie wpływ jakości snu na dobrostan oraz oś mózgowo-jelitowa. Pracuję z osobami doświadczającymi chorób psychosomatycznych i zaburzeń funkcjonalnych układu pokarmowego.</p>
+            </div>
+
+            <p>Moje doświadczenie zawodowe obejmuje pracę w prywatnych gabinetach na terenie Warszawy, oddziale psychiatrycznym Szpitala Bielańskiego, Fundacji Una oraz praktyki kliniczne przy USWPS. Oferuję zarówno sesje stacjonarne, jak i online, dostosowując terapię do indywidualnych potrzeb pacjenta.</p>
         </div>
     </section>
 
     <!-- Qualifications Section -->
     <section class="qualifications-section">
-        <div class="container">
-            <h2 class="section-title">Specjalizacje i kompetencje</h2>
-            
-            <!-- Zaburzenia -->
-            <h3 class="category-title">🧠 Zaburzenia i trudności</h3>
+        <div class="container container-wide">
+            <h3 class="category-title">🧠 Obszary specjalizacji</h3>
             <div class="qualifications-grid">
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja">
                     <h3>Depresja</h3>
-                    <p>Terapia zaburzeń nastroju i depresji</p>
+                    <p>Terapia zaburzeń nastroju i stanów depresyjnych</p>
                 </div>
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
-                    <h3>Zaburzenia lękowe</h3>
-                    <p>Leczenie fobii, GAD, lęku napadowego i hipochondrii</p>
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Lęki">
+                    <h3>Lęki</h3>
+                    <p>Leczenie zaburzeń lękowych i stanów lękowych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Fobia społeczna">
+                    <h3>Fobia społeczna</h3>
+                    <p>Terapia lęku społecznego i trudności w relacjach</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Fobie">
+                    <h3>Fobie</h3>
+                    <p>Leczenie fobii specyficznych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Lęk napadowy">
+                    <h3>Lęk napadowy</h3>
+                    <p>Terapia napadów paniki i ataków lękowych</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Terapia OCD (ERP) Background Removed.png" alt="OCD">
-                    <h3>OCD (Nerwica natręctw)</h3>
+                    <h3>OCD</h3>
                     <p>Terapia zaburzeń obsesyjno-kompulsywnych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="GAD">
+                    <h3>Zespół lęku uogólnionego</h3>
+                    <p>Leczenie przewlekłego niepokoju i napięcia</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Terapia PTSD Background Removed.png" alt="Trauma">
@@ -364,54 +410,88 @@
                     <p>Przetwarzanie traumatycznych doświadczeń</p>
                 </div>
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
-                    <h3>ADHD</h3>
-                    <p>Diagnoza i terapia zespołu nadpobudliwości psychoruchowej</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Autyzm">
-                    <h3>Autyzm</h3>
-                    <p>Wsparcie dla osób ze spektrum autyzmu</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Zaburzenia osobowości">
-                    <h3>Zaburzenia osobowości</h3>
-                    <p>Terapia zaburzeń osobowości</p>
-                </div>
-                <div class="qualification-card">
-                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Bezsenność">
-                    <h3>Bezsenność</h3>
-                    <p>Leczenie zaburzeń snu</p>
+                    <img src="Assets/Uslugi/Zaburzenia psychosomatyczne Background Removed.png" alt="Hipochondria">
+                    <h3>Hipochondria</h3>
+                    <p>Terapia zaburzeń obsługujących lęk zdrowotny</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Terapia wypalenia Background Removed.png" alt="Wypalenie">
                     <h3>Wypalenie zawodowe</h3>
-                    <p>Wsparcie w walce z wypaleniem</p>
+                    <p>Wsparcie w walce z chronicznym stresem zawodowym</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Ból emocjonalny">
+                    <h3>Ból emocjonalny</h3>
+                    <p>Pomoc w przepracowaniu trudnych emocji</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Budowanie pewności siebie Background Removed.png" alt="Samoocena">
-                    <h3>Niska samoocena</h3>
-                    <p>Budowanie pewności siebie i poczucia wartości</p>
+                    <h3>Niskie poczucie własnej wartości</h3>
+                    <p>Budowanie pewności siebie i samoakceptacji</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="Koncentracja">
+                    <h3>Zaburzenia koncentracji</h3>
+                    <p>Praca nad uwagą i funkcjami poznawczymi</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Bezsenność">
+                    <h3>Bezsenność</h3>
+                    <p>Leczenie zaburzeń snu metodami CBT-I</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Zaburzenia nastroju">
+                    <h3>Zaburzenia nastroju</h3>
+                    <p>Terapia wahań nastroju i dysregulacji emocjonalnej</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Psychogastroenterologia (IBS) Background Removed.png" alt="Psychosomatyka">
                     <h3>Choroby psychosomatyczne</h3>
-                    <p>Psychogastroenterologia, zaburzenia psychosomatyczne</p>
+                    <p>IBS, SIBO, dyspepsja, zgaga, ból brzucha</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
+                    <h3>ADHD</h3>
+                    <p>Wsparcie dla osób z zespołem nadpobudliwości</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Autyzm">
+                    <h3>Spektrum autyzmu</h3>
+                    <p>Terapia dla osób neurodywergentnych</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Zaburzenia osobowości">
+                    <h3>Zaburzenia osobowości</h3>
+                    <p>DBT i CBT w leczeniu zaburzeń osobowości</p>
                 </div>
             </div>
 
-            <!-- Metody terapeutyczne -->
-            <h3 class="category-title" style="margin-top: 3rem;">💡 Metody terapeutyczne</h3>
+            <h3 class="category-title category-title--spaced">💡 Metody i usługi</h3>
             <div class="qualifications-grid">
                 <div class="qualification-card">
-                    <img src="Assets/Uslugi/Terapia poznawczo-behawioralna (CBT) Background Removed.png" alt="CBT">
+                    <img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="CBT">
                     <h3>Terapia CBT</h3>
-                    <p>Certyfikowany psychoterapeuta poznawczo-behawioralny</p>
+                    <p>4-letnie szkolenie w Centrum CBT (placówka rekomendowana przez PTTPB)</p>
                 </div>
                 <div class="qualification-card">
                     <img src="Assets/Uslugi/Psychogastroenterologia (IBS) Background Removed.png" alt="Psychogastroenterologia">
                     <h3>Psychogastroenterologia</h3>
-                    <p>Specjalistyczne podejście do zaburzeń psychosomatycznych układu pokarmowego</p>
+                    <p>Roczny kurs psychogastroenterologii – leczenie problemów trzewnych przez psychoterapię</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia skoncentrowana na rozwiązaniach Background Removed.png" alt="TSR">
+                    <h3>Terapia Skoncentrowana na Rozwiązaniach</h3>
+                    <p>TSR I stopień – podejście skoncentrowane na zasobach i celach</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia dialektyczno-behawioralna DBT Background Removed.png" alt="DBT">
+                    <h3>Terapia DBT</h3>
+                    <p>Dialektyczna terapia behawioralna – regulacja emocji</p>
+                </div>
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="Mindfulness">
+                    <h3>Praktyka uważności</h3>
+                    <p>Mindfulness – integracja uważności z terapią poznawczo-behawioralną</p>
                 </div>
             </div>
         </div>
@@ -419,69 +499,46 @@
 
     <!-- Experience Section -->
     <section class="experience-section">
-        <div class="container">
-            <h2 class="section-title">Wykształcenie i doświadczenie</h2>
+        <div class="container container-wide">
+            <h3 class="category-title">💼 Doświadczenie zawodowe</h3>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Psychoterapeuta poznawczo-behawioralny</h3>
-                    <p class="company">Centrum CBT</p>
-                    <p class="date">Certyfikat</p>
-                    <p>Ukończone szkolenie w terapii poznawczo-behawioralnej</p>
+                    <ul>
+                        <li>Centrum CBT – Psychoterapeuta Poznawczo-Behawioralny (czterotletnie szkolenie w trakcie – placówka rekomendowana przez PTTPB)</li>
+                        <li>Centrum CBT – Psychogastroenterolog (roczny kurs specjalistyczny – leczenie problemów trzewnych IBS, SIBO, dyspepsja przy użyciu psychoterapii)</li>
+                        <li>Centrum Terapii Krótkoterminowej – Terapia Skoncentrowana na Rozwiązaniach I stopień</li>
+                        <li>Uniwersytet SWPS – Magister Psychologii (jednolite studia magisterskie, specjalność kliniczna)</li>
+                    </ul>
                 </div>
+            </div>
 
+            <h3 class="category-title category-title--spaced">🎓 Wykształcenie i certyfikaty</h3>
+            <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Psychogastroenterolog</h3>
-                    <p class="company">Centrum CBT</p>
-                    <p class="date">Certyfikat</p>
-                    <p>Specjalistyczne szkolenie z zakresu psychogastroenterologii</p>
+                    <ul>
+                        <li>Prywatne gabinety na terenie Warszawy – prowadzenie indywidualnej psychoterapii CBT, sesje stacjonarne i online</li>
+                        <li>Oddział psychiatryczny Szpitala Bielańskiego – praca z pacjentami psychiatrycznymi w warunkach klinicznych</li>
+                        <li>Fundacja Una – praca w organizacji non-profit świadczącej pomoc psychologiczną</li>
+                        <li>Praktyki kliniczne przy USWPS – praktyki w klinice uniwersyteckiej prowadzone w ramach studiów</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <h3>Magister Psychologii</h3>
-                    <p class="company">SWPS Uniwersytet Humanistycznospołeczny</p>
-                    <p class="date">Dyplom magistra</p>
-                    <p>Studia psychologiczne ukończone z wyróżnieniem</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Psychoterapeuta</h3>
-                    <p class="company">Prywatne gabinety na terenie Warszawy</p>
-                    <p class="date">Obecnie</p>
-                    <p>Prowadzenie indywidualnej psychoterapii poznawczo-behawioralnej</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Psycholog kliniczny</h3>
-                    <p class="company">Oddział psychiatryczny Szpitala Bielańskiego</p>
-                    <p class="date">Doświadczenie kliniczne</p>
-                    <p>Praca z pacjentami psychiatrycznymi na oddziale szpitalnym</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Psycholog</h3>
-                    <p class="company">Fundacja Una</p>
-                    <p class="date">Doświadczenie</p>
-                    <p>Praca w organizacji non-profit świadczącej pomoc psychologiczną</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Praktyki kliniczne</h3>
-                    <p class="company">SWPS Uniwersytet</p>
-                    <p class="date">Szkolenie</p>
-                    <p>Praktyki kliniczne prowadzone w ramach studiów</p>
-                </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--malachite-green);">
+                <p style="color: #666; margin: 0;"><strong style="color: var(--malachite-dark);">Członkostwo:</strong> PTTPB (Polskie Towarzystwo Terapii Poznawczej i Behawioralnej)</p>
+                <p style="color: #666; margin: 0.5rem 0 0 0;"><strong style="color: var(--malachite-dark);">Superwizja:</strong> Regularnie korzystam z superwizji, aby zapewniać najwyższą jakość terapii</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container container-wide">
             <h2>Gotowy na pierwszy krok?</h2>
             <p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
             <div class="cta-buttons">
-                <a href="https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów konsultację</a>
-                <a href="index.html#kontakt" class="btn-secondary" style="background: white; color: var(--malachite-green);">Skontaktuj się</a>
+                <a href="https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
+                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
             </div>
         </div>
     </section>

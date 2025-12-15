@@ -3,46 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Pac - Psycholog / Psychoterapeuta</title>
-    <meta name="description" content="Maria Pac - Psychoterapeuta specjalizująca się w zaburzeniach lękowych, depresji, ADHD i kryzysach życiowych.">
+    <title>Mgr Maria Pac - Psycholog, Psychoterapeuta CBT | Centrum Terapii Malachit</title>
+    <meta name="description" content="Maria Pac - Psychoterapeutka CBT w trakcie certyfikacji, członkini PTTPB. Specjalizacja: OCD, lęki, depresja, ADHD, psychoedukacja. Online i stacjonarnie.">
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
-        :root { --malachite-green: #0d7377; --malachite-dark: #0a5a5d; --malachite-light: #14a09e; }
+        :root { 
+            --malachite-green: #0d7377; 
+            --malachite-dark: #0a5a5d; 
+            --malachite-light: #14a09e;
+            --beige: #faf9f7;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #2c3e50; background: white; }
-        .hero { background: white; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
-        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 0; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.1); z-index: 0; }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; }
-        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5); }
-        .hero .subtitle { font-size: 1.5rem; color: #111; margin-bottom: 1rem; font-weight: 600; text-shadow: 2px 2px 8px rgba(255,255,255,0.9), -2px -2px 8px rgba(255,255,255,0.9); }
-        .hero .rating { display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1rem; }
-        .stars { color: var(--malachite-green); font-size: 1.5rem; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 80px; }
-        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: var(--malachite-dark); text-align: left; }
-        .about-section { background: white; }
-        .about-section p { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1rem; text-align: justify; }
-        .qualifications-section { background: #f8f9fa; }
-        .qualifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-        .category-title { font-size: 1.5rem; font-weight: 600; color: var(--malachite-dark); margin-bottom: 1.5rem; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .qualification-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; border: 1px solid #e0e0e0; text-align: left; }
-        .qualification-card:hover { transform: translateY(-3px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
-        .qualification-card img { width: 80px; height: 80px; margin-bottom: 1.5rem; object-fit: contain; }
-        .qualification-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--malachite-dark); }
-        .qualification-card p { color: #666; font-size: 1rem; line-height: 1.6; }
-        .experience-section { background: white; }
-        .timeline { margin: 0; }
-        .timeline-item { padding: 2rem 0; border-bottom: 1px solid #e0e0e0; }
-        .timeline-item:last-child { border-bottom: none; }
-        .timeline-item h3 { font-size: 1.3rem; color: var(--malachite-dark); margin-bottom: 0.5rem; word-wrap: break-word; overflow-wrap: break-word; }
-        .timeline-item .company { font-size: 1rem; color: #666; margin-bottom: 0.5rem; }
-        .timeline-item .date { font-size: 0.9rem; color: #999; margin-bottom: 1rem; }
-        .timeline-item p { color: #555; line-height: 1.6; }
-        .cta-section { background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%); padding: 4rem 2rem; text-align: center; color: white; }
+        body { font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #2c3e50; background: white; }
+        
+        /* Hero Section */
+        .hero-therapist {
+            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            z-index: 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+        }
+        .therapist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+        .hero-therapist h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .hero-therapist .specialty {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .rating span:not(.rating-stars) {
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        /* Container spacing is centralized in Assets/header.css */
+        .section-title { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            color: var(--malachite-dark); 
+            text-align: left;
+        }
+        
+        /* About Section */
+        .about-section { 
+            background: var(--beige); 
+        }
+        .about-content {
+            max-width: 100%;
+        }
+        /* About section typography is standardized in Assets/header.css */
+        .about-section strong {
+            color: var(--malachite-dark);
+            font-weight: 600;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: white;
+            border-left: 4px solid var(--malachite-green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .highlight-box strong {
+            color: var(--malachite-dark);
+            font-size: 1.2rem;
+        }
+        
+        /* Qualifications Section */
+        .qualifications-section { 
+            background: white; 
+        }
+        .qualifications-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 1.5rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        /* .category-title styling is centralized in Assets/header.css */
+        .qualification-card { 
+            background: #f8f9fa; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+            transition: all 0.3s; 
+            border: 1px solid #e0e0e0; 
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .qualification-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 24px rgba(13, 115, 119, 0.15);
+            border-color: var(--malachite-light);
+        }
+        .qualification-card img { 
+            width: 80px; 
+            height: 80px; 
+            margin-bottom: 1.5rem; 
+            object-fit: contain; 
+        }
+        .qualification-card h3 { 
+            font-size: 1.3rem; 
+            margin-bottom: 0.75rem; 
+            color: var(--malachite-dark); 
+        }
+        .qualification-card p { 
+            color: #666; 
+            font-size: 1rem; 
+            line-height: 1.6; 
+        }
+        /* Experience/Education styling is centralized in Assets/header.css */
+        .cta-section { background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%); text-align: center; color: white; }
         .cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
         .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        @media (max-width: 768px) { .container { padding: 20px 20px; } .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.2rem; } .qualifications-grid { grid-template-columns: 1fr; } .timeline-item h3 { margin: 0; } }
+        /* Responsive */
+        @media (max-width: 768px) { 
+            .hero-therapist { min-height: 70vh; padding: 6rem 1.5rem 3rem; }
+            .hero-therapist h1 { font-size: 2rem; } 
+            .hero-therapist .subtitle { font-size: 1.2rem; }
+            .therapist-avatar-large { width: 150px; height: 150px; }
+            .section-title { font-size: 1.8rem; }
+            .qualifications-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .qualification-card { padding: 1.5rem; }
+
+            .experience-section li { font-size: 1.05rem; }
+        }
     </style>
 </head>
 <body>
@@ -53,11 +198,188 @@
         <div class="burger-menu" onclick="toggleMenu()"><span class="active-page">MARIA PAC</span> ▼</div>
         <nav class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">STRONA GŁÓWNA</a><a href="o-nas.html" onclick="toggleMenu()">O NAS</a><a href="services.html" onclick="toggleMenu()">USŁUGI</a><a href="cennik.html" onclick="toggleMenu()">CENNIK</a><a href="faq.html" onclick="toggleMenu()">FAQ</a><a href="blog.html" onclick="toggleMenu()">BLOG</a><a href="index.html#kontakt" onclick="toggleMenu()">KONTAKT</a></nav>
     </header>
-    <section class="hero"><video autoplay muted loop playsinline class="hero-video"><source src="Assets/HeroTerapeuta/14692046_1920_1080_60fps.mp4" type="video/mp4"></video><div class="hero-content"><h1>Mgr Maria Pac</h1><p class="subtitle">Psycholog / Psychoterapeuta</p><div class="rating"><span class="stars">★★★★★</span><span style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">(11 opinii)</span></div></div></section>
-    <section class="about-section"><div class="container"><h2 class="section-title">O mnie</h2><p>Jestem psychologiem i psychoterapeutą z doświadczeniem w pracy z osobami zmagającymi się z różnorodnymi trudnościami emocjonalnymi. Specjalizuję się w terapii zaburzeń lękowych, depresji oraz ADHD.</p><p>W mojej praktyce szczególną uwagę poświęcam wspieraniu osób w kryzysach życiowych oraz tym, którzy borykają się z niską samooceną. Stosuję podejście empatyczne i dostosowane do indywidualnych potrzeb każdego pacjenta.</p><p>Wierzę, że każdy człowiek ma w sobie siłę do przezwyciężenia swoich trudności, a moją rolą jest wspierać go w tym procesie i pomóc odkryć własne zasoby.</p></div></section>
-    <section class="qualifications-section"><div class="container"><h2 class="section-title">Specjalizacje i kompetencje</h2><h3 class="category-title">🧠 Zaburzenia i trudności</h3><div class="qualifications-grid"><div class="qualification-card"><img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe"><h3>Zaburzenia lękowe</h3><p>Terapia lęków i zaburzeń lękowych</p></div><div class="qualification-card"><img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja"><h3>Depresja</h3><p>Wsparcie w zaburzeniach nastroju</p></div><div class="qualification-card"><img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD"><h3>ADHD</h3><p>Wsparcie psychologiczne dla osób z ADHD</p></div><div class="qualification-card"><img src="Assets/Uslugi/Budowanie pewności siebie Background Removed.png" alt="Niska samoocena"><h3>Niska samoocena</h3><p>Budowanie pewności siebie</p></div><div class="qualification-card"><img src="Assets/Uslugi/Kryzysy Background Removed.png" alt="Kryzysy"><h3>Kryzysy życiowe</h3><p>Wsparcie w trudnych momentach</p></div></div></div></section>
-    <section class="experience-section"><div class="container"><h2 class="section-title">Wykształcenie i doświadczenie</h2><div class="timeline"><div class="timeline-item"><h3>Psychoterapia</h3><p class="company">Szkolenie podyplomowe</p><p class="date">Certyfikat</p><p>Ukończone szkolenie psychoterapeutyczne</p></div><div class="timeline-item"><h3>Magister Psychologii</h3><p class="company">Uniwersytet</p><p class="date">Dyplom magistra</p><p>Ukończone studia magisterskie na kierunku psychologia</p></div><div class="timeline-item"><h3>Psychoterapeuta</h3><p class="company">Centrum Terapii Malachit</p><p class="date">Obecnie</p><p>Prowadzenie psychoterapii indywidualnej</p></div></div></div></section>
-    <section class="cta-section"><div class="container"><h2>Gotowy na pierwszy krok?</h2><p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p><div class="cta-buttons"><a href="https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów konsultację</a><a href="index.html#kontakt" class="btn-secondary" style="background: white; color: var(--malachite-green);">Skontaktuj się</a></div></div></section>
+    <section class="hero-therapist">
+        <img src="Assets/HeroTerapeuta/benjamin-voros-phIFdC6lA4E-unsplash.jpg" alt="" class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0;">
+        <div class="hero-content">
+            <img src="Assets/Photos/Maria-Pac.jpg" alt="Maria Pac" class="therapist-avatar-large">
+            <h1>Mgr Maria Pac</h1>
+            <p class="specialty">Psycholog, Psychoterapeuta CBT</p>
+            <div class="rating">
+                <span class="rating-stars">★★★★★</span>
+                <span>(11 opinii)</span>
+            </div>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="container container-wide">
+            <h3 class="category-title">👤 O mnie</h3>
+            <div class="about-content">
+                <div class="highlight-box">
+                    <p style="margin-bottom: 0.5rem;">🎓 <strong>Podejście integracyjne CBT</strong></p>
+                    <p style="margin-bottom: 0.5rem; color: #666; font-size: 1rem;">Członkini PTTPB • Psychoterapeutka CBT w trakcie certyfikacji • Praca pod superwizją</p>
+                    <p style="margin-bottom: 0; color: #666; font-size: 1rem;">Integracja terapii poznawczo-behawioralnej z terapią schematów, ACT i technikami uważności (mindfulness)</p>
+                </div>
+                
+                <p>W pracy <strong>najważniejsza jest dla mnie uważność na potrzeby pacjenta</strong> i dostosowywanie do nich przebiegu wspólnej pracy. Niezależnie od tego, czy prowadzę proces diagnostyczny, czy udzielam wsparcia psychologicznego, staram się spojrzeć na świat oczami pacjenta i zrozumieć jego rzeczywistość.</p>
+                
+                <p><strong>Pracę poznawczo-behawioralną uzupełniam</strong> technikami terapii schematu, ACT, uważności i psychoedukacją. To podejście pozwala mi dostosować metody terapeutyczne do indywidualnych potrzeb każdej osoby, z którą pracuję.</p>
+                
+                <p>Specjalizuję się w pracy z osobami zmagającymi się z <strong>zaburzeniami lękowymi</strong> (w tym OCD, fobiami, napadami paniki), <strong>depresją, ADHD oraz trudnościami w relacjach</strong>. Prowadzę również psychoedukację dla osób z ADHD oraz diagnostykę tego zaburzenia.</p>
+                
+                <p>Doświadczenie zdobywałam m.in. na <strong>oddziale psychiatrycznym</strong> Uzdrowiska w Konstancinie, gdzie pracowałam z pacjentami z różnymi zaburzeniami psychicznymi. Pracuję zarówno z osobami dorosłymi, jak i <strong>młodzieżą od 16 roku życia</strong>.</p>
+                
+                <p>Jestem <strong>psychoterapeutką CBT w trakcie certyfikacji</strong> oraz członkinią <strong>Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej (PTTPB)</strong>. Swoją pracę regularnie poddaję superwizji, co gwarantuje wysoką jakość świadczonych usług.</p>
+            </div>
+        </div>
+    </section>
+    <section class="qualifications-section">
+        <div class="container container-wide">
+            <h3 class="category-title">🧠 Obszary specjalizacji</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia lękowe Background Removed.png" alt="Zaburzenia lękowe">
+                    <h3>Zaburzenia lękowe</h3>
+                    <p>Kompleksowa terapia lęków, fobii, napadów paniki, lęku uogólnionego i nerwicy</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia OCD (ERP) Background Removed.png" alt="OCD">
+                    <h3>OCD (Obsesyjno-kompulsyjne)</h3>
+                    <p>Specjalistyczna terapia zaburzeń obsesyjno-kompulsyjnych z wykorzystaniem metody ERP</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia nastroju Background Removed.png" alt="Depresja">
+                    <h3>Depresja i zaburzenia nastroju</h3>
+                    <p>Wsparcie w depresji i zaburzeniach emocjonalnych</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png" alt="ADHD">
+                    <h3>ADHD</h3>
+                    <p>Diagnoza, psychoedukacja i terapia ADHD u dorosłych</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png" alt="Spektrum autyzmu">
+                    <h3>Spektrum autyzmu (ASD)</h3>
+                    <p>Wsparcie psychologiczne dla osób ze spektrum autyzmu</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia relacji i rodzinne Background Removed.png" alt="Problemy w relacjach">
+                    <h3>Problemy w relacjach</h3>
+                    <p>Terapia trudności w relacjach interpersonalnych</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Budowanie pewności siebie Background Removed.png" alt="Niska samoocena">
+                    <h3>Niska samoocena</h3>
+                    <p>Budowanie poczucia własnej wartości i pewności siebie</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Zaburzenia osobowości Background Removed.png" alt="Perfekcjonizm">
+                    <h3>Perfekcjonizm</h3>
+                    <p>Praca z nadmiernym perfekcjonizmem i samokontrolą</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Kryzysy emocjonalne Background Removed.png" alt="Kryzysy">
+                    <h3>Kryzysy życiowe</h3>
+                    <p>Psychologia kryzysu i interwencja kryzysowa (emocjonalny, zawodowy, życiowy)</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Leczenie bezsenności Background Removed.png" alt="Bezsenność">
+                    <h3>Bezsenność</h3>
+                    <p>Terapia zaburzeń snu i bezsenności</p>
+                </div>
+            </div>
+            
+            <h3 class="category-title category-title--spaced">💡 Metody i usługi</h3>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia Poznawczo Behawioralna CBT Background Removed.png" alt="Psychoterapia CBT">
+                    <h3>Psychoterapia CBT</h3>
+                    <p>Terapia poznawczo-behawioralna - metoda oparta na dowodach naukowych</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia OCD (ERP) Background Removed.png" alt="Terapia OCD">
+                    <h3>Terapia OCD</h3>
+                    <p>Specjalistyczna terapia zaburzeń obsesyjno-kompulsyjnych w nurcie CBT</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="Terapia Schematów">
+                    <h3>Terapia Schematów</h3>
+                    <p>Praca z głębokimi wzorcami myślenia i przekonaniami</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia akceptacji i zaangazowania Background Removed.png" alt="Terapia ACT">
+                    <h3>Terapia ACT</h3>
+                    <p>Terapia Akceptacji i Zaangażowania - akceptacja i wartości życiowe</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Terapia skoncentrowana na wspolczuciu CFT Background Removed.png" alt="Mindfulness">
+                    <h3>Techniki uważności (Mindfulness)</h3>
+                    <p>Praktyki uważności wspierające regulację emocji</p>
+                </div>
+                
+                <div class="qualification-card">
+                    <img src="Assets/Uslugi/Psychoedukacja ADHD Background Removed.png" alt="Psychoedukacja">
+                    <h3>Psychoedukacja i diagnoza ADHD</h3>
+                    <p>Edukacja pacjentów, diagnostyka i psychoedukacja ADHD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="experience-section">
+        <div class="container container-wide">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="category-title">💼 Doświadczenie zawodowe</h3>
+                    <ul>
+                        <li><strong>Centrum Terapii Malachit</strong> - Psychoterapeuta CBT, prowadzenie sesji online i stacjonarnych</li>
+                        <li><strong>Oddział Psychiatryczny, Uzdrowisko Konstancin-Jeziorna</strong> - Praca z pacjentami psychiatrycznymi</li>
+                        <li><strong>NZOZ Victi</strong> - Udzielanie wsparcia psychologicznego</li>
+                        <li><strong>Stowarzyszenie Terapeutów</strong> - Działalność terapeutyczna</li>
+                        <li><strong>Fundacja Druga Strona Lustra</strong> - Wsparcie psychologiczne</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="category-title category-title--spaced">🎓 Wykształcenie i certyfikaty</h3>
+                    <ul>
+                        <li><strong>Uniwersytet Warszawski</strong> - Psychologia (studia magisterskie 5-letnie)</li>
+                        <li><strong>SWPS Uniwersytet Humanistycznospołeczny</strong> - Psychologia kryzysu i interwencja kryzysowa (szkolenie roczne)</li>
+                        <li><strong>Szkoła Psychoterapeutyczna</strong> - Psychoterapia CBT z dialogiem motywującym (4-letnie szkolenie akredytowane przez PTTPB, <strong>w trakcie certyfikacji</strong>)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="category-title category-title--spaced">🌐 Języki</h3>
+                    <ul>
+                        <li><strong>Polski</strong> - język ojczysty</li>
+                        <li><strong>Angielski</strong> - prowadzenie terapii</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container container-wide">
+            <h2>Gotowy na pierwszy krok?</h2>
+            <p>Umów się na konsultację i zacznij swoją drogę do lepszego samopoczucia</p>
+            <div class="cta-buttons">
+                <a href="https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
+                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
+            </div>
+        </div>
+    </section>
     <script>function toggleMenu() { const mobileMenu = document.getElementById('mobileMenu'); mobileMenu.classList.toggle('active'); }</script>
     <footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;"><div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;"><div><h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3><p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p><p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p><p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p><p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p><p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p></div><div><h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3><p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none;">Regulamin</a></p><p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none;">Polityka Prywatności</a></p><p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none;">Cennik</a></p><p style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: #666; text-decoration: none;">FAQ</a></p></div><div><h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3><p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p><p style="color: #666;">Sob-Niedz: Zamknięte</p></div></div><div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">© 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.</div></footer>
 </body>
