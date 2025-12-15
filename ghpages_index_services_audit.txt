@@ -1,0 +1,9 @@
+BASE https://boroviec.github.io/Malachit/
+Refs 35
+Bad 5
+
+404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+404	Assets/Uslugi/Terapia PTSD Background Removed.png
+404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
