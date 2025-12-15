@@ -1,0 +1,80 @@
+BASE	https://boroviec.github.io/Malachit/
+TherapistPages	11
+UniqueRefs	30
+BadRefs	5
+
+404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+404	Assets/Uslugi/Terapia PTSD Background Removed.png
+404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+# Per-page failures
+
+MaksymilianRosochacki.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Terapia PTSD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+alina-kyselova.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Terapia PTSD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+dorota-wojtlowska-wiechetek.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+karolina-budny.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+maria-pac.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+marta-kurkiewicz.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+marta-sklodowska.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+marta-szczepaniak.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+
+milena-filippowicz.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Terapia PTSD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+rafal-suchta.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Terapia PTSD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
+
+sylwia-borowiec-herej.html
+  404	Assets/Uslugi/Diagnoza i terapia ADHD Background Removed.png
+  404	Assets/Uslugi/Diagnoza i terapia ASD Background Removed.png
+  404	Assets/Uslugi/Zaburzenia lękowe Background Removed.png
+  404	Assets/Uslugi/Zaburzenia nastroju Background Removed.png
