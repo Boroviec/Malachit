@@ -275,11 +275,37 @@
             background: #f8f9fa;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
         }
 
         .therapist-mini-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+
+        /* Always-visible cue that the card is clickable (ZnanyLekarz) */
+        .therapist-mini-card::after {
+            content: "ZnanyLekarz ↗";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--malachite-green);
+            background: rgba(13, 115, 119, 0.08);
+            border: 1px solid rgba(13, 115, 119, 0.18);
+            padding: 0.18rem 0.5rem;
+            border-radius: 999px;
+        }
+
+        .therapist-mini-card:focus-visible {
+            outline: 3px solid rgba(13, 115, 119, 0.35);
+            outline-offset: 3px;
         }
 
         .therapist-mini-avatar {
@@ -296,6 +322,7 @@
             font-weight: 600;
             color: #2d3748;
             line-height: 1.3;
+            margin-bottom: 0.15rem;
         }
 
         @media (max-width: 768px) {
@@ -429,7 +456,6 @@
                     <div class="therapist-mini-name">Marta Szczepaniak</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- ASD -->
@@ -481,7 +507,6 @@
                     <div class="therapist-mini-name">Marta Szczepaniak</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Zaburzenia nastroju -->
@@ -541,7 +566,6 @@
                     <div class="therapist-mini-name">Rafał Suchta</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Zaburzenia lękowe -->
@@ -601,7 +625,6 @@
                     <div class="therapist-mini-name">Rafał Suchta</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- PTSD -->
@@ -637,7 +660,6 @@
                     <div class="therapist-mini-name">Rafał Suchta</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Zaburzenia osobowości -->
@@ -673,7 +695,6 @@
                     <div class="therapist-mini-name">Rafał Suchta</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- CBT -->
@@ -726,7 +747,6 @@
                     <div class="therapist-mini-name">Rafał Suchta</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- DBT -->
@@ -750,7 +770,6 @@
                     <div class="therapist-mini-name">Alina Kyselova</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- ACT -->
@@ -767,7 +786,6 @@
                 <li>Angażowaniem się w wartościowe działania</li>
             </ul>
             <p>ACT pomaga w radzeniu sobie z lękiem, depresją, chronicznym bólem i wieloma innymi wyzwaniami.</p>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Terapia schematów -->
@@ -791,7 +809,6 @@
                     <div class="therapist-mini-name">Alina Kyselova</div>
                 </div>
             </div>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- CFT -->
@@ -807,7 +824,6 @@
                 <li>Zrozumieniu ewolucyjnych podstaw emocji</li>
                 <li>Technikach uważności i imagery</li>
             </ul>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Terapia skoncentrowana na rozwiązaniach -->
@@ -824,7 +840,6 @@
                 <li>Małych krokach prowadzących do zmian</li>
             </ul>
             <p>Skuteczna metoda dla osób szukających konkretnych rozwiązań w krótkim czasie.</p>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
         <!-- Terapia systemowa -->
@@ -841,7 +856,6 @@
                 <li>Wzmacnianie więzi i zrozumienia</li>
             </ul>
             <p>Pomaga w rozwiązywaniu problemów relacyjnych i poprawie jakości komunikacji w bliskich związkach.</p>
-            <a href="index.html#kontakt" class="btn-primary">Umów konsultację</a>
         </div>
 
     </div>
@@ -874,6 +888,40 @@
                 });
             });
         });
+
+        // Link mini therapist cards to ZnanyLekarz profiles
+        document.addEventListener('DOMContentLoaded', function() {
+            const zlByName = {
+                'Sylwia Borowiec-Herej': 'https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa',
+                'Dorota Wojtłowska-Wiechetek': 'https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa',
+                'Karolina Budny': 'https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa',
+                'Milena Filippowicz': 'https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa',
+                'Alina Kyselova': 'https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa',
+                'Marta Kurkiewicz': 'https://www.znanylekarz.pl/marta-kurkiewicz-2/psycholog-psychoterapeuta/warszawa',
+                'Maria Pac': 'https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa',
+                'Maksymilian Rosochacki': 'https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa',
+                'Marta Skłodowska': 'https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa',
+                'Rafał Suchta': 'https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa',
+                'Marta Szczepaniak': 'https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa'
+            };
+
+            document.querySelectorAll('.therapist-mini-card').forEach((card) => {
+                const nameEl = card.querySelector('.therapist-mini-name');
+                const name = nameEl ? nameEl.textContent.trim() : '';
+                const href = zlByName[name];
+                if (!href) return;
+
+                const a = document.createElement('a');
+                a.className = card.className;
+                a.href = href;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.setAttribute('aria-label', `Otwórz profil ZnanyLekarz: ${name}`);
+
+                while (card.firstChild) a.appendChild(card.firstChild);
+                card.replaceWith(a);
+            });
+        });
     </script>
 
     <!-- Footer -->
@@ -881,7 +929,6 @@
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
             <!-- Contact Info -->
             <div>
-                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
                 <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
                 <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
@@ -892,7 +939,6 @@
 
             <!-- Quick Links -->
             <div>
-                <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
                 <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Regulamin</a></p>
                 <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
                 <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
