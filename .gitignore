@@ -1,3 +1,7 @@
 
 # Hero video files (too large for GitHub)
 Assets/HeroTerapeuta/*.mp4
+
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
