@@ -287,20 +287,52 @@
             text-decoration: none;
         }
 
-        /* Always-visible cue that the card is clickable (ZnanyLekarz) */
-        .therapist-mini-card::after {
-            content: "ZnanyLekarz ↗";
+        /* Actions inside the mini card */
+        .therapist-mini-actions {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .therapist-mini-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-top: 0.35rem;
             font-size: 0.72rem;
             font-weight: 600;
+            padding: 0.22rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .therapist-mini-btn:focus-visible {
+            outline: 3px solid rgba(13, 115, 119, 0.35);
+            outline-offset: 2px;
+        }
+
+        .therapist-mini-btn--primary {
             color: var(--malachite-green);
             background: rgba(13, 115, 119, 0.08);
-            border: 1px solid rgba(13, 115, 119, 0.18);
-            padding: 0.18rem 0.5rem;
-            border-radius: 999px;
+            border-color: rgba(13, 115, 119, 0.18);
+        }
+
+        .therapist-mini-btn--primary:hover {
+            background: rgba(13, 115, 119, 0.12);
+        }
+
+        .therapist-mini-btn--secondary {
+            color: #4a5568;
+            background: rgba(74, 85, 104, 0.06);
+            border-color: rgba(74, 85, 104, 0.16);
+        }
+
+        .therapist-mini-btn--secondary:hover {
+            background: rgba(74, 85, 104, 0.10);
         }
 
         .therapist-mini-card:focus-visible {
@@ -889,8 +921,24 @@
             });
         });
 
-        // Link mini therapist cards to ZnanyLekarz profiles
+        // Add two actions to each mini therapist card:
+        // - "Umów się" (primary) -> ZnanyLekarz
+        // - "Poznaj lepiej" (secondary) -> internal profile page
         document.addEventListener('DOMContentLoaded', function() {
+            const profileByName = {
+                'Maksymilian Rosochacki': 'MaksymilianRosochacki.html',
+                'Sylwia Borowiec-Herej': 'sylwia-borowiec-herej.html',
+                'Karolina Budny': 'karolina-budny.html',
+                'Milena Filippowicz': 'milena-filippowicz.html',
+                'Dorota Wojtłowska-Wiechetek': 'dorota-wojtlowska-wiechetek.html',
+                'Alina Kyselova': 'alina-kyselova.html',
+                'Marta Kurkiewicz': 'marta-kurkiewicz.html',
+                'Maria Pac': 'maria-pac.html',
+                'Marta Skłodowska': 'marta-sklodowska.html',
+                'Rafał Suchta': 'rafal-suchta.html',
+                'Marta Szczepaniak': 'marta-szczepaniak.html'
+            };
+
             const zlByName = {
                 'Sylwia Borowiec-Herej': 'https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa',
                 'Dorota Wojtłowska-Wiechetek': 'https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa',
@@ -908,18 +956,37 @@
             document.querySelectorAll('.therapist-mini-card').forEach((card) => {
                 const nameEl = card.querySelector('.therapist-mini-name');
                 const name = nameEl ? nameEl.textContent.trim() : '';
-                const href = zlByName[name];
-                if (!href) return;
+                if (!name) return;
 
-                const a = document.createElement('a');
-                a.className = card.className;
-                a.href = href;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                a.setAttribute('aria-label', `Otwórz profil ZnanyLekarz: ${name}`);
+                // Prevent duplicating actions if the HTML already contains them.
+                if (card.querySelector('.therapist-mini-actions')) return;
 
-                while (card.firstChild) a.appendChild(card.firstChild);
-                card.replaceWith(a);
+                const actions = document.createElement('div');
+                actions.className = 'therapist-mini-actions';
+
+                const zlHref = zlByName[name];
+                if (zlHref) {
+                    const book = document.createElement('a');
+                    book.className = 'therapist-mini-btn therapist-mini-btn--primary';
+                    book.href = zlHref;
+                    book.target = '_blank';
+                    book.rel = 'noopener noreferrer';
+                    book.textContent = 'Umów się ↗';
+                    book.setAttribute('aria-label', `Umów się — otwórz ZnanyLekarz: ${name}`);
+                    actions.appendChild(book);
+                }
+
+                const profileHref = profileByName[name];
+                if (profileHref) {
+                    const more = document.createElement('a');
+                    more.className = 'therapist-mini-btn therapist-mini-btn--secondary';
+                    more.href = profileHref;
+                    more.textContent = 'Poznaj lepiej';
+                    more.setAttribute('aria-label', `Poznaj lepiej: ${name}`);
+                    actions.appendChild(more);
+                }
+
+                if (actions.childElementCount) card.appendChild(actions);
             });
         });
     </script>
