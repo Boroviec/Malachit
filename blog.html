@@ -36,9 +36,9 @@
     
     <style>
         :root {
-            --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-green: #2F5349;
+            --malachite-dark: #1e3a31;
+            --malachite-light: #4a7a68;
             --gold: #d4af37;
             --gold-light: #f0d577;
         }
@@ -317,8 +317,8 @@
             <a href="index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
-            <span class="phone">📞 +48 577 804 146</span>
-            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            <span class="phone">📞 +48 519 402 423</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
             <span class="active-page">BLOG</span> ▼
@@ -406,7 +406,7 @@
                         Pierwsze spotkanie z terapeutą może być stresujące. Zobacz, czego się spodziewać i jak się przygotować, żeby wykorzystać je jak najlepiej.
                     </p>
                     <div class="blog-footer">
-                        <span class="blog-author">👤 Mgr Karolina Budny</span>
+                        <span class="blog-author">👤 Centrum Malachit</span>
                         <a href="blog/jak-przygotowac-sie-do-pierwszej-wizyty.html" class="read-more">Czytaj więcej →</a>
                     </div>
                 </div>
@@ -482,7 +482,7 @@
                         Coraz więcej dorosłych osób otrzymuje diagnozę spektrum autyzmu. Zobacz, jak wygląda proces diagnostyczny i dlaczego warto go przejść.
                     </p>
                     <div class="blog-footer">
-                        <span class="blog-author">👤 Mgr Marta Kurkiewicz</span>
+                        <span class="blog-author">👤 Centrum Malachit</span>
                         <a href="blog/diagnostyka-asd-u-doroslych.html" class="read-more">Czytaj więcej →</a>
                     </div>
                 </div>
@@ -490,37 +490,10 @@
         </div>
     </div>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
+        <script src="Assets/nav.js"></script>
 
-        // Category filter functionality
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                // Here you would filter articles based on category
-            });
-        });
+    <script src="Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
 
-        // Smooth page transitions
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href$=".html"]');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href === window.location.pathname.split('/').pop() || this.hostname !== window.location.hostname) {
-                        return;
-                    }
-                    e.preventDefault();
-                    document.body.classList.add('page-transition');
-                    setTimeout(() => { window.location.href = href; }, 200);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

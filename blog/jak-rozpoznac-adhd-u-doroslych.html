@@ -80,9 +80,9 @@
     
     <style>
         :root {
-            --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-green: #2F5349;
+            --malachite-dark: #1e3a31;
+            --malachite-light: #4a7a68;
             --gold: #d4af37;
             --gold-light: #f0d577;
         }
@@ -176,9 +176,7 @@
             gap: 0;
         }
 
-        nav.mobile-menu.active {
-            display: flex;
-        }
+        nav.mobile-menu
 
         nav.mobile-menu a {
             padding: 1rem 0;
@@ -600,7 +598,7 @@
             <a href="../index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
-            <span class="phone">📞 +48 577 804 146</span>
+            <span class="phone">📞 +48 519 402 423</span>
             <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
@@ -912,13 +910,10 @@
         </div>
     </article>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const burger = document.querySelector('.burger-menu');
-            mobileMenu.classList.toggle('active');
-            burger.classList.toggle('active');
-        }
-    </script>
+        <script src="../Assets/nav.js"></script>
+
+    <script src="../Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
+
 </body>
 </html>

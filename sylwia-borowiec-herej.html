@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
-            --malachite-green: #0d7377;
+            --malachite-green: #2F5349;
             --malachite-dark: #0a5c5f;
             --malachite-light: #10989d;
             --beige: #faf9f7;
@@ -115,23 +115,8 @@
         /* Container sizing is handled globally in Assets/header.css */
 
         /* Section Styles */
-        .section-title {
-            text-align: left;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            margin-bottom: 2rem;
-            color: var(--malachite-green);
-            font-weight: 700;
-        }
 
         /* .category-title styling is centralized in Assets/header.css */
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-        }
 
         .about-section {
             background: var(--beige);
@@ -191,44 +176,6 @@
         /* Timeline styling is centralized in Assets/header.css */
 
         /* Approach Section */
-        .approach-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .approach-card {
-            background: var(--beige);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--malachite-green);
-        }
-
-        .approach-card h3 {
-            color: var(--malachite-green);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .approach-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .approach-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .approach-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--malachite-green);
-            font-weight: bold;
-        }
 
         /* CTA Section */
         .cta-section {
@@ -260,10 +207,6 @@
         /* Responsive */
         @media (max-width: 768px) {
             .qualifications-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .approach-cards {
                 grid-template-columns: 1fr;
             }
 
@@ -328,7 +271,7 @@
             <p class="specialty">Psycholog neurokognitywistka, psychoterapeutka CBT w trakcie</p>
             <div class="rating">
                 <span class="rating-stars">★★★★★</span>
-                <span>(55 opinii)</span>
+                <span>(60 opinii)</span>
             </div>
         </div>
     </section>
@@ -480,67 +423,19 @@
             <p>Umów się na pierwszą konsultację i rozpocznij swoją drogę do lepszego zrozumienia siebie</p>
             <div class="cta-buttons">
                 <a href="https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
-                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
+                <span class="cta-phone">lub Zadzwoń: 519 402 423</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-<footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-        <!-- Contact Info -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
-            <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
-            
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
-        </div>
-
-        <!-- Hours -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
-            <p style="color: #666;">Sob-Niedz: Zamknięte</p>
-        </div>
-
-        <!-- Useful Links -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
-            <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.facebook.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Facebook</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.instagram.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Instagram</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">ZnanyLekarz (umów wizytę)</a></p>
-        </div>
-    </div>
-
-    <!-- Copyright -->
-    <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
-        © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
-    </div>
-</footer>
 
 
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+        <script src="Assets/nav.js"></script>
+
+    <script src="Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
+
 </body>
 </html>

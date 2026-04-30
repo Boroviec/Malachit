@@ -522,10 +522,10 @@ nav a.active::after {
 }
 
 .btn-primary:hover {
-    background: var(--malachite-dark);
+    background: #4a7a68;
     color: white !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(13, 115, 119, 0.3);
+    box-shadow: 0 6px 16px rgba(47, 83, 73, 0.3);
 }
 
 .btn-secondary {
@@ -544,11 +544,11 @@ nav a.active::after {
 }
 
 .btn-secondary:hover {
-    background: rgba(13, 115, 119, 0.05);
-    color: var(--malachite-dark) !important;
-    border-color: var(--malachite-dark);
+    background: rgba(47, 83, 73, 0.05);
+    color: #4a7a68 !important;
+    border-color: #4a7a68;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+    box-shadow: 0 4px 12px rgba(47, 83, 73, 0.2);
 }
 
 /* Button variants for dark backgrounds (CTA sections with gradient) */

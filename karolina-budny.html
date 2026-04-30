@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
-            --malachite-green: #0d7377;
+            --malachite-green: #2F5349;
             --malachite-dark: #0a5c5f;
             --malachite-light: #10989d;
             --beige: #faf9f7;
@@ -28,45 +28,6 @@
         }
 
         /* Hero Section */
-        .hero-therapist {
-            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.35;
-            z-index: 0;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-        }
 
         .therapist-avatar-large {
             width: 200px;
@@ -76,21 +37,6 @@
             border: 5px solid white;
             box-shadow: 0 8px 24px rgba(0,0,0,0.2);
             object-fit: cover;
-        }
-
-        .hero-therapist h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: white;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        .hero-therapist .specialty {
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1rem;
-            font-weight: 400;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .rating {
@@ -131,23 +77,8 @@
         }
 
         /* Section Styles */
-        .section-title {
-            text-align: left;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            margin-bottom: 2rem;
-            color: var(--malachite-green);
-            font-weight: 700;
-        }
 
         /* .category-title styling is centralized in Assets/header.css */
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-        }
 
         .about-section {
             background: var(--beige);
@@ -275,7 +206,7 @@
             <a href="index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
-            <span class="phone">📞 +48 577 804 146</span>
+            <span class="phone">📞 +48 519 402 423</span>
             <a href="https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
@@ -438,67 +369,16 @@
             <p>Umów się na pierwszą konsultację i rozpocznij swoją drogę do lepszego samopoczucia</p>
             <div class="cta-buttons">
                 <a href="https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa" target="_blank" rel="noopener noreferrer" class="btn-primary-dark">Umów wizytę</a>
-                <span class="cta-phone">lub Zadzwoń: 577 804 146</span>
+                <span class="cta-phone">lub Zadzwoń: 519 402 423</span>
             </div>
         </div>
     </section>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
+        <script src="Assets/nav.js"></script>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 
-    <!-- Footer -->
-<footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-        <!-- Contact Info -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
-            <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
-            
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
-        </div>
-
-        <!-- Hours -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
-            <p style="color: #666;">Sob-Niedz: Zamknięte</p>
-        </div>
-
-        <!-- Useful Links -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
-            <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.facebook.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Facebook</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.instagram.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Instagram</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">ZnanyLekarz (umów wizytę)</a></p>
-        </div>
-    </div>
-
-    <!-- Copyright -->
-    <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
-        © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
-    </div>
-</footer>
-
+    <script src="Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
 
 </body>
 </html>

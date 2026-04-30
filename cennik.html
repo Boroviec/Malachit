@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="Assets/header.css?v=2">
     <style>
         :root {
-            --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-green: #2F5349;
+            --malachite-dark: #1e3a31;
+            --malachite-light: #4a7a68;
             --gold: #d4af37;
             --gold-light: #f0d577;
             --text-dark: #2c3e50;
@@ -32,27 +32,60 @@
 
         /* Hero */
         .hero-pricing {
-            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
-            color: white;
+            position: relative;
             min-height: 90vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 4rem 5%;
-            padding-top: 6rem;
-            margin-top: -100px;
             text-align: center;
+            padding: 2rem;
+            padding-top: 120px;
+            margin-top: -100px;
+            overflow: hidden;
+        }
+
+        .hero-pricing .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-pricing .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(47,83,73,0.35) 0%, rgba(0,0,0,0.15) 100%);
+            z-index: 2;
+        }
+
+        .hero-pricing .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 620px;
+            color: white;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero-pricing h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 3rem);
             margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            color: white;
         }
 
         .hero-pricing p {
-            font-size: 1.2rem;
-            opacity: 0.95;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
         /* Container */
@@ -69,36 +102,6 @@
             color: var(--malachite-dark);
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Pricing Categories */
-        .pricing-category {
-            margin-bottom: 4rem;
-        }
-
-        .category-header {
-            background: rgba(13, 115, 119, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--malachite-green);
-            margin-bottom: 2rem;
-        }
-
-        .category-header h2 {
-            font-size: 1.8rem;
-            color: var(--malachite-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .category-header p {
-            color: #666;
-            font-size: 1rem;
-        }
 
         /* Service Cards */
         .services-list {
@@ -153,7 +156,7 @@
         .price-unit {
             font-size: 0.9rem;
             color: #666;
-            margin-top: 0rem;
+            margin-top: 0;
         }
 
         /* Express Pricing Highlight */
@@ -237,30 +240,6 @@
             font-weight: bold;
         }
 
-        /* Info Boxes */
-        .info-box {
-            background: rgba(212, 175, 55, 0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            border-left: 4px solid var(--gold);
-        }
-
-        .info-box h3 {
-            color: var(--malachite-dark);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .info-box ul {
-            list-style-position: inside;
-            color: #666;
-        }
-
-        .info-box li {
-            margin-bottom: 0.5rem;
-        }
-
         /* CTA */
         .cta-section {
             background: #f8f9fa;
@@ -294,6 +273,21 @@
             .express-pricing {
                 padding: 2rem;
             }
+
+            .service-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-price {
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            .price-value {
+                font-size: 1.6rem;
+                white-space: normal;
+            }
         }
     </style>
 </head>
@@ -313,8 +307,8 @@
             <a href="index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
-            <span class="phone">📞 +48 577 804 146</span>
-            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            <span class="phone">📞 +48 519 402 423</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
             <span class="active-page">CENNIK</span> ▼
@@ -329,9 +323,13 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero-pricing" style="background-image: url('Assets/Photos/Biuro/biuro 5.png'); background-size: cover; background-position: center;">
-        <h1 style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);">Cennik Usług</h1>
-        <p style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5); max-width: 400px; margin-left: auto; margin-right: auto;">Przejrzyste ceny i profesjonalna opieka psychologiczna</p>
+    <section class="hero-pricing">
+        <img src="Assets/Photos/Biuro/Cennik.png" alt="Cennik" class="hero-video">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cennik Usług</h1>
+            <p>Przejrzyste ceny i profesjonalna opieka psychologiczna</p>
+        </div>
     </section>
 
     <!-- Payment Info -->
@@ -350,7 +348,7 @@
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
                     <p style="margin-bottom: 0.75rem; color: #666; font-size: 0.95rem;"><strong>Numer konta:</strong></p>
                     <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                        <code style="background: white; padding: 0.75rem 1.25rem; border-radius: 6px; font-size: 1.1rem; flex: 1; min-width: 250px;">87 1140 2004 0000 3402 8572 2965</code>
+                        <code style="background: white; padding: 0.75rem 1.25rem; border-radius: 6px; font-size: 1.1rem; flex: 1; min-width: 250px;">62 1140 2004 0000 3702 8278 6593</code>
                         <button onclick="copyAccountNumber()" style="background: var(--malachite-green); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; transition: all 0.3s;">📋 Kopiuj</button>
                     </div>
                     <p style="margin-top: 1.25rem; color: #666; font-size: 0.95rem;"><strong>Tytuł przelewu:</strong> Data wizyty, Imię i nazwisko pacjenta, Imię i nazwisko specjalisty</p>
@@ -570,92 +568,29 @@
             <h2>Masz pytania dotyczące cennika?</h2>
             <p>Skontaktuj się z nami, aby uzyskać więcej informacji lub umówić się na konsultację</p>
             <a href="index.html#kontakt" class="btn-secondary" style="margin-right: 1rem;">Skontaktuj się</a>
-            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem; padding: 2rem 0;">
-            <a href="regulamin-i-polityka-prywatnosci.html" style="color: var(--malachite-green); text-decoration: none; font-size: 0.95rem;">📄 Regulamin i Polityka Prywatności</a>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
     </div>
 
     <script>
+        const BOOKING_URL = 'https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit#highlight-calendar';
+
         function copyAccountNumber() {
-            const accountNumber = '87 1140 2004 0000 3402 8572 2965';
+            const accountNumber = '62 1140 2004 0000 3702 8278 6593';
+            const btn = event.currentTarget;
             navigator.clipboard.writeText(accountNumber).then(() => {
-                alert('Numer konta skopiowany do schowka!');
+                const original = btn.textContent;
+                btn.textContent = '✓ Skopiowano';
+                setTimeout(() => btn.textContent = original, 2000);
             }).catch(err => {
                 console.error('Błąd kopiowania:', err);
             });
         }
 
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
-
-        // Smooth page transitions
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href$=".html"]');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Skip if it's the current page or external link
-                    if (href === window.location.pathname.split('/').pop() || this.hostname !== window.location.hostname) {
-                        return;
-                    }
-                    
-                    e.preventDefault();
-                    document.body.classList.add('page-transition');
-                    
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 200);
-                });
-            });
-        });
     </script>
-
-    <!-- Footer -->
-<footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-        <!-- Contact Info -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
-            <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
-            
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
-        </div>
-
-        <!-- Hours -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
-            <p style="color: #666;">Sob-Niedz: Zamknięte</p>
-        </div>
-
-        <!-- Useful Links -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
-            <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.facebook.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Facebook</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.instagram.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Instagram</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">ZnanyLekarz (umów wizytę)</a></p>
-        </div>
-    </div>
-
-    <!-- Copyright -->
-    <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
-        © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
-    </div>
-</footer>
-
-
+    <script src="Assets/nav.js"></script>
+    <script src="Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
 
 </body>
 </html>

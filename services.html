@@ -29,7 +29,7 @@
                 "email": "sekretariat@malachit.org",
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "ul. Marszałka Józefa Piłsudskiego 56/116",
+                    "streetAddress": "ul. Puławska 232",
                     "addressLocality": "Warszawa",
                     "addressCountry": "PL"
                 },
@@ -155,9 +155,9 @@
     
     <style>
         :root {
-            --malachite-green: #0d7377;
-            --malachite-dark: #0a5a5d;
-            --malachite-light: #14a09e;
+            --malachite-green: #2F5349;
+            --malachite-dark: #1e3a31;
+            --malachite-light: #4a7a68;
             --gold: #d4af37;
             --gold-light: #f0d577;
         }
@@ -176,28 +176,60 @@
 
         /* Hero Section */
         .hero-services {
-            background: linear-gradient(135deg, var(--malachite-dark) 0%, var(--malachite-light) 100%);
-            color: white;
+            position: relative;
             min-height: 90vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 4rem 5%;
-            padding-top: 6rem;
-            margin-top: -100px;
             text-align: center;
+            padding: 2rem;
+            padding-top: 120px;
+            margin-top: -100px;
+            overflow: hidden;
+        }
+
+        .hero-services .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-services .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(47,83,73,0.35) 0%, rgba(0,0,0,0.15) 100%);
+            z-index: 2;
+        }
+
+        .hero-services .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 620px;
+            color: white;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero-services h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 3rem);
             margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            color: white;
         }
 
         .hero-services p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 800px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.95);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
         .container {
@@ -247,18 +279,6 @@
             color: #4a5568;
         }
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
         .therapists-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -288,52 +308,6 @@
         }
 
         /* Actions inside the mini card */
-        .therapist-mini-actions {
-            margin-top: 0.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .therapist-mini-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 0.22rem 0.55rem;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            text-decoration: none;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .therapist-mini-btn:focus-visible {
-            outline: 3px solid rgba(13, 115, 119, 0.35);
-            outline-offset: 2px;
-        }
-
-        .therapist-mini-btn--primary {
-            color: var(--malachite-green);
-            background: rgba(13, 115, 119, 0.08);
-            border-color: rgba(13, 115, 119, 0.18);
-        }
-
-        .therapist-mini-btn--primary:hover {
-            background: rgba(13, 115, 119, 0.12);
-        }
-
-        .therapist-mini-btn--secondary {
-            color: #4a5568;
-            background: rgba(74, 85, 104, 0.06);
-            border-color: rgba(74, 85, 104, 0.16);
-        }
-
-        .therapist-mini-btn--secondary:hover {
-            background: rgba(74, 85, 104, 0.10);
-        }
 
         .therapist-mini-card:focus-visible {
             outline: 3px solid rgba(13, 115, 119, 0.35);
@@ -402,8 +376,8 @@
             <a href="index.html#kontakt">KONTAKT</a>
         </nav>
         <div class="header-contact">
-            <span class="phone">📞 +48 577 804 146</span>
-            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit&hl=pl-PL&gei=lF8SaaavAZP8wPAPxciFgQ8&rwg_token=ACgRB3eaRShjLVuyUrQ3OLbmuY-Ril4Nux9hhaDeoSUMv1Lq1QmqP_pTFCW3AOOeBl4pHmyKmIvT9vW-XmheDvJYTklXBn9uFw%3D%3D#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
+            <span class="phone">📞 +48 519 402 423</span>
+            <a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3?prevent-patient-app-banner=true&utm_source=google&utm_medium=gmb&utm_campaign=237277&utm_content=book_visit#highlight-calendar" target="_blank" rel="noopener noreferrer" class="btn-primary">Umów wizytę</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
             <span class="active-page">USŁUGI</span> ▼
@@ -418,9 +392,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-services" style="background-image: url('Assets/Photos/Biuro/biuro3.jpg'); background-size: cover; background-position: center;">
-        <h1 style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5);">Nasze Usługi</h1>
-        <p style="text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5); max-width: 400px; margin-left: auto; margin-right: auto;">Profesjonalne wsparcie psychologiczne i psychoterapeutyczne dostosowane do Twoich potrzeb</p>
+    <section class="hero-services">
+        <img src="Assets/Photos/Biuro/Usługi.png" alt="Usługi" class="hero-video">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nasze Usługi</h1>
+            <p>Profesjonalne wsparcie psychologiczne i psychoterapeutyczne dostosowane do Twoich potrzeb</p>
+        </div>
     </section>
 
     <div class="container">
@@ -440,50 +418,6 @@
             </ul>
             
             <p>Terapia ADHD w naszym centrum opiera się na najnowszych badaniach naukowych i indywidualnym podejściu do każdego pacjenta.</p>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Sylwia Borowiec-Herej</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Karolina.jpeg" alt="Karolina Budny" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Karolina Budny</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta-Kurkiewicz.jpg" alt="Marta Kurkiewicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Kurkiewicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maria.jpg" alt="Maria Pac" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maria Pac</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/MartaSklodowska.jpeg" alt="Marta Skłodowska" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Skłodowska</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta Szczepaniak.jpeg" alt="Marta Szczepaniak" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Szczepaniak</div>
-                </div>
-            </div>
         </div>
 
         <!-- ASD -->
@@ -499,42 +433,6 @@
                 <li>Pomoc w regulacji sensorycznej</li>
                 <li>Współpracę z rodziną i środowiskiem</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Sylwia Borowiec-Herej</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta-Kurkiewicz.jpg" alt="Marta Kurkiewicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Kurkiewicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/MartaSklodowska.jpeg" alt="Marta Skłodowska" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Skłodowska</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta Szczepaniak.jpeg" alt="Marta Szczepaniak" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Szczepaniak</div>
-                </div>
-            </div>
         </div>
 
         <!-- Zaburzenia nastroju -->
@@ -550,50 +448,6 @@
                 <li>Budowaniu zdrowych nawyków</li>
                 <li>Zapobieganiu nawrotom</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Sylwia Borowiec-Herej</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Karolina.jpeg" alt="Karolina Budny" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Karolina Budny</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg" alt="Dorota Wojtłowska-Wiechetek" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Dorota Wojtłowska-Wiechetek</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta-Kurkiewicz.jpg" alt="Marta Kurkiewicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Kurkiewicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maria.jpg" alt="Maria Pac" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maria Pac</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/MartaSklodowska.jpeg" alt="Marta Skłodowska" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Skłodowska</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-            </div>
         </div>
 
         <!-- Zaburzenia lękowe -->
@@ -609,50 +463,6 @@
                 <li>Pracę z katastroficznymi myślami</li>
                 <li>Techniki relaksacyjne i oddechowe</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Sylwia Borowiec-Herej</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Karolina.jpeg" alt="Karolina Budny" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Karolina Budny</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg" alt="Dorota Wojtłowska-Wiechetek" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Dorota Wojtłowska-Wiechetek</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta-Kurkiewicz.jpg" alt="Marta Kurkiewicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Kurkiewicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maria.jpg" alt="Maria Pac" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maria Pac</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/MartaSklodowska.jpeg" alt="Marta Skłodowska" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Skłodowska</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-            </div>
         </div>
 
         <!-- PTSD -->
@@ -668,26 +478,6 @@
                 <li>Pracę z flashbackami i koszmarami</li>
                 <li>Odbudowę poczucia bezpieczeństwa</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg" alt="Dorota Wojtłowska-Wiechetek" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Dorota Wojtłowska-Wiechetek</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-            </div>
         </div>
 
         <!-- Zaburzenia osobowości -->
@@ -703,26 +493,6 @@
                 <li>Budowaniem zdrowego obrazu siebie</li>
                 <li>Rozwojem umiejętności radzenia sobie</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Dorota-Wojciechowska-Wiechetek.jpg" alt="Dorota Wojtłowska-Wiechetek" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Dorota Wojtłowska-Wiechetek</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-            </div>
         </div>
 
         <!-- CBT -->
@@ -739,42 +509,6 @@
                 <li>Nabywaniu praktycznych umiejętności</li>
             </ul>
             <p>Skuteczna w leczeniu depresji, zaburzeń lękowych, OCD, PTSD i wielu innych problemów.</p>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Maksymilian.jpg" alt="Maksymilian Rosochacki" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Maksymilian Rosochacki</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Sylwia-Borowiec-Herej.jpg" alt="Sylwia Borowiec-Herej" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Sylwia Borowiec-Herej</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Karolina.jpeg" alt="Karolina Budny" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Karolina Budny</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Milena.jpeg" alt="Milena Filippowicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Milena Filippowicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Marta-Kurkiewicz.jpg" alt="Marta Kurkiewicz" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Kurkiewicz</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/MartaSklodowska.jpeg" alt="Marta Skłodowska" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Marta Skłodowska</div>
-                </div>
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Rafal.jpeg" alt="Rafał Suchta" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Rafał Suchta</div>
-                </div>
-            </div>
         </div>
 
         <!-- DBT -->
@@ -790,53 +524,6 @@
                 <li>Umiejętności tolerowania stresu</li>
                 <li>Indywidualne sesje terapeutyczne</li>
             </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ACT -->
-        <div class="service-detail" id="act">
-            <h2><img src="Assets/Uslugi/Terapia akceptacji i zaangazowania Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia akceptacji i zaangażowania (ACT)</h2>
-            <p>ACT to nowoczesne podejście terapeutyczne, które uczy akceptacji trudnych doświadczeń wewnętrznych i skupienia się na działaniach zgodnych z własnymi wartościami.</p>
-            
-            <h3>W ramach ACT pracujemy nad:</h3>
-            <ul>
-                <li>Akceptacją trudnych myśli i emocji</li>
-                <li>Rozpoznaniem własnych wartości</li>
-                <li>Defuzją poznawczą</li>
-                <li>Uważnością i obecnością</li>
-                <li>Angażowaniem się w wartościowe działania</li>
-            </ul>
-            <p>ACT pomaga w radzeniu sobie z lękiem, depresją, chronicznym bólem i wieloma innymi wyzwaniami.</p>
-        </div>
-
-        <!-- Terapia schematów -->
-        <div class="service-detail" id="ts">
-            <h2><img src="Assets/Uslugi/Terapia schematów (TS) Background Removed.png" alt="" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Terapia schematów (TS)</h2>
-            <p>Terapia schematów to podejście integrujące elementy terapii poznawczo-behawioralnej, psychodynamicznej i teorii przywiązania. Koncentruje się na głębokich wzorcach myślowych i emocjonalnych ukształtowanych we wczesnym dzieciństwie.</p>
-            
-            <h3>Praca terapeutyczna obejmuje:</h3>
-            <ul>
-                <li>Identyfikację wczesnych nieadaptacyjnych schematów</li>
-                <li>Zrozumienie źródeł trudności</li>
-                <li>Pracę z wewnętrznym dzieckiem</li>
-                <li>Zmianę dysfunkcyjnych strategii radzenia sobie</li>
-                <li>Budowanie zdrowszych wzorców relacyjnych</li>
-            </ul>
-            
-            <h3>Nasi specjaliści:</h3>
-            <div class="therapists-grid">
-                <div class="therapist-mini-card">
-                    <img src="Assets/Photos/Alina.jpeg" alt="Alina Kyselova" class="therapist-mini-avatar">
-                    <div class="therapist-mini-name">Alina Kyselova</div>
-                </div>
-            </div>
         </div>
 
         <!-- CFT -->
@@ -888,144 +575,11 @@
 
     </div>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
-
-        // Smooth page transitions
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href$=".html"]');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Skip if it's the current page or external link
-                    if (href === window.location.pathname.split('/').pop() || this.hostname !== window.location.hostname) {
-                        return;
-                    }
-                    
-                    e.preventDefault();
-                    document.body.classList.add('page-transition');
-                    
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 200);
-                });
-            });
-        });
-
-        // Add two actions to each mini therapist card:
-        // - "Umów się" (primary) -> ZnanyLekarz
-        // - "Poznaj lepiej" (secondary) -> internal profile page
-        document.addEventListener('DOMContentLoaded', function() {
-            const profileByName = {
-                'Maksymilian Rosochacki': 'MaksymilianRosochacki.html',
-                'Sylwia Borowiec-Herej': 'sylwia-borowiec-herej.html',
-                'Karolina Budny': 'karolina-budny.html',
-                'Milena Filippowicz': 'milena-filippowicz.html',
-                'Dorota Wojtłowska-Wiechetek': 'dorota-wojtlowska-wiechetek.html',
-                'Alina Kyselova': 'alina-kyselova.html',
-                'Marta Kurkiewicz': 'marta-kurkiewicz.html',
-                'Maria Pac': 'maria-pac.html',
-                'Marta Skłodowska': 'marta-sklodowska.html',
-                'Rafał Suchta': 'rafal-suchta.html',
-                'Marta Szczepaniak': 'marta-szczepaniak.html'
-            };
-
-            const zlByName = {
-                'Sylwia Borowiec-Herej': 'https://www.znanylekarz.pl/sylwia-borowiec-herej/psycholog/warszawa',
-                'Dorota Wojtłowska-Wiechetek': 'https://www.znanylekarz.pl/dorota-wojtlowska-wiechetek/psychiatra/warszawa',
-                'Karolina Budny': 'https://www.znanylekarz.pl/karolina-budny/psycholog-psychoterapeuta/warszawa',
-                'Milena Filippowicz': 'https://www.znanylekarz.pl/milena-filippowicz/psycholog-psychoterapeuta/warszawa',
-                'Alina Kyselova': 'https://www.znanylekarz.pl/alina-kyselova/psycholog-psychoterapeuta/warszawa',
-                'Marta Kurkiewicz': 'https://www.znanylekarz.pl/marta-kurkiewicz-2/psycholog-psychoterapeuta/warszawa',
-                'Maria Pac': 'https://www.znanylekarz.pl/maria-pac/psycholog-psychoterapeuta/warszawa',
-                'Maksymilian Rosochacki': 'https://www.znanylekarz.pl/maksymilian-rosochacki/psycholog-psychoterapeuta/warszawa',
-                'Marta Skłodowska': 'https://www.znanylekarz.pl/marta-sklodowska/psycholog/warszawa',
-                'Rafał Suchta': 'https://www.znanylekarz.pl/rafal-suchta/psycholog-psychoterapeuta/warszawa',
-                'Marta Szczepaniak': 'https://www.znanylekarz.pl/marta-szczepaniak-7/psycholog/warszawa'
-            };
-
-            document.querySelectorAll('.therapist-mini-card').forEach((card) => {
-                const nameEl = card.querySelector('.therapist-mini-name');
-                const name = nameEl ? nameEl.textContent.trim() : '';
-                if (!name) return;
-
-                // Prevent duplicating actions if the HTML already contains them.
-                if (card.querySelector('.therapist-mini-actions')) return;
-
-                const actions = document.createElement('div');
-                actions.className = 'therapist-mini-actions';
-
-                const zlHref = zlByName[name];
-                if (zlHref) {
-                    const book = document.createElement('a');
-                    book.className = 'therapist-mini-btn therapist-mini-btn--primary';
-                    book.href = zlHref;
-                    book.target = '_blank';
-                    book.rel = 'noopener noreferrer';
-                    book.textContent = 'Umów się ↗';
-                    book.setAttribute('aria-label', `Umów się — otwórz ZnanyLekarz: ${name}`);
-                    actions.appendChild(book);
-                }
-
-                const profileHref = profileByName[name];
-                if (profileHref) {
-                    const more = document.createElement('a');
-                    more.className = 'therapist-mini-btn therapist-mini-btn--secondary';
-                    more.href = profileHref;
-                    more.textContent = 'Poznaj lepiej';
-                    more.setAttribute('aria-label', `Poznaj lepiej: ${name}`);
-                    actions.appendChild(more);
-                }
-
-                if (actions.childElementCount) card.appendChild(actions);
-            });
-        });
-    </script>
-
-    <!-- Footer -->
-<footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-        <!-- Contact Info -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 577 804 146</p>
-            <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
-            
-            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
-            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
-        </div>
-
-        <!-- Hours -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
-            <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
-            <p style="color: #666;">Sob-Niedz: Zamknięte</p>
-        </div>
-
-        <!-- Useful Links -->
-        <div>
-            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
-            <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.facebook.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Facebook</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.instagram.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Instagram</a></p>
-            <p style="margin-bottom: 0.5rem;"><a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">ZnanyLekarz (umów wizytę)</a></p>
-        </div>
-    </div>
-
-    <!-- Copyright -->
-    <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
-        © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
-    </div>
-</footer>
+        <script src="Assets/nav.js"></script>
 
 
+    <script src="Assets/footer.js"></script>
+    <div id="footer-placeholder"></div>
 
 </body>
 </html>

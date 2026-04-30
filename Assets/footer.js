@@ -1,16 +1,54 @@
-// Load footer on all pages
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('Assets/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            // Find all footer placeholders or insert at the end of body
-            const footerPlaceholder = document.getElementById('footer-placeholder');
-            if (footerPlaceholder) {
-                footerPlaceholder.innerHTML = data;
-            } else {
-                // If no placeholder, append to body
-                document.body.insertAdjacentHTML('beforeend', data);
-            }
-        })
-        .catch(error => console.error('Error loading footer:', error));
-});
+(function() {
+    const footerHTML = `
+<footer style="background: #f8f9fa; padding: 3rem 5%; margin-top: 0; border-top: 1px solid #e0e0e0;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+        <!-- Contact Info -->
+        <div>
+            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Kontakt</h3>
+            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Warszawa</strong></p>
+            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 519 402 423</p>
+            <p style="color: #666; margin-bottom: 1rem;">📧 kontakt@ctmalachit.pl</p>
+
+            <p style="color: #666; margin-bottom: 0.5rem;"><strong>Zielona Góra</strong></p>
+            <p style="color: #666; margin-bottom: 0.5rem;">📞 +48 573 778 667</p>
+        </div>
+
+        <!-- Hours -->
+        <div>
+            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Godziny pracy</h3>
+            <p style="color: #666; margin-bottom: 0.5rem;">Pon-Pt: 09:00 - 18:00</p>
+            <p style="color: #666;">Sob-Niedz: Zamknięte</p>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+            <h3 style="color: var(--malachite-dark); margin-bottom: 1rem; font-size: 1.1rem;">Przydatne linki</h3>
+            <p style="margin-bottom: 0.5rem;"><a href="cennik.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Cennik</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="regulamin-i-polityka-prywatnosci.html" style="color: #666; text-decoration: none; transition: color 0.3s;">Polityka Prywatności</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="https://www.facebook.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Facebook</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="https://www.instagram.com/ctmalachit/" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">Instagram</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="https://www.znanylekarz.pl/placowki/centrum-terapii-malachit-3" target="_blank" rel="noopener noreferrer" style="color: #666; text-decoration: none; transition: color 0.3s;">ZnanyLekarz (umów wizytę)</a></p>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div style="max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 0.9rem;">
+        © 2024 Centrum Terapii Malachit. Wszystkie prawa zastrzeżone.
+    </div>
+</footer>`;
+
+    function insertFooter() {
+        const placeholder = document.getElementById('footer-placeholder');
+        if (placeholder) {
+            placeholder.outerHTML = footerHTML;
+        } else {
+            document.body.insertAdjacentHTML('beforeend', footerHTML);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', insertFooter);
+    } else {
+        insertFooter();
+    }
+}());
